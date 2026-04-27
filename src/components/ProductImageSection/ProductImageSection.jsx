@@ -110,15 +110,19 @@ function ImageWithSkeleton({ src, alt, className, onClick, title, active }) {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <div className={`skeleton-wrapper ${active ? 'active' : ''}`} style={{ 
-      position: 'absolute', 
-      inset: 0, 
-      opacity: active ? 1 : 0, 
-      pointerEvents: active ? 'all' : 'none',
-      transition: 'opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1)'
-    }}>
-      {!loaded && active && (
-        <div className="skeleton-loader" />
+    <div 
+      className={`skeleton-wrapper ${active ? 'active' : ''}`} 
+      style={{ 
+        position: 'absolute', 
+        inset: 0, 
+        opacity: active ? 1 : 0, 
+        pointerEvents: active ? 'all' : 'none',
+        transition: 'opacity 1s cubic-bezier(0.4, 0, 0.2, 1)',
+        background: '#1a1a1a' // Brighter than pure black
+      }}
+    >
+      {!loaded && (
+        <div className="skeleton-loader skeleton-dark" />
       )}
       <img 
         src={src} 
@@ -129,7 +133,7 @@ function ImageWithSkeleton({ src, alt, className, onClick, title, active }) {
         title={title}
         style={{ 
           opacity: loaded ? 1 : 0, 
-          transition: 'opacity 0.5s ease',
+          transition: 'opacity 0.4s ease',
           width: '100%',
           height: '100%',
           objectFit: 'cover'
