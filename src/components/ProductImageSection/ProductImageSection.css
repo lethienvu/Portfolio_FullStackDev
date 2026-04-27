@@ -111,7 +111,16 @@
   overflow: hidden;
   border-radius: 10px;
   z-index: 2;
-  background: #222;
+  background: #1a1a1a;
+}
+
+.screen-content .skeleton-wrapper {
+  background: #1a1a1a;
+}
+
+.device-phone__screen .skeleton-wrapper {
+  background: #1a1a1a;
+  border-radius: 35px;
 }
 
 .screen::after {
@@ -184,7 +193,7 @@
   height: auto;
   display: block;
   position: relative;
-  z-index: 2;
+  z-index: 3;
   pointer-events: none;
 }
 
@@ -196,8 +205,8 @@
   height: 97%;
   overflow: hidden;
   border-radius: 35px;
-  z-index: 2;
-  background: #222;
+  z-index: 1;
+  background: #1a1a1a;
 }
 
 .device-img {

@@ -118,7 +118,6 @@ function ImageWithSkeleton({ src, alt, className, onClick, title, active }) {
         opacity: active ? 1 : 0, 
         pointerEvents: active ? 'all' : 'none',
         transition: 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
-        background: '#222', // Dark grey fallback
         zIndex: active ? 2 : 1
       }}
     >
@@ -127,9 +126,10 @@ function ImageWithSkeleton({ src, alt, className, onClick, title, active }) {
           position: 'absolute', 
           inset: 0, 
           zIndex: 10, 
-          background: 'linear-gradient(90deg, #222 25%, #333 50%, #222 75%)',
+          background: 'linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%)',
           backgroundSize: '200% 100%',
-          animation: 'skeleton-shimmer 1.5s infinite linear'
+          animation: 'skeleton-shimmer 1.5s infinite linear',
+          borderRadius: 'inherit'
         }} />
       )}
       <img 
@@ -145,7 +145,8 @@ function ImageWithSkeleton({ src, alt, className, onClick, title, active }) {
           transition: 'opacity 0.5s ease',
           width: '100%',
           height: '100%',
-          objectFit: 'cover'
+          objectFit: 'cover',
+          display: 'block'
         }}
       />
     </div>
