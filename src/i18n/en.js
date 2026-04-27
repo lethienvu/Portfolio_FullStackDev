@@ -35,7 +35,7 @@ const en = {
       faster: "200% faster with AI",
     },
     cta: {
-      projects: "View Projects →",
+      projects: "View Projects",
       contact: "Contact Me",
     },
     card: {
@@ -173,6 +173,21 @@ const en = {
           { value: "10+", label: "Multinational Corporations" },
         ],
       },
+      {
+        icon: "ai",
+        title: "AI Integration & Performance Optimization",
+        desc: "Leveraging deep AI integration to optimize development workflows. Utilizing LLMs and AI-driven tools to automate development processes, boosting productivity by <strong>200%</strong> and minimizing technical errors.",
+        skills: ["AI Integration", "Agent Skills", "Agent Henes", "Prompt Engineering", "Workflow Automation", "Claude/Gemini API"],
+        logos: [
+          'https://cdn.simpleicons.org/googlegemini',
+          'https://cdn.simpleicons.org/githubcopilot'
+        ],
+        metrics: [
+          { value: "200%", label: "Productivity Boost" },
+          { value: "-30%", label: "Dev Time" },
+          { value: "AI-Native", label: "Mindset" },
+        ],
+      },
     ],
     demo: {
       title: "Live Demo — Virtual Scroll Employee List",
@@ -269,7 +284,7 @@ const en = {
       emailPlaceholder: "email@company.com",
       message: "Message",
       messagePlaceholder: "I'd like to discuss a collaboration opportunity...",
-      submit: "Send Message →",
+      submit: "Send Message",
     },
     success: "✅ Thank you! I will get back to you within 24 hours.",
   },

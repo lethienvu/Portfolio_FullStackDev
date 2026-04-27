@@ -385,49 +385,56 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-3);
-
+  gap: 6px;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 2px 2px rgba(255, 255, 255, 0.3);
-  border-radius: 28px;
-  padding: var(--space-4);
-  width: 100%;
-  max-width: 220px;
-  transition: transform var(--transition);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 10px;
+  width: 90px;
+  flex-shrink: 0;
+  transition: all var(--transition);
 }
 
 .vcard__qr-container:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px) scale(1.05);
   border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
 .qr-title {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 8px;
   font-weight: var(--weight-bold);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  margin: 0;
 }
 
 .vcard__qr {
   width: 100%;
   height: auto;
-  border-radius: 16px;
+  border-radius: 8px;
   background: #fff;
-  padding: 6px;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 3px;
 }
 
-/* Liquid Glass Action Buttons */
+.contact__footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
 .contact__actions {
+  flex: 1;
   display: flex;
   gap: var(--space-3);
-  margin-top: var(--space-8);
-  flex-wrap: wrap;
+  margin-top: 0;
 }
 
 .action-btn {
@@ -504,10 +511,15 @@
     justify-content: flex-end;
   }
 
+  .contact__footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-6);
+  }
+
   .vcard__qr-container {
-    max-width: 180px;
-    margin-top: auto;
-    margin-bottom: 0;
     align-self: center;
+    width: 110px;
+    margin: 0;
   }
 }

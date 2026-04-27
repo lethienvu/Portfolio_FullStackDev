@@ -12,56 +12,13 @@ import imgHeroVcshow from "../../assets/hero-vcshow.png";
 const SCATTERED_IMGS = [imgHeroMobile, imgHeroPweb, imgHeroPweb3, imgHeroVcshow];
 
 /* ── Hero Lightbox ────────────────────────────────────── */
-function HeroLightbox({ images, activeIndex, onClose, onPrev, onNext }) {
-  useEffect(() => {
-    const handleKey = (e) => {
-      if (e.key === "Escape") onClose();
-      if (e.key === "ArrowLeft") onPrev();
-      if (e.key === "ArrowRight") onNext();
-    };
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, [onClose, onPrev, onNext]);
-
-  return (
-    <div className="hero-lightbox" role="dialog" aria-modal="true" aria-label="Screenshot preview" onClick={onClose}>
-      {/* Header */}
-      <div className="hero-lightbox__header" onClick={(e) => e.stopPropagation()}>
-        <span className="hero-lightbox__counter">
-          {activeIndex + 1} / {images.length}
-        </span>
-        <button className="hero-lightbox__close" onClick={onClose} aria-label="Close preview">
-          ×
-        </button>
-      </div>
-
-      {/* Main image */}
-      <div className="hero-lightbox__content" onClick={(e) => e.stopPropagation()}>
-        <img src={images[activeIndex]} alt={`Screenshot ${activeIndex + 1}`} className="hero-lightbox__img" />
-      </div>
-
-      {/* Bottom nav */}
-      <div className="hero-lightbox__center-nav" onClick={(e) => e.stopPropagation()}>
-        <button className="hero-lightbox__nav-inline" onClick={onPrev} aria-label="Previous image">
-          ‹
-        </button>
-        <span className="hero-lightbox__counter">
-          {activeIndex + 1} / {images.length}
-        </span>
-        <button className="hero-lightbox__nav-inline" onClick={onNext} aria-label="Next image">
-          ›
-        </button>
-      </div>
-    </div>
-  );
-}
 
 /* ── Scattered Frames (with hover + lightbox trigger) ── */
 function ScatteredFrames({ onOpenLightbox }) {
   return (
     <div className="hero-scatter">
       {SCATTERED_IMGS.map((src, i) => (
-        <button key={i} className={`hero-scatter__card hero-scatter__card--${i}`} onClick={() => onOpenLightbox(i)} aria-label={`View screenshot ${i + 1} full screen`}>
+        <button key={i} className={`hero-scatter__card hero-scatter__card--${i}`} onClick={() => onOpenLightbox(SCATTERED_IMGS, i)} aria-label={`View screenshot ${i + 1} full screen`}>
           <div className="hero-scatter__topbar">
             <span />
             <span />
@@ -99,16 +56,10 @@ function SunCloudsAnimation() {
   );
 }
 
-export default function HeroSection() {
+export default function HeroSection({ onOpenLightbox }) {
   const { t } = useLanguage();
   const h = t.hero;
 
-  /* Lightbox state */
-  const [lightboxIndex, setLightboxIndex] = useState(null);
-  const openLightbox = useCallback((i) => setLightboxIndex(i), []);
-  const closeLightbox = useCallback(() => setLightboxIndex(null), []);
-  const prevImg = useCallback(() => setLightboxIndex((i) => (i - 1 + SCATTERED_IMGS.length) % SCATTERED_IMGS.length), []);
-  const nextImg = useCallback(() => setLightboxIndex((i) => (i + 1) % SCATTERED_IMGS.length), []);
 
   const HERO_STATS = [
     { value: "2.5+", label: h.stats.exp },
@@ -401,10 +352,10 @@ export default function HeroSection() {
             </div>
 
             <div className="hero__actions">
-              <a href="#projects" className="btn-primary">
+              <a href="#experience" className="btn btn-primary btn--md">
                 {h.cta.projects}
               </a>
-              <a href="#contact" className="btn-secondary">
+              <a href="#contact" className="btn btn-secondary btn--md">
                 {h.cta.contact}
               </a>
 
@@ -436,13 +387,12 @@ export default function HeroSection() {
               <div className="hero__card-wrapper">
                 <ProfileCard />
               </div>
-              <ScatteredFrames onOpenLightbox={openLightbox} />
+              <ScatteredFrames onOpenLightbox={onOpenLightbox} />
             </aside>
           </div>
         </div>
       </section>
 
-      {lightboxIndex !== null && <HeroLightbox images={SCATTERED_IMGS} activeIndex={lightboxIndex} onClose={closeLightbox} onPrev={prevImg} onNext={nextImg} />}
     </>
   );
 }

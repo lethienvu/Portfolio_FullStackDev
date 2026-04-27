@@ -108,6 +108,10 @@
   transition: opacity var(--transition), background var(--transition);
 }
 
+.hero-scatter__overlay svg {
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+}
+
 .hero-scatter__card:hover .hero-scatter__overlay {
   opacity: 1;
   background: color-mix(in srgb, var(--color-ink) 40%, transparent);
@@ -314,145 +318,6 @@
 }
 
 /* ── Hero Lightbox ─────────────────────────────────────── */
-.hero-lightbox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: color-mix(in srgb, var(--color-ink) 88%, transparent);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  padding: var(--space-4);
-  backdrop-filter: blur(8px);
-  animation: heroLightboxFadeIn var(--transition);
-}
-
-@keyframes heroLightboxFadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.hero-lightbox__header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: var(--space-4) var(--space-5);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 10000;
-  color: var(--color-white);
-  box-sizing: border-box;
-}
-
-.hero-lightbox__counter {
-  font-family: var(--font-display);
-  font-size: var(--text-lg);
-  font-weight: var(--weight-semibold);
-  letter-spacing: var(--tracking-wide);
-  color: color-mix(in srgb, var(--color-white) 85%, transparent);
-}
-
-.hero-lightbox__close {
-  background: none;
-  border: none;
-  color: var(--color-white);
-  font-size: var(--text-6xl);
-  cursor: pointer;
-  line-height: 1;
-  padding: 0;
-  transition: transform var(--transition);
-  opacity: 0.8;
-}
-
-.hero-lightbox__close:hover {
-  transform: scale(1.15);
-  opacity: 1;
-}
-
-.hero-lightbox__content {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: var(--space-7);
-  animation: heroImgIn 0.25s ease;
-}
-
-@keyframes heroImgIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.hero-lightbox__img {
-  max-width: 85vw;
-  max-height: 78vh;
-  object-fit: contain;
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-md);
-  background: var(--color-surface);
-}
-
-.hero-lightbox__center-nav {
-  position: absolute;
-  bottom: var(--space-5);
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
-  background: color-mix(in srgb, var(--color-white) 10%, transparent);
-  padding: var(--space-2) var(--space-5);
-  border-radius: var(--radius-pill);
-  backdrop-filter: blur(10px);
-  z-index: 10001;
-  color: var(--color-white);
-}
-
-.hero-lightbox__nav-inline {
-  background: none;
-  border: none;
-  color: var(--color-white);
-  font-size: var(--text-6xl);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform var(--transition), color var(--transition);
-  padding: 0;
-  padding-bottom: var(--space-1);
-  line-height: 1;
-  opacity: 0.85;
-}
-
-.hero-lightbox__nav-inline:hover {
-  transform: scale(1.25);
-  color: var(--color-accent);
-  opacity: 1;
-}
-
-@media (max-width: 768px) {
-  .hero-lightbox__img {
-    max-width: 95vw;
-  }
-}
 
 
 
@@ -687,42 +552,6 @@
   flex-wrap: wrap;
 }
 
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-3) var(--space-5);
-  background: var(--color-ink);
-  color: var(--color-white);
-  font-size: var(--text-md);
-  font-weight: var(--weight-semibold);
-  border-radius: var(--radius-pill);
-  transition: background var(--transition), transform var(--transition);
-}
-
-.btn-primary:hover {
-  background: var(--color-accent);
-  color: var(--color-white);
-  transform: translateY(-1px);
-}
-
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-3) var(--space-5);
-  border: var(--size-border-medium) solid var(--color-border-strong);
-  color: var(--color-ink-2);
-  font-size: var(--text-md);
-  font-weight: var(--weight-semibold);
-  border-radius: var(--radius-pill);
-  transition: border-color var(--transition), color var(--transition);
-}
-
-.btn-secondary:hover {
-  border-color: var(--color-ink);
-  color: var(--color-ink);
-}
 
 /* RIGHT: Card */
 .hero__card {

@@ -13,6 +13,10 @@
   margin-bottom: var(--space-8);
 }
 
+.tech__card:nth-child(5) {
+  grid-column: span 2;
+}
+
 .tech__card {
   background: var(--color-bg-alt);
   border: var(--size-border-thin) solid var(--color-border);
@@ -126,6 +130,10 @@
 @media (max-width: 768px) {
   .tech__grid {
     grid-template-columns: 1fr;
+  }
+
+  .tech__card:nth-child(5) {
+    grid-column: auto;
   }
 }
 

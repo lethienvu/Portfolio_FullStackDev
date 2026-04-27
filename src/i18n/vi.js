@@ -35,7 +35,7 @@ const vi = {
       faster: 'Tăng 200% hiệu suất với AI',
     },
     cta: {
-      projects: 'Xem dự án →',
+      projects: 'Xem dự án',
       contact:  'Liên hệ tôi',
     },
     card: {
@@ -177,6 +177,17 @@ const vi = {
         ],
         metrics: [{ value: '14.000', label: 'Người dùng cuối' }, { value: '+20%', label: 'Vượt tiến độ' }, { value: '5+', label: 'Tập đoàn đa quốc gia' }],
       },
+      {
+        icon:  'ai',
+        title: 'Tích hợp AI & Tối ưu hóa Hiệu suất',
+        desc:  'Tích hợp AI chuyên sâu để tối ưu hiệu suất làm việc. Sử dụng LLM và các công cụ AI để tự động hóa quy trình phát triển, tăng <strong>200%</strong> hiệu suất và giảm thiểu sai sót kỹ thuật.',
+        skills: ['AI Integration', 'Agent Skills', 'Agent Henes', 'Prompt Engineering', 'Workflow Automation', 'Claude/Gemini API'],
+        logos: [
+          'https://cdn.simpleicons.org/googlegemini',
+          'https://cdn.simpleicons.org/githubcopilot'
+        ],
+        metrics: [{ value: '200%', label: 'Tăng hiệu suất' }, { value: '-30%', label: 'Thời gian phát triển' }, { value: 'AI-Native', label: 'Tư duy' }],
+      },
     ],
     demo: {
       title: 'Trình diễn Trực tiếp — Danh sách Nhân viên Cuộn ảo',
@@ -285,7 +296,7 @@ const vi = {
       emailPlaceholder:   'email@company.com',
       message:            'Nội dung',
       messagePlaceholder: 'Tôi muốn thảo luận về cơ hội hợp tác...',
-      submit:             'Gửi tin nhắn →',
+      submit:             'Gửi tin nhắn',
     },
     success: '✅ Cảm ơn bạn! Tôi sẽ phản hồi trong vòng 24 giờ.',
   },

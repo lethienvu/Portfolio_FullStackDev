@@ -117,12 +117,12 @@
 }
 
 .timeline__period {
-  font-size: var(--text-sm);
+  font-size: var(--text-md);
   font-weight: var(--weight-semibold);
   color: var(--color-ink-3);
-  letter-spacing: var(--tracking-wider);
+  letter-spacing: var(--tracking-widest);
   text-transform: uppercase;
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space-1);
 }
 
 .timeline__role {
@@ -130,7 +130,7 @@
   font-size: var(--text-4xl);
   font-weight: var(--weight-bold);
   color: var(--color-ink);
-  margin-bottom: var(--space-1);
+  margin-bottom: var(--space-4);
 }
 
 .timeline__company-header {
@@ -327,6 +327,10 @@
   .timeline {
     padding-left: var(--space-6);
   }
+
+  .timeline__dot {
+    left: calc(-1 * var(--space-6) - 5px);
+  }
 }
 
 @media (max-width: 900px) {
@@ -372,6 +376,10 @@
 @media (max-width: 480px) {
   .timeline {
     padding-left: var(--space-5);
+  }
+
+  .timeline__dot {
+    left: calc(-1 * var(--space-5) - 5px);
   }
 
   .timeline__role {

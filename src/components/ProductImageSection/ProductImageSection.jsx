@@ -103,26 +103,19 @@ const SLIDES = [
     desc: 'Thiết kế hệ thống RESTful API linh hoạt đóng vai trò như một Orchestrator, giao tiếp xuyên suốt giữa CSDL lõi với trình duyệt web và di động của hàng ngàn công nhân.'
   }
 ];
+const LAPTOP_IMGS = SLIDES.map(s => s.laptop);
+const PHONE_IMGS = SLIDES.map(s => s.phone);
 
-function ProductShowcase({ current, setCurrent, lightbox, setLightbox }) {
+function ProductShowcase({ current, setCurrent, onOpenLightbox, isLightboxOpen }) {
   useEffect(() => {
     const timer = setInterval(() => {
-      if (!lightbox.isOpen) {
+      if (!isLightboxOpen) {
         setCurrent((prev) => (prev + 1) % SLIDES.length);
       }
     }, 4000);
     return () => clearInterval(timer);
-  }, [lightbox.isOpen, setCurrent]);
+  }, [isLightboxOpen, setCurrent]);
 
-  const handlePrev = (e) => {
-    e.stopPropagation();
-    setLightbox(prev => ({ ...prev, index: (prev.index - 1 + SLIDES.length) % SLIDES.length }));
-  };
-
-  const handleNext = (e) => {
-    e.stopPropagation();
-    setLightbox(prev => ({ ...prev, index: (prev.index + 1) % SLIDES.length }));
-  };
 
   return (
     <div className="product-showcase">
@@ -138,7 +131,7 @@ function ProductShowcase({ current, setCurrent, lightbox, setLightbox }) {
                   src={slide.laptop} 
                   alt={slide.title} 
                   className={`device-img ${idx === current ? 'active' : ''}`}
-                  onClick={() => setLightbox({ isOpen: true, type: 'laptop', index: idx })}
+                  onClick={() => onOpenLightbox(LAPTOP_IMGS, idx)}
                   title="Xem toàn màn hình"
                 />
               ))}
@@ -157,7 +150,7 @@ function ProductShowcase({ current, setCurrent, lightbox, setLightbox }) {
                 src={slide.phone} 
                 alt={slide.title} 
                 className={`device-img ${idx === current ? 'active' : ''}`}
-                onClick={() => setLightbox({ isOpen: true, type: 'phone', index: idx })}
+                onClick={() => onOpenLightbox(PHONE_IMGS, idx)}
                 title="Xem toàn màn hình"
               />
             ))}
@@ -183,41 +176,14 @@ function ProductShowcase({ current, setCurrent, lightbox, setLightbox }) {
         </div>
       </div>
 
-      {lightbox.isOpen && (
-        <div className="product-lightbox" onClick={() => setLightbox(prev => ({ ...prev, isOpen: false }))}>
-          <div className="product-lightbox__header" onClick={e => e.stopPropagation()}>
-            <div className="product-lightbox__logo-container">
-              <img src={`${import.meta.env.BASE_URL}icons.svg`} alt="Logo portfolio" className="product-lightbox__logo-icon" />
-              <div className="product-lightbox__logo-text">
-                <span className="product-lightbox__logo-name">Lê Thiên Vũ</span>
-                <span className="product-lightbox__logo-sub">Portfolio</span>
-              </div>
-            </div>
-            <button className="product-lightbox__close" onClick={() => setLightbox(prev => ({ ...prev, isOpen: false }))} title="Đóng">×</button>
-          </div>
-
-          <div className="product-lightbox__content" onClick={e => e.stopPropagation()}>
-            <img src={lightbox.type === 'laptop' ? SLIDES[lightbox.index].laptop : SLIDES[lightbox.index].phone} alt="Full screen view" className="product-lightbox__img" />
-          </div>
-
-          <div className="product-lightbox__center-nav" onClick={e => e.stopPropagation()}>
-            <button className="product-lightbox__nav-inline prev" onClick={handlePrev} title="Trước">‹</button>
-            <span className="product-lightbox__counter">
-              {lightbox.index + 1} / {SLIDES.length}
-            </span>
-            <button className="product-lightbox__nav-inline next" onClick={handleNext} title="Tiếp">›</button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
 
-export default function ProductImageSection() {
+export default function ProductImageSection({ onOpenLightbox, isLightboxOpen }) {
   const { t } = useLanguage();
   const content = t.productImages;
   const [current, setCurrent] = useState(0);
-  const [lightbox, setLightbox] = useState({ isOpen: false, type: 'laptop', index: 0 });
 
   return (
     <section id="product-images" className="product-images-section" aria-labelledby="product-images-heading">
@@ -238,8 +204,8 @@ export default function ProductImageSection() {
           <ProductShowcase 
             current={current} 
             setCurrent={setCurrent} 
-            lightbox={lightbox} 
-            setLightbox={setLightbox} 
+            onOpenLightbox={onOpenLightbox} 
+            isLightboxOpen={isLightboxOpen}
           />
         </div>
       </div>

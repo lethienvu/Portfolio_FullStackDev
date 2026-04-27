@@ -69,14 +69,6 @@ export default function ContactSection() {
           {/* Left: Avatar & QR Code */}
           <div className="vcard__avatar-section">
             <img src={avatarImg} alt="Vu Le Thien Avatar" className="vcard__avatar-bg" />
-            <div className="vcard__qr-container">
-              <p className="qr-title">Zalo QR</p>
-              <img 
-                src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://zalo.me/0945949065" 
-                alt="Zalo QR" 
-                className="vcard__qr" 
-              />
-            </div>
           </div>
 
           {/* Right: Info & Actions */}
@@ -119,13 +111,24 @@ export default function ContactSection() {
               ))}
             </nav>
 
-            <div className="contact__actions">
-              <a href="tel:0945949065" className="action-btn action-btn--primary">
-                📞 Gọi ngay
-              </a>
-              <a href="mailto:lethienvu.se@gmail.com" className="action-btn action-btn--secondary">
-                ✉️ Gửi mail
-              </a>
+            <div className="contact__footer">
+              <div className="contact__actions">
+                <a href="tel:0945949065" className="action-btn action-btn--primary">
+                  Gọi ngay
+                </a>
+                <a href="mailto:lethienvu.se@gmail.com" className="action-btn action-btn--secondary">
+                  Gửi mail
+                </a>
+              </div>
+              
+              <div className="vcard__qr-container">
+                <p className="qr-title">Zalo QR</p>
+                <img 
+                  src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://zalo.me/0945949065" 
+                  alt="Zalo QR" 
+                  className="vcard__qr" 
+                />
+              </div>
             </div>
 
           </div>

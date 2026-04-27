@@ -185,6 +185,32 @@ const iconMap = {
       </g>
     </svg>
   ),
+  ai: (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+    >
+      <g
+        fill="none"
+        stroke="#093fb4ff"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      >
+        <path
+          fill="#fff7e9ff"
+          d="M12 21a9 9 0 1 0-9-9c0 1.488.36 2.89 1 4.125L3 21l4.875-1c1.236.64 2.637 1 4.125 1Z"
+        />
+        <path
+          stroke="#ff731dff"
+          d="M9 10a3 3 0 1 1 6 0c0 1.657-1.343 3-3 3s-3-1.343-3-3ZM12 13v3"
+        />
+        <path d="M9 16h6" stroke="#ff731dff" />
+      </g>
+    </svg>
+  ),
 };
 
 export default function TechDeepDive() {
@@ -206,9 +232,6 @@ export default function TechDeepDive() {
           {tech.cards.map((card) => (
             <article key={card.title} className="tech__card" role="listitem">
               <div className="tech__card-top">
-                <div className="tech__card-icon" aria-hidden="true">
-                  {iconMap[card.icon]}
-                </div>
                 {card.logos && (
                   <div className="tech__card-logos">
                     {card.logos.map((logo, i) => (

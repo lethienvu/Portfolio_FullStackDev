@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
+import Lightbox from "./components/common/Lightbox.jsx";
 import "./App.css";
 import { useLanguage } from "./i18n/LanguageContext.jsx";
+import { useScrollAnimation } from "./hooks/useScrollAnimation.js";
 import HeroSection from "./components/HeroSection/HeroSection";
 import ExperienceSection from "./components/ExperienceSection/ExperienceSection";
 import TechDeepDive from "./components/TechDeepDive/TechDeepDive";
@@ -33,6 +35,16 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { t } = useLanguage();
 
+  // Prevent scroll when menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => { document.body.style.overflow = "unset"; };
+  }, [menuOpen]);
+
   const NAV_LINKS = [
     { label: t.nav.experience, href: "#experience" },
     { label: t.nav.technical, href: "#technical" },
@@ -61,18 +73,15 @@ function Navbar() {
           </ul>
 
           {/* Desktop: lang toggle + hire CTA */}
-          <div
-            style={{ display: "flex", alignItems: "center", gap: "10px" }}
-            className="navbar__desktop-actions"
-          >
+          <div className="navbar__desktop-actions">
             <LangToggle />
-            <a href="mailto:lethienvu.se@gmail.com" className="navbar__cta">
+            <a href="#contact" className="btn btn-primary btn--sm">
               {t.nav.hire}
             </a>
           </div>
 
           <button
-            className="navbar__hamburger"
+            className={`navbar__hamburger${menuOpen ? " open" : ""}`}
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((o) => !o)}
@@ -86,26 +95,53 @@ function Navbar() {
 
       {/* Mobile menu */}
       <div className={`mobile-menu${menuOpen ? " open" : ""}`} role="menu">
-        {NAV_LINKS.map(({ label, href }) => (
+        <div className="mobile-menu__header">
+           <div className="navbar__logo">
+            <img src={`${import.meta.env.BASE_URL}icons.svg`} alt="Logo portfolio" />
+            <div className="navbar__logo-text">
+              <span className="navbar__logo-name">Lê Thiên Vũ</span>
+              <span className="navbar__logo-sub">Portfolio</span>
+            </div>
+          </div>
+          <button 
+            className={`navbar__hamburger ${menuOpen ? "open" : ""}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
+
+        <div className="mobile-menu__content">
+          <nav className="mobile-menu__nav">
+            {NAV_LINKS.map(({ label, href }) => (
+              <a
+                key={href}
+                href={href}
+                className="mobile-menu__link"
+                role="menuitem"
+                onClick={() => setMenuOpen(false)}
+              >
+                {label}
+              </a>
+            ))}
+          </nav>
+        </div>
+
+        <div className="mobile-menu__footer">
           <a
-            key={href}
-            href={href}
+            href="#contact"
+            className="btn btn-primary btn--md mobile-menu__cta"
             role="menuitem"
             onClick={() => setMenuOpen(false)}
           >
-            {label}
+            {t.nav.hire}
           </a>
-        ))}
-        <a
-          href="mailto:lethienvu.se@gmail.com"
-          role="menuitem"
-          onClick={() => setMenuOpen(false)}
-        >
-          {t.nav.hire} →
-        </a>
-        {/* Language toggle in mobile menu */}
-        <div style={{ paddingTop: "8px" }}>
-          <LangToggle />
+          <div className="mobile-menu__lang">
+            <LangToggle />
+          </div>
         </div>
       </div>
     </>
@@ -170,16 +206,41 @@ function Footer() {
 }
 
 export default function App() {
+  useScrollAnimation();
+  const [lightboxData, setLightboxData] = useState({ isOpen: false, images: [], index: 0 });
+
+  const openLightbox = useCallback((images, index = 0) => {
+    setLightboxData({ isOpen: true, images, index });
+  }, []);
+
+  const closeLightbox = useCallback(() => {
+    setLightboxData(prev => ({ ...prev, isOpen: false }));
+  }, []);
+
+  const nextLightboxImg = useCallback(() => {
+    setLightboxData(prev => ({
+      ...prev,
+      index: (prev.index + 1) % prev.images.length
+    }));
+  }, []);
+
+  const prevLightboxImg = useCallback(() => {
+    setLightboxData(prev => ({
+      ...prev,
+      index: (prev.index - 1 + prev.images.length) % prev.images.length
+    }));
+  }, []);
+
   return (
     <>
       <Navbar />
       <div className="page-wrapper">
         <main id="main-content">
-          <HeroSection />
+          <HeroSection onOpenLightbox={openLightbox} />
           <ExperienceSection />
           <ClientsAndProducts />
           <TechDeepDive />
-          <ProductImageSection />
+          <ProductImageSection onOpenLightbox={openLightbox} isLightboxOpen={lightboxData.isOpen} />
           <div
             style={{
               position: "relative",
@@ -214,6 +275,16 @@ export default function App() {
           </div>
         </main>
       </div>
+
+      {lightboxData.isOpen && (
+        <Lightbox
+          images={lightboxData.images}
+          index={lightboxData.index}
+          onClose={closeLightbox}
+          onNext={nextLightboxImg}
+          onPrev={prevLightboxImg}
+        />
+      )}
     </>
   );
 }
