@@ -138,9 +138,9 @@
   align-items: center;
   gap: var(--space-4);
   margin-bottom: var(--space-6);
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.4);
   padding: var(--space-4);
   border-radius: 24px;
@@ -190,16 +190,16 @@
 }
 
 .timeline__card {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 24px;
   padding: var(--space-6);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   position: relative;
   overflow: hidden;
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
 }
 
 .timeline__card:hover {
@@ -267,15 +267,13 @@
 }
 
 .exp-kpi {
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 16px;
   padding: var(--space-4);
   text-align: center;
   box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.8), 0 2px 5px rgba(0, 0, 0, 0.02);
-  transition: transform var(--transition);
+  transition: transform var(--transition), background-color var(--transition);
 }
 
 .exp-kpi:hover {

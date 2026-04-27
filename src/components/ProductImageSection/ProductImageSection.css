@@ -49,8 +49,8 @@
 
 /* Product Showcase Slider */
 .product-showcase {
-  background: rgba(20, 20, 20, 0.5);
-  backdrop-filter: blur(40px) saturate(200%);
+  background: rgba(20, 20, 20, 0.7);
+  backdrop-filter: blur(12px) saturate(200%);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.1);
   border-radius: 40px;
@@ -262,7 +262,7 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  transition: all var(--transition);
+  transition: transform var(--transition), background-color var(--transition), box-shadow var(--transition);
 }
 
 .showcase-dot.active {

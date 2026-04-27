@@ -117,7 +117,7 @@ function ImageWithSkeleton({ src, alt, className, onClick, title, active }) {
       pointerEvents: active ? 'all' : 'none',
       transition: 'opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1)'
     }}>
-      {!loaded && (
+      {!loaded && active && (
         <div className="skeleton-loader" />
       )}
       <img 
