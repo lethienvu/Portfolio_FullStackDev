@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { useLanguage } from '../../i18n/LanguageContext';
 import './ClientsAndProducts.css';
 
@@ -8,6 +9,21 @@ import stealflowerImg from '../../assets/customer/STEALFLOWER.removebg-preview.p
 import detmoldImg from '../../assets/customer/DETMOLD_packaging.jpg';
 import tvcImg from '../../assets/customer/tvc_logo.png';
 import navtImg from '../../assets/customer/NAVT.svg';
+
+function LogoWithSkeleton({ src, alt }) {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <div className="cap-client-logo" style={{ position: 'relative', background: 'transparent' }}>
+      {!loaded && <div className="skeleton" style={{ position: 'absolute', inset: 0, borderRadius: '8px' }} />}
+      <img 
+        src={src} 
+        alt={alt} 
+        onLoad={() => setLoaded(true)} 
+        style={{ opacity: loaded ? 1 : 0, transition: 'opacity 0.3s ease' }}
+      />
+    </div>
+  );
+}
 
 export default function ClientsAndProducts() {
   const { t } = useLanguage();
@@ -41,9 +57,7 @@ export default function ClientsAndProducts() {
                 aria-hidden={groupIndex > 0 ? "true" : undefined}
               >
                 {clients.map((client, idx) => (
-                  <div key={`${client.name}-${idx}`} className="cap-client-logo">
-                    <img src={client.logo} alt={client.name} />
-                  </div>
+                  <LogoWithSkeleton key={`${client.name}-${groupIndex}-${idx}`} src={client.logo} alt={client.name} />
                 ))}
               </div>
             ))}

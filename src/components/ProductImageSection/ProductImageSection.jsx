@@ -106,6 +106,39 @@ const SLIDES = [
 const LAPTOP_IMGS = SLIDES.map(s => s.laptop);
 const PHONE_IMGS = SLIDES.map(s => s.phone);
 
+function ImageWithSkeleton({ src, alt, className, onClick, title, active }) {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <div className={`skeleton-wrapper ${active ? 'active' : ''}`} style={{ 
+      position: 'absolute', 
+      inset: 0, 
+      opacity: active ? 1 : 0, 
+      pointerEvents: active ? 'all' : 'none',
+      transition: 'opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1)'
+    }}>
+      {!loaded && (
+        <div className="skeleton-loader" />
+      )}
+      <img 
+        src={src} 
+        alt={alt} 
+        className={className}
+        onClick={onClick}
+        onLoad={() => setLoaded(true)}
+        title={title}
+        style={{ 
+          opacity: loaded ? 1 : 0, 
+          transition: 'opacity 0.5s ease',
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover'
+        }}
+      />
+    </div>
+  );
+}
+
 function ProductShowcase({ current, setCurrent, onOpenLightbox, isLightboxOpen }) {
   useEffect(() => {
     const timer = setInterval(() => {
@@ -126,18 +159,27 @@ function ProductShowcase({ current, setCurrent, onOpenLightbox, isLightboxOpen }
             <div className="header"></div>
             <div className="screen-content">
               {SLIDES.map((slide, idx) => (
-                <img 
+                <ImageWithSkeleton 
                   key={`laptop-${slide.id}`}
                   src={slide.laptop} 
                   alt={slide.title} 
                   className={`device-img ${idx === current ? 'active' : ''}`}
                   onClick={() => onOpenLightbox(LAPTOP_IMGS, idx)}
                   title="Xem toàn màn hình"
+                  active={idx === current}
                 />
               ))}
             </div>
           </div>
           <div className="keyboard"></div>
+          <div className="product-slider__overlay">
+             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+             </svg>
+          </div>
         </div>
 
         {/* Phone Frame */}
@@ -145,15 +187,24 @@ function ProductShowcase({ current, setCurrent, onOpenLightbox, isLightboxOpen }
           <img src={phoneFrame} alt="Phone Frame" className="phone-frame-img" />
           <div className="device-phone__screen">
              {SLIDES.map((slide, idx) => (
-              <img 
+              <ImageWithSkeleton 
                 key={`phone-${slide.id}`}
                 src={slide.phone} 
                 alt={slide.title} 
                 className={`device-img ${idx === current ? 'active' : ''}`}
                 onClick={() => onOpenLightbox(PHONE_IMGS, idx)}
                 title="Xem toàn màn hình"
+                active={idx === current}
               />
             ))}
+          </div>
+          <div className="product-slider__overlay">
+             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+             </svg>
           </div>
         </div>
       </div>
