@@ -4,10 +4,10 @@ import "./HeroSection.css";
 import { useLanguage } from "../../i18n/LanguageContext.jsx";
 import ProfileCard from "../ProfileCard/ProfileCard.jsx";
 
-import imgHeroMobile from "../../assets/hero-mobileApp.png";
-import imgHeroPweb from "../../assets/hero-pweb.png";
-import imgHeroPweb3 from "../../assets/hero-pweb3.png";
-import imgHeroVcshow from "../../assets/hero-vcshow.png";
+import imgHeroMobile from "../../assets/hero-mobileApp.jpg";
+import imgHeroPweb from "../../assets/hero-pweb.jpg";
+import imgHeroPweb3 from "../../assets/hero-pweb3.jpg";
+import imgHeroVcshow from "../../assets/hero-vcshow.jpg";
 
 const SCATTERED_IMGS = [imgHeroMobile, imgHeroPweb, imgHeroPweb3, imgHeroVcshow];
 

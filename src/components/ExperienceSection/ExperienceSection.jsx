@@ -8,7 +8,7 @@ import imgMem1 from '../../assets/experienceBg/thienVu_1.jpeg';
 import imgMem2 from '../../assets/experienceBg/thienVu_2.jpeg';
 import imgMem3 from '../../assets/experienceBg/thienvu_3.jpeg';
 import imgMem4 from '../../assets/experienceBg/thienVu_4.jpeg';
-import imgMem5 from '../../assets/experienceBg/sguPic.png';
+import imgMem5 from '../../assets/experienceBg/sguPic.jpg';
 
 function TimelineItem({ item, clientsLabel }) {
   return (

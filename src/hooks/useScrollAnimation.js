@@ -12,14 +12,21 @@ export function useScrollAnimation() {
         });
       },
       {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.1,
+        rootMargin: '50px'
       }
     );
 
-    const elements = document.querySelectorAll('section, .timeline__item, .tech__card, .project-card, .contact__channel-wrapper');
-    elements.forEach((el) => observer.observe(el));
+    // Delay để tránh observe quá nhiều elements cùng lúc
+    const timeoutId = setTimeout(() => {
+      const elements = document.querySelectorAll('section:not(.animate-on-scroll), .timeline__item:not(.animate-on-scroll), .tech__card:not(.animate-on-scroll), .project-card:not(.animate-on-scroll)');
+      elements.forEach((el) => observer.observe(el));
+    }, 100);
 
-    return () => observer.disconnect();
+    return () => {
+      clearTimeout(timeoutId);
+      observer.disconnect();
+    };
   }, []);
 }
+

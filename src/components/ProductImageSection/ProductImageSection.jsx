@@ -1,27 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import './ProductImageSection.css';
 import { useLanguage } from '../../i18n/LanguageContext.jsx';
-import imgPweb from '../../assets/hero-pweb.png';
-import imgMobileApp from '../../assets/hero-mobileApp.png';
-import imgPweb3 from '../../assets/hero-pweb3.png';
-import imgVcshow from '../../assets/hero-vcshow.png';
+import imgPweb from '../../assets/hero-pweb.jpg';
+import imgMobileApp from '../../assets/hero-mobileApp.jpg';
+import imgPweb3 from '../../assets/hero-pweb3.jpg';
+import imgVcshow from '../../assets/hero-vcshow.jpg';
 import phoneFrame from '../../assets/phone-frame.svg';
 
 import imgVaoCaLanding from '../../assets/VaoCa-LandingPage.JPG';
 import imgPAppGps from '../../assets/pApp-GPS.jpg';
 import imgPAppReport from '../../assets/pApp-report.PNG';
 import imgPAppReport2 from '../../assets/pApp-report2.PNG';
-import imgPWebDetmold from '../../assets/pWeb-Detmold.png';
-import imgPWebEmployeeList from '../../assets/pWeb-employeeList.png';
-import imgPWebLauncher from '../../assets/pWeb-launcher.png';
-import imgPWebProfile from '../../assets/pWeb-profile.png';
-import imgPWebDashboard from '../../assets/pWeb_dashboard.png';
+import imgPWebDetmold from '../../assets/pWeb-Detmold.jpg';
+import imgPWebEmployeeList from '../../assets/pWeb-employeeList.jpg';
+import imgPWebLauncher from '../../assets/pWeb-launcher.jpg';
+import imgPWebProfile from '../../assets/pWeb-profile.jpg';
+import imgPWebDashboard from '../../assets/pWeb_dashboard.jpg';
 import imgNavtRecruitment from '../../assets/navt-recruitment.jpeg';
-import imgPWebLogin from '../../assets/pWeb-login.png';
+import imgPWebLogin from '../../assets/pWeb-login.jpg';
 import imgPAppAttendance from '../../assets/pApp-attendance.PNG';
 import imgVCQr from '../../assets/VC-qr.PNG';
 import imgGPSCamera from '../../assets/GPS-camera.JPG';
-import imgPWebRequestCreate from '../../assets/request1.png';
+import imgPWebRequestCreate from '../../assets/request1.jpg';
 import imgDPVN from '../../assets/dpvn.jpg';
 
 const SLIDES = [

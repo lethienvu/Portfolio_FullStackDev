@@ -33,6 +33,10 @@
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
+.animate-on-scroll.animated {
+  will-change: auto;
+}
+
 .animate-fade {
   opacity: 0;
   will-change: opacity;
@@ -409,4 +413,26 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 ::-webkit-scrollbar-thumb {
   background: var(--color-border-strong);
   border-radius: var(--size-scrollbar-thumb);
+}
+
+/* Performance optimizations */
+img {
+  content-visibility: auto;
+}
+
+img.loading {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+img.loaded {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
