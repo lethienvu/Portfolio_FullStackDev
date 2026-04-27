@@ -187,7 +187,7 @@ function ProductShowcase({ current, setCurrent, lightbox, setLightbox }) {
         <div className="product-lightbox" onClick={() => setLightbox(prev => ({ ...prev, isOpen: false }))}>
           <div className="product-lightbox__header" onClick={e => e.stopPropagation()}>
             <div className="product-lightbox__logo-container">
-              <img src="../../../public/icons.svg" alt="Logo portfolio" className="product-lightbox__logo-icon" />
+              <img src="/icons.svg" alt="Logo portfolio" className="product-lightbox__logo-icon" />
               <div className="product-lightbox__logo-text">
                 <span className="product-lightbox__logo-name">Lê Thiên Vũ</span>
                 <span className="product-lightbox__logo-sub">Portfolio</span>

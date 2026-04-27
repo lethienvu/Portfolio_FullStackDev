@@ -45,7 +45,7 @@ function Navbar() {
       <nav className="navbar" role="navigation" aria-label="Main navigation">
         <div className="container navbar__inner">
           <a href="#hero" className="navbar__logo">
-            <img src="../public/icons.svg" alt="Logo portfolio" />
+            <img src="/icons.svg" alt="Logo portfolio" />
             <div className="navbar__logo-text">
               <span className="navbar__logo-name">Lê Thiên Vũ</span>
               <span className="navbar__logo-sub">Portfolio</span>
