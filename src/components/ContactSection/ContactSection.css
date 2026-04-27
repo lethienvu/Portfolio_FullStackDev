@@ -1,0 +1,513 @@
+/* ContactSection.css */
+.contact {
+  padding-block: var(--space-9);
+  position: relative;
+  background-color: #050505;
+  overflow: hidden;
+}
+
+.contact__channel-wrapper {
+  position: relative;
+}
+
+.contact__channel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  position: relative;
+}
+
+.contact__channel-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.copy-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 0;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.copy-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.action-btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+}
+
+.action-btn--primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+}
+
+.action-btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.action-btn--secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.action-btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .contact__channel {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .contact__channel-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .copy-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .contact__actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .action-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* =========================================
+   Midnight Sky Background (Uiverse.io)
+   ========================================= */
+.uiverse-midnight-sky {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background-color: #050505;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.uiverse-midnight-sky .sky-canvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  background: #050505;
+}
+
+.uiverse-midnight-sky .stars {
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat;
+}
+
+.uiverse-midnight-sky .stars-1 {
+  background-image: radial-gradient(1px 1px at 10% 10%, #fff, transparent),
+    radial-gradient(1px 1px at 30% 20%, #fff, transparent),
+    radial-gradient(1px 1px at 50% 50%, #fff, transparent),
+    radial-gradient(1px 1px at 70% 30%, #fff, transparent),
+    radial-gradient(1px 1px at 90% 10%, #fff, transparent);
+  background-size: 200px 200px;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.uiverse-midnight-sky .stars-2 {
+  background-image: radial-gradient(1.5px 1.5px at 20% 40%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 60% 85%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 85% 65%, #fff, transparent);
+  background-size: 300px 300px;
+  animation: twinkle 5s ease-in-out infinite 1s;
+}
+
+.uiverse-midnight-sky .stars-3 {
+  background-image: radial-gradient(2px 2px at 40% 70%, #fff, transparent),
+    radial-gradient(2px 2px at 10% 80%, #fff, transparent),
+    radial-gradient(2px 2px at 80% 40%, #fff, transparent);
+  background-size: 400px 400px;
+  animation: twinkle 7s ease-in-out infinite 2s;
+}
+
+.uiverse-midnight-sky .meteor {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5);
+  opacity: 0;
+}
+
+.uiverse-midnight-sky .meteor::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, #fff, transparent);
+}
+
+.uiverse-midnight-sky .m1 {
+  top: 10%;
+  left: 110%;
+  animation: shoot 8s linear infinite;
+}
+
+.uiverse-midnight-sky .m2 {
+  top: 30%;
+  left: 110%;
+  animation: shoot 12s linear infinite 4s;
+}
+
+.uiverse-midnight-sky .m3 {
+  top: 50%;
+  left: 110%;
+  animation: shoot 10s linear infinite 2s;
+}
+
+.uiverse-midnight-sky .moon {
+  position: absolute;
+  top: 15%;
+  right: 15%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 15px 15px 0 0 #fdfbd3;
+  filter: drop-shadow(0 0 15px rgba(253, 251, 211, 0.4));
+  z-index: 10;
+}
+
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes shoot {
+  0% {
+    transform: translateX(0) translateY(0) rotate(-35deg);
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  15%,
+  100% {
+    transform: translateX(-1500px) translateY(1000px) rotate(-35deg);
+    opacity: 0;
+  }
+}
+
+/* =========================================
+   Apple-style Dark Liquid Glass vCard
+   ========================================= */
+.contact__vcard {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  background: rgba(15, 15, 20, 0.1);
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 32px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.4), inset 0 -1px 1px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.vcard__info {
+  padding: var(--space-8);
+  background: rgba(20, 20, 25, 0.4);
+  backdrop-filter: blur(30px) saturate(150%);
+  -webkit-backdrop-filter: blur(30px) saturate(150%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.05);
+}
+
+.contact__header {
+  margin-bottom: var(--space-6);
+}
+
+.contact__header .section-title {
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.contact__header .section-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact__channels {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.contact__channel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  color: #fff;
+  font-size: var(--text-md);
+  font-weight: var(--weight-medium);
+  transition: all var(--transition);
+}
+
+.contact__channel:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.contact__channel-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-2xl);
+  flex-shrink: 0;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+.contact__channel div>div:first-child {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Form Success & Other defaults removed since form is gone */
+
+/* Edge-to-edge Avatar Section */
+.vcard__avatar-section {
+  position: relative;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: var(--space-8);
+  min-height: 450px;
+  overflow: hidden;
+}
+
+.vcard__avatar-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  transition: transform 0.5s ease;
+}
+
+.contact__vcard:hover .vcard__avatar-bg {
+  transform: scale(1.03);
+}
+
+.vcard__avatar-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.85) 100%);
+  z-index: 1;
+}
+
+/* Liquid Glass QR Container */
+.vcard__qr-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 2px 2px rgba(255, 255, 255, 0.3);
+  border-radius: 28px;
+  padding: var(--space-4);
+  width: 100%;
+  max-width: 220px;
+  transition: transform var(--transition);
+}
+
+.vcard__qr-container:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.qr-title {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.vcard__qr {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  background: #fff;
+  padding: 6px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Liquid Glass Action Buttons */
+.contact__actions {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  flex: 1;
+  min-width: 110px;
+  padding: var(--space-3) var(--space-4);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-pill);
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition: all var(--transition);
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.action-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+
+.action-btn:hover::before {
+  left: 200%;
+}
+
+.action-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 900px) {
+  .contact__vcard {
+    grid-template-columns: 1fr;
+  }
+
+  .vcard__avatar-section {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .vcard__avatar-section,
+  .vcard__info {
+    padding: var(--space-5);
+  }
+
+  .contact__actions {
+    flex-direction: column;
+  }
+
+  .vcard__avatar-section {
+    padding-top: var(--space-7);
+    justify-content: flex-end;
+  }
+
+  .vcard__qr-container {
+    max-width: 180px;
+    margin-top: auto;
+    margin-bottom: 0;
+    align-self: center;
+  }
+}
