@@ -117,12 +117,20 @@ function ImageWithSkeleton({ src, alt, className, onClick, title, active }) {
         inset: 0, 
         opacity: active ? 1 : 0, 
         pointerEvents: active ? 'all' : 'none',
-        transition: 'opacity 1s cubic-bezier(0.4, 0, 0.2, 1)',
-        background: '#1a1a1a' // Brighter than pure black
+        transition: 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+        background: '#222', // Dark grey fallback
+        zIndex: active ? 2 : 1
       }}
     >
       {!loaded && (
-        <div className="skeleton-loader skeleton-dark" />
+        <div className="skeleton-loader" style={{ 
+          position: 'absolute', 
+          inset: 0, 
+          zIndex: 10, 
+          background: 'linear-gradient(90deg, #222 25%, #333 50%, #222 75%)',
+          backgroundSize: '200% 100%',
+          animation: 'skeleton-shimmer 1.5s infinite linear'
+        }} />
       )}
       <img 
         src={src} 
@@ -131,9 +139,10 @@ function ImageWithSkeleton({ src, alt, className, onClick, title, active }) {
         onClick={onClick}
         onLoad={() => setLoaded(true)}
         title={title}
+        loading="eager"
         style={{ 
           opacity: loaded ? 1 : 0, 
-          transition: 'opacity 0.4s ease',
+          transition: 'opacity 0.5s ease',
           width: '100%',
           height: '100%',
           objectFit: 'cover'
@@ -144,6 +153,14 @@ function ImageWithSkeleton({ src, alt, className, onClick, title, active }) {
 }
 
 function ProductShowcase({ current, setCurrent, onOpenLightbox, isLightboxOpen }) {
+  // Preload all images
+  useEffect(() => {
+    [...LAPTOP_IMGS, ...PHONE_IMGS].forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
   useEffect(() => {
     const timer = setInterval(() => {
       if (!isLightboxOpen) {

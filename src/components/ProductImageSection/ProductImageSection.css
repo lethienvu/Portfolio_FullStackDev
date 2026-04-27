@@ -111,7 +111,7 @@
   overflow: hidden;
   border-radius: 10px;
   z-index: 2;
-  background: var(--color-bg);
+  background: #222;
 }
 
 .screen::after {
@@ -190,14 +190,14 @@
 
 .device-phone__screen {
   position: absolute;
-  top: 2.5%;
-  left: 6.5%;
-  width: 87%;
-  height: 95%;
-  background: var(--color-bg);
-  border-radius: 20px;
+  top: 1.5%;
+  left: 3%;
+  width: 94%;
+  height: 97%;
   overflow: hidden;
-  z-index: 1;
+  border-radius: 35px;
+  z-index: 2;
+  background: #222;
 }
 
 .device-img {
