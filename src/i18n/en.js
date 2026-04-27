@@ -260,7 +260,7 @@ const en = {
   contact: {
     sectionLabel: "Get In Touch",
     title: "Contact",
-    subtitle: "Open to discussing Fullstack / Tech Lead opportunities or sharing thoughts on system architecture and HR implementations.",
+    subtitle: "If you are looking for a leader who bridges complex business logic with high-performance technical architecture, let's connect to drive operational excellence together.",
     formTitle: "Send a message",
     fields: {
       name: "Full Name",

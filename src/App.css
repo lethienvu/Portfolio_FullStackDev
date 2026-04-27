@@ -157,16 +157,19 @@
 .navbar__cta {
   font-size: var(--text-base);
   font-weight: var(--weight-semibold);
-  color: var(--color-accent);
-  border: var(--size-border-medium) solid var(--color-accent);
+  color: var(--color-white);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 8px 20px;
   border-radius: var(--radius-pill);
-  padding: var(--space-1) var(--space-4);
-  transition: background var(--transition), color var(--transition);
+  border: none;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .navbar__cta:hover {
-  background: var(--color-accent);
-  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
 }
 
 /* ---------- Language toggle ---------- */

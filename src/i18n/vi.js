@@ -276,7 +276,7 @@ const vi = {
   contact: {
     sectionLabel: 'Liên hệ',
     title:        'Liên hệ',
-    subtitle:     'Sẵn sàng thảo luận về các cơ hội Fullstack / Tech Lead hoặc chia sẻ về kiến trúc hệ thống và triển khai HR.',
+    subtitle:     'Nếu bạn đang tìm kiếm một người dẫn dắt có khả năng chuyển hóa các bài toán nghiệp vụ nhân sự phức tạp thành giải pháp kỹ thuật hiệu suất cao, hãy kết nối ngay để cùng tạo nên sự khác biệt.',
     formTitle:    'Gửi tin nhắn',
     fields: {
       name:               'Họ và tên',
