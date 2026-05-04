@@ -123,3 +123,39 @@
 .radio-container input:nth-of-type(4):checked ~ .liquid-slider {
   transform: translateX(300%);
 }
+
+@media (max-width: 768px) {
+  .radio-container {
+    width: calc(100% - 24px);
+    max-width: 560px;
+    bottom: 12px;
+    --gap: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .radio-container label {
+    min-width: 0;
+    padding: 8px 6px;
+    font-size: var(--text-sm);
+    letter-spacing: var(--tracking-normal);
+    white-space: normal;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 480px) {
+  .radio-container {
+    width: calc(100% - 16px);
+    bottom: 8px;
+    --gap: 2px;
+  }
+
+  .radio-container label {
+    padding: 7px 4px;
+    font-size: var(--text-xs);
+    line-height: 1.1;
+  }
+}

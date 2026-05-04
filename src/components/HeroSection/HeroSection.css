@@ -10,6 +10,15 @@
   overflow: hidden;
 }
 
+/* On mobile the stacked layout is naturally tall — remove forced vh constraint */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding-block: var(--space-7) var(--space-6);
+  }
+}
+
+
 /* Subtle grid background */
 .hero::before {
   content: '';
@@ -31,6 +40,22 @@
   align-items: center;
   position: relative;
   z-index: 1;
+}
+
+/* ── Mobile: stack text above graphics ── */
+@media (max-width: 768px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .hero__text {
+    order: 1;
+  }
+
+  .hero__right-col {
+    order: 2;
+  }
 }
 
 /* RIGHT: Graphics column */
@@ -438,116 +463,8 @@ flex-direction: column;
   transform: translateY(-1px);
 }
 
-@media (max-width: 768px) {
-  .hero__role-tags {
-    gap: 6px;
-  }
+/* Legacy breakpoints cleaned up - see responsive rules near bottom of file */
 
-  .hero__role-tag {
-    padding: 5px 12px;
-    font-size: 12px;
-  }
-
-  /* Responsive hero card và frames trên mobile */
-  .hero__inner {
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
-  }
-
-  .hero__text {
-    order: 1;
-    max-width: 100%;
-  }
-
-  .hero-scatter {
-    order: 2;
-    position: static;
-    margin-top: var(--space-4);
-    grid-template-columns: repeat(2, minmax(120px, 1fr));
-  }
-
-  .hero-scatter__img {
-    height: 100px;
-  }
-
-  .pcard {
-    width: min(320px, 100%);
-    height: min(320px, 100%);
-    margin: 0 auto;
-  }
-
-  .hero__desc {
-  margin-top: var(--space-5);
-  font-size: var(--text-2xl);
-  color: var(--color-ink-2);
-  max-width: var(--max-w-hero-desc);
-  line-height: var(--leading-loose);
-}
-
-  .hero__stats {
-  display: flex;
-  gap: var(--space-7);
-  margin-top: var(--space-7);
-  padding-top: var(--space-6);
-  border-top: var(--size-border-thin) solid var(--color-border);
-}
-
-
-  .hero__stat-value {
-  font-family: var(--font-display);
-  font-size: var(--text-6xl);
-  font-weight: var(--weight-bold);
-  color: var(--color-ink);
-  letter-spacing: var(--tracking-tightest);
-}
-}
-
-@media (max-width: 480px) {
-  .hero__graphics {
-    min-height: 320px;
-  }
-
-  .pcard {
-    width: min(260px, 100%);
-    height: min(260px, 100%);
-  }
-
-  .hero-scatter__card--0 {
-    width: 165px;
-    top: -14px;
-    left: -14px;
-  }
-
-  .hero-scatter__card--1 {
-    width: 150px;
-    top: -16px;
-    right: -12px;
-  }
-
-  .hero-scatter__card--2 {
-    width: 160px;
-    bottom: -18px;
-    left: -12px;
-  }
-
-  .hero-scatter__card--3 {
-    width: 145px;
-    bottom: -20px;
-    right: -12px;
-  }
-
-  .hero-scatter__img {
-    height: 105px;
-  }
-
-  .hero__stat-value {
-    font-size: var(--text-2xl);
-  }
-
-  .hero__stats {
-    gap: var(--space-3);
-  }
-}
 
 .hero__about-section {
   display: flex;
@@ -603,7 +520,7 @@ flex-direction: column;
 }
 
 .hero__stat-label {
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   color: var(--color-ink-3);
   margin-top: var(--space-1);
   word-wrap: break-word;
@@ -614,15 +531,14 @@ flex-direction: column;
 .hero__bottom-row {
   display: flex;
   align-items: center;
-  gap: 20%; /* Add 20% gap between actions and slider */
+  gap: 20%;
   width: 100%;
   max-width: 100%;
-  /* Align left side with the main container, let right side breathe */
   padding-left: clamp(1.5rem, calc((100vw - 1440px) / 2 + 1.5rem), 50vw);
   padding-right: 1.5rem;
   overflow: visible;
   margin-top: var(--space-7);
-  flex-wrap: nowrap; /* Keep them on one line as requested */
+  flex-wrap: nowrap;
   position: relative;
   z-index: 5;
 }
@@ -724,6 +640,14 @@ flex-direction: column;
   width: 100%;
 }
 
+/* Center right col on mobile */
+@media (max-width: 768px) {
+  .hero__right-col {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 /* ── Infinite Skills Slider ── */
 .hero__skills-slider {
   display: flex;
@@ -770,6 +694,11 @@ flex-direction: column;
   gap: var(--space-2);
 }
 
+.hero__skill-name {
+  white-space: nowrap;
+  line-height: 1.1;
+}
+
 .hero__skill-icon {
   color: var(--color-accent);
   display: flex;
@@ -785,19 +714,28 @@ flex-direction: column;
   object-fit: contain;
 }
 
-/* Responsive */
-
+/* ── Responsive Slider & Graphics ── */
 
 @media (max-width: 900px) {
   .hero__inner {
     grid-template-columns: 1fr;
   }
 
+  /* Stack text above graphics on tablet */
+  .hero__text {
+    order: 1;
+  }
+
+  .hero__right-col {
+    order: 2;
+  }
+
   .hero__graphics {
     display: flex;
     width: 100%;
-    max-width: 520px;
-    height: auto;
+    max-width: 480px;
+    height: 360px;
+    margin: 0 auto;
   }
 
   .hero__stats {
@@ -806,6 +744,12 @@ flex-direction: column;
 
   .hero__skills-slider {
     margin-top: var(--space-5);
+  }
+
+  .hero__bottom-row {
+    padding-left: var(--container-px);
+    padding-right: var(--container-px);
+    gap: var(--space-5);
   }
 }
 
@@ -940,7 +884,180 @@ flex-direction: column;
 @media (max-width: 900px) {
   .sun-clouds-container {
     top: 2%;
-    right: 50%;
-    transform: translateX(50%) scale(0.6);
+    right: 5%;
+    transform: scale(0.5);
+    transform-origin: top right;
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 768px) {
+  .sun-clouds-container {
+    display: none;
+  }
+}
+
+/* ── Mobile Overrides (768px and below) ── */
+@media (max-width: 768px) {
+  .hero__name {
+    font-size: clamp(2rem, 8vw, 2.75rem);
+    letter-spacing: var(--tracking-wide);
+  }
+
+  .hero__role {
+    margin-top: 0;
+    font-size: clamp(1.25rem, 4.6vw, 1.8rem);
+  }
+
+  .hero__role-sub {
+    font-size: clamp(0.95rem, 3.3vw, 1.25rem);
+  }
+
+  .hero__role-tags {
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .hero__role-tag {
+    padding: 4px 10px;
+    font-size: var(--text-xs);
+    border-radius: 16px;
+  }
+
+  /* ── Laptop Frame (hero__graphics) on mobile ── */
+  .hero__graphics {
+    width: 100%;
+    max-width: 380px;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  /* Scale down scattered cards to fit within the constrained frame */
+  .hero-scatter__card--0 { width: 150px; top: -10px; left: -8px; }
+  .hero-scatter__card--1 { width: 140px; top: -12px; right: -8px; }
+  .hero-scatter__card--2 { width: 146px; bottom: -14px; left: -8px; }
+  .hero-scatter__card--3 { width: 136px; bottom: -16px; right: -8px; }
+
+  .hero-scatter__img { height: 95px !important; }
+
+  /* ── Bottom Row: stack actions above slider ── */
+  .hero__bottom-row {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-4);
+    margin-top: var(--space-5);
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* ── Actions: 2-col grid on 768px ── */
+  .hero__actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2);
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 14px;
+    font-size: var(--text-base);
+  }
+
+  /* Hide floating star decorations to avoid overflow on small buttons */
+  .hero__actions .btn-primary .star-1,
+  .hero__actions .btn-primary .star-2,
+  .hero__actions .btn-primary .star-3,
+  .hero__actions .btn-primary .star-4,
+  .hero__actions .btn-primary .star-5,
+  .hero__actions .btn-primary .star-6 {
+    display: none;
+  }
+
+  /* ── Tech Stack Slider: full width, adjusted fade masks ── */
+  .hero__skills-slider {
+    width: 100%;
+    flex: none;
+    margin-top: 0;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 7%, black 93%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 7%, black 93%, transparent);
+  }
+
+  .hero__skills-track {
+    gap: var(--space-5);
+    animation-duration: 20s;
+  }
+
+  .hero__skill-item {
+    min-width: 64px;
+    font-size: var(--text-2xs);
+    gap: 6px;
+  }
+
+  .hero__skill-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .hero__skill-name {
+    white-space: nowrap;
+    font-size: var(--text-2xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__name {
+    font-size: clamp(1.7rem, 8.5vw, 2.1rem);
+  }
+
+  .hero__role {
+    font-size: clamp(1.08rem, 5.6vw, 1.45rem);
+  }
+
+  .hero__role-tag {
+    padding: 3px 8px;
+    font-size: 10px;
+  }
+
+  /* ── Laptop Frame: compact on small phones ── */
+  .hero__graphics {
+    max-width: 300px;
+    height: 240px;
+  }
+
+  /* Scattered cards: tighter fit for 480px */
+  .hero-scatter__card--0 { width: 118px; top: -8px; left: -6px; }
+  .hero-scatter__card--1 { width: 112px; top: -10px; right: -6px; }
+  .hero-scatter__card--2 { width: 116px; bottom: -10px; left: -6px; }
+  .hero-scatter__card--3 { width: 108px; bottom: -12px; right: -6px; }
+
+  .hero-scatter__img { height: 78px !important; }
+
+  /* ── Actions: single column on small phones ── */
+  .hero__actions {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__actions .btn {
+    padding: 9px 12px;
+    font-size: var(--text-sm);
+  }
+
+  /* ── Slider: slightly faster on small screens ── */
+  .hero__skills-track {
+    gap: var(--space-4);
+    animation-duration: 17s;
+  }
+
+  .hero__skill-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .hero__bottom-row {
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }

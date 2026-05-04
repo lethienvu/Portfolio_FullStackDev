@@ -593,3 +593,31 @@
     display: none;
   }
 }
+
+@media (max-width: 768px) {
+  .floating-top-bar {
+    top: var(--space-3);
+    right: var(--space-3);
+    gap: 6px;
+    padding: 3px;
+  }
+
+  .lang-select {
+    font-size: var(--text-sm);
+    padding: 4px 26px 4px 10px;
+    background-size: 0.95em auto, 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-top-bar {
+    top: var(--space-2);
+    right: var(--space-2);
+  }
+
+  .lang-select {
+    font-size: var(--text-xs);
+    padding: 4px 24px 4px 8px;
+    border-width: var(--size-border-thin);
+  }
+}
