@@ -327,7 +327,7 @@
   }
 
   .device-laptop {
-    position: static;
+    position: relative;
     width: 100%;
     max-width: 520px;
   }
@@ -350,7 +350,7 @@
   }
 
   .device-phone {
-    position: static;
+    position: relative;
     width: min(200px, 60%);
     transform: none;
     filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.25));

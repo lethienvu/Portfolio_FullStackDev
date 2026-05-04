@@ -7,7 +7,7 @@ const en = {
     home: "Home",
     experience: "Experience",
     technical: "Technical",
-    projects: "Products & Solutions",
+    projects: "Products",
     contact: "Contact",
     hire: "Save vCard",
   },
