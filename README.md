@@ -1,16 +1,79 @@
-# React + Vite
+# Portfolio Full Stack Developer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Giới thiệu
 
-Currently, two official plugins are available:
+Dự án Portfolio thể hiện năng lực phát triển Full Stack từ khâu phân tích yêu cầu, thiết kế hệ thống, triển khai đến vận hành sản phẩm thực tế.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Lưu ý quan trọng về giao diện
 
-## React Compiler
+**Các hình nh và giao diện trong dự án này mang tính chất minh họa.** Do yêu cầu bảo mật dữ liệu người dùng và tuân thủ các quy định về quyền riêng tư, repository này chỉ cung cấp:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Giao diện đơn giản hóa để minh họa cấu trúc và luồng hoạt động
+- Mô tả chuyên nghiệp về các tính năng đã triển khai
+- Kiến trúc hệ thống và quy trình phát triển
 
-## Expanding the ESLint configuration
+**Tất cả các chức năng được trình bày đều đã trải qua quy trình phát triển đầy đủ:**
+- Thu thập và phân tích yêu cầu
+- Thiết kế kiến trúc và database
+- Phát triển và kiểm thử
+- Triển khai đến người dùng thực tế
+- Vận hành và bảo trì
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Kiến thức chuyên môn
+
+### Phân tích & Thiết kế
+- Thu thập và phân tích yêu cầu nghiệp vụ
+- Thiết kế kiến trúc hệ thống (System Design)
+- Thiết kế cơ sở dữ liệu (Database Design)
+- Thiết kế API RESTful/GraphQL
+- Lập kế hoạch sprint và quản lý backlog
+
+### Frontend Development
+- **Frameworks:** React, Vue.js, Angular
+- **State Management:** Redux, Zustand, Context API
+- **Styling:** CSS3, SASS, Tailwind CSS, Material-UI
+- **Build Tools:** Vite, Webpack, Rollup
+- **Testing:** Jest, React Testing Library, Cypress
+
+### Backend Development
+- **Languages:** Node.js, Python, Java, PHP
+- **Frameworks:** Express, NestJS, Django, Spring Boot
+- **Databases:** PostgreSQL, MySQL, MongoDB, Redis
+- **ORM/ODM:** Prisma, TypeORM, Sequelize, Mongoose
+- **Authentication:** JWT, OAuth2, Session-based
+
+### DevOps & Cloud
+- **Cloud Platforms:** AWS, Google Cloud, Azure
+- **Containerization:** Docker, Docker Compose
+- **CI/CD:** GitHub Actions, GitLab CI, Jenkins
+- **Monitoring:** CloudWatch, Prometheus, Grafana
+- **Version Control:** Git, GitHub, GitLab
+
+### Soft Skills
+- Làm việc nhóm theo Agile/Scrum
+- Code review và mentoring
+- Viết tài liệu kỹ thuật
+- Giao tiếp với stakeholders
+
+## Công nghệ sử dụng trong dự án này
+
+- **Frontend:** React + Vite
+- **Build Tool:** Vite với HMR
+- **Code Quality:** ESLint
+
+## Cài đặt và chạy dự án
+
+```bash
+# Cài đặt dependencies
+npm install
+
+# Chạy development server
+npm run dev
+
+# Build production
+npm run build
+```
+
+## Liên hệ
+
+Để xem demo đầy đủ hoặc thảo luận về các dự án thực tế, vui lòng liên hệ trực tiếp.

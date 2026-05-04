@@ -83,7 +83,7 @@ export default function ProfileCard() {
               <XIcon />
             </a>
           </div>
-          <a href="#contact" className="pcard__contact-btn">
+          <a href={`${import.meta.env.BASE_URL}vcard.vcf`} download="LeThienVu_Contact.vcf" className="pcard__contact-btn">
             {card.contactBtn}
           </a>
         </div>

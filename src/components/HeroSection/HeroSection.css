@@ -2,8 +2,10 @@
 .hero {
   min-height: calc(100vh - var(--size-navbar-height));
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding-block: var(--space-8) var(--space-9);
+  padding-block: var(--space-8) var(--space-4);
   position: relative;
   overflow: hidden;
 }
@@ -22,15 +24,16 @@
 }
 
 .hero__inner {
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr var(--size-hero-grid-card);
-  gap: var(--space-9);
+  grid-template-columns: 55fr 45fr;
+  gap: clamp(2rem, 4vw, 4rem);
   align-items: center;
   position: relative;
   z-index: 1;
 }
 
-/* RIGHT: Graphics column — wide enough for cards to peek out */
+/* RIGHT: Graphics column */
 .hero__graphics {
   display: flex;
   justify-content: center;
@@ -119,7 +122,7 @@
 
 .hero-scatter__topbar {
   height: 20px;
-  background: var(--color-accent);
+  background: var(--color-surface);
   display: flex;
   align-items: center;
   padding: 0 var(--space-2);
@@ -327,8 +330,14 @@
 /* LEFT: Text */
 .hero__text {
   min-width: 0;
-  /* Prevents grid blowout */
+gap: 1rem;
+display: flex;
+flex-direction: column;
 }
+
+
+
+
 
 .hero__badge {
   display: inline-flex;
@@ -368,12 +377,13 @@
 }
 
 .hero__name {
-  font-family: var(--font-display);
+  font-family: 'Madimi One', var(--font-display);
   font-size: var(--text-hero-name);
   font-weight: var(--weight-bold);
   line-height: var(--leading-tight);
-  letter-spacing: var(--tracking-tightest);
+  letter-spacing: var(--tracking-wider);
   color: var(--color-ink);
+  text-transform: uppercase;
 }
 
 .hero__name-accent {
@@ -381,13 +391,24 @@
 }
 
 .hero__role {
-  font-family: var(--font-display);
+  font-family: 'Yellowtail', cursive;
   font-size: var(--text-hero-role);
-  font-weight: var(--weight-medium);
-  color: var(--color-ink-2);
-  margin-top: var(--space-3);
+  color: var(--color-accent);
   line-height: var(--leading-card);
+  margin-top: -1.5rem;
 }
+
+.hero__role-main {
+  font-family: 'Yellowtail', cursive;
+  color: var(--color-danger-text);
+}
+
+.hero__role-sub {
+  font-family: var(--font-body);
+  color: var(--color-accent);
+  font-size: var(--text-section-title);
+}
+
 
 .hero__role-tags {
   display: flex;
@@ -405,9 +426,11 @@
   border-radius: 20px;
   font-size: 13px;
   font-weight: 500;
-  color: var(--color-ink-2);
+  color: #999999;
+  font-family: var(--font-body);
   transition: all 0.2s ease;
 }
+
 
 .hero__role-tag:hover {
   background: rgba(102, 126, 234, 0.15);
@@ -454,17 +477,29 @@
   }
 
   .hero__desc {
-    font-size: var(--text-lg);
-  }
+  margin-top: var(--space-5);
+  font-size: var(--text-2xl);
+  color: var(--color-ink-2);
+  max-width: var(--max-w-hero-desc);
+  line-height: var(--leading-loose);
+}
 
   .hero__stats {
-    gap: var(--space-4);
-    flex-wrap: wrap;
-  }
+  display: flex;
+  gap: var(--space-7);
+  margin-top: var(--space-7);
+  padding-top: var(--space-6);
+  border-top: var(--size-border-thin) solid var(--color-border);
+}
+
 
   .hero__stat-value {
-    font-size: var(--text-3xl);
-  }
+  font-family: var(--font-display);
+  font-size: var(--text-6xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+  letter-spacing: var(--tracking-tightest);
+}
 }
 
 @media (max-width: 480px) {
@@ -514,42 +549,92 @@
   }
 }
 
-.hero__desc {
+.hero__about-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
   margin-top: var(--space-5);
-  font-size: var(--text-2xl);
-  color: var(--color-ink-2);
-  max-width: var(--max-w-hero-desc);
-  line-height: var(--leading-loose);
+  align-self: flex-start;
+  width: 100%;
+}
+
+.hero__about-title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+}
+
+.hero__desc {
+  font-size: clamp(0.875rem, 1.4vw, 1rem);
+  color: #475569;
+  max-width: 100%;
+  line-height: 1.7;
 }
 
 .hero__stats {
-  display: flex;
-  gap: var(--space-7);
-  margin-top: var(--space-7);
-  padding-top: var(--space-6);
-  border-top: var(--size-border-thin) solid var(--color-border);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 2vw, 2rem);
+  padding-top: clamp(1rem, 2vw, var(--space-4));
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+  align-self: flex-start;
+  max-width: 100%;
 }
+
+.hero__stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
 
 .hero__stat-value {
   font-family: var(--font-display);
-  font-size: var(--text-6xl);
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
   font-weight: var(--weight-bold);
-  color: var(--color-ink);
+  color: #0f172a;
   letter-spacing: var(--tracking-tightest);
+  line-height: 1;
 }
 
 .hero__stat-label {
   font-size: var(--text-base);
   color: var(--color-ink-3);
   margin-top: var(--space-1);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.hero__bottom-row {
+  display: flex;
+  align-items: center;
+  gap: 20%; /* Add 20% gap between actions and slider */
+  width: 100%;
+  max-width: 100%;
+  /* Align left side with the main container, let right side breathe */
+  padding-left: clamp(1.5rem, calc((100vw - 1440px) / 2 + 1.5rem), 50vw);
+  padding-right: 1.5rem;
+  overflow: visible;
+  margin-top: var(--space-7);
+  flex-wrap: nowrap; /* Keep them on one line as requested */
+  position: relative;
+  z-index: 5;
 }
 
 .hero__actions {
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  margin-top: var(--space-7);
-  flex-wrap: wrap;
+  flex-shrink: 0;
+  overflow: visible;
+  position: relative;
+  z-index: 10;
 }
 
 
@@ -641,12 +726,9 @@
 
 /* ── Infinite Skills Slider ── */
 .hero__skills-slider {
-  position: absolute;
-  right: -90px;
-  /* Offset to match the centered hero__graphics */
-  width: 560px;
-  /* Matches width of hero__graphics */
   display: flex;
+  flex: 1;
+  min-width: 0;
   flex-direction: row;
   overflow: hidden;
   -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
@@ -704,13 +786,7 @@
 }
 
 /* Responsive */
-@media (max-width: 1200px) {
-  .hero__skills-slider {
-    right: -40px;
-    /* Offset to match the 460px centered graphic in a 380px column */
-    width: 460px;
-  }
-}
+
 
 @media (max-width: 900px) {
   .hero__inner {
@@ -729,10 +805,6 @@
   }
 
   .hero__skills-slider {
-    position: relative;
-    right: auto;
-    width: 100%;
-    max-width: 100vw;
     margin-top: var(--space-5);
   }
 }

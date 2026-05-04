@@ -6,6 +6,19 @@
   margin-bottom: var(--space-8);
 }
 
+.tech__header .security-notice {
+  margin-top: 1.5rem;
+  padding: 1rem 1.5rem;
+  background-color: rgba(255, 193, 7, 0.1);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--color-ink-2);
+  max-width: 800px;
+  margin-inline: auto;
+  text-align: left;
+}
+
 .tech__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -97,7 +97,7 @@ export default function ProjectShowcase() {
           <div className="clients-grid">
             {clients.map((client, i) => (
               <div key={i} className="client-logo">
-                <img src={client.img} alt={client.name} title={client.name} />
+                <img src={client.img} alt={client.name} title={client.name} className="no-lightbox" />
               </div>
             ))}
           </div>

@@ -4,11 +4,12 @@ import bestEmpBanner from '../assets/bestEmployee/bestEmp_Banner.jpeg';
 const en = {
   // Navbar
   nav: {
+    home: "Home",
     experience: "Experience",
     technical: "Technical",
     projects: "Products & Solutions",
     contact: "Contact",
-    hire: "Hire Me",
+    hire: "Save vCard",
   },
 
   // Footer
@@ -19,6 +20,8 @@ const en = {
 
   // Clients & Products
   clientsProducts: {
+    title: 'Clients',
+    subtitle: 'Trusted partners we have worked with',
     clients: 'Featured Clients',
     products: 'Products Developed',
   },
@@ -28,19 +31,19 @@ const en = {
     badge: "#OpenToWork",
     role: "Fullstack Software Engineer",
     roleSubtitle: "Implementation & Technical Leader · User Interface/User Experience (UI/UX) Design · Frontend Developer · Backend Developer · Business Analyst · Enterprise Resource Planning (ERP) Consultant",
-    desc: "Software engineer with experience deploying large-scale HR systems for multinational corporations (Lotte, Nidec, Tripod, Haiphong Steel Flower). Specialized in fullstack development, performance optimization, system architecture, and project management.",
+    desc: "As a <strong>Full-stack Engineer & Technical Implementation Lead</strong> with nearly <strong>3 years</strong> of experience, I possess a unique combination of in-depth programming capabilities and direct project implementation experience. I have managed and successfully deployed Human Resources (HR) systems for over <strong>10 major enterprises</strong> serving <strong>14,000+ users</strong>. With a comprehensive mindset encompassing the entire project lifecycle and the ability to deeply integrate <strong>Multi-agent AI</strong> into workflows to optimize resources, I consistently ensure maximum project efficiency. I am seeking a company with cultural alignment for a long-term commitment (3-5 years) to co-create sustainable values and outstanding software solutions.",
     stats: {
-      exp: "2.5+ years experience",
+      exp: "3+ years experience",
       users: "14,000+ users",
       faster: "200% faster with AI",
     },
     cta: {
       projects: "View Projects",
-      contact: "Contact Me",
+      contact: "Save vCard",
     },
     card: {
       title: "Fullstack Developer & Tech Lead",
-      contactBtn: "Contact Me",
+      contactBtn: "Save vCard",
     },
   },
 
@@ -48,23 +51,24 @@ const en = {
   experience: {
     sectionLabel: "Work History",
     title: "Career Timeline",
-    subtitle: "Implemented and led Human Resource Management system deployments for <strong>10+</strong> enterprises, serving <strong>14,000+</strong> end-users across multinational corporations.",
+    subtitle: "Project Management & Implementation Lead and Software Development & System Architecture at VIET TIN SOFTWARE, delivering end-to-end HR ecosystems for <strong>10+</strong> major corporate clients serving <strong>14,000+</strong> end-users.",
     clientsLabel: "Key Clients",
     jobs: [
       {
-        period: "06/2024 – Present",
-        role: "Implementation & Technical Leader",
-        company: "VIETIN SOFT Co., Ltd",
+        period: "06/2023 – Present",
+        role: "Project Management & Implementation Lead",
+        company: "VIET TIN SOFTWARE SOLUTION COMPANY LIMITED",
         companyDesc: "Developer of the Paradise HR Ecosystem serving tens of thousands of employees.",
         current: true,
         highlights: [
-          "Orchestrated full-lifecycle implementation of Paradise HR for <strong>10+</strong> major clients: Lotte (<strong>~3,000</strong> employees), Nidec Advanced Motor (<strong>~4,000</strong> employees), Tripod Vietnam (2 factories, <strong>~4,000</strong> employees), Detmold Packaging (<strong>~2,000</strong> employees), Haiphong Steel Flower (<strong>~300</strong> employees). Total: <strong>14,000+</strong> end-users.",
-          "Translated <strong>150+</strong> complex Human Resource business rules (Payroll, Core HR, Social Insurance, Timekeeping) into technical specifications, reducing requirement gaps by <strong>20–30%</strong>.",
-          "Delivered complex modules in <strong>15–20</strong> days (vs. standard <strong>20–25</strong> days), within <strong>±5%</strong> budget. Achieved <strong>90–95%</strong> system stability during peak payroll. <strong>100%</strong> client retention rate.",
+          "End-to-End Implementation: Orchestrated the full-lifecycle implementation of Paradise HR software for <strong>10+ major corporate clients</strong> (including Lotte ~3,000 employees, Nidec ~4,000, Detmold ~3,000, Tripod ~4,000, etc.). Successfully managed systems serving a combined workforce of over <strong>14,000+ end-users</strong>.",
+          "Business-to-Technical Translation: Translated <strong>150+ intricate HR business rules</strong> (Core HR, Time & Attendance, Payroll, Social Insurance, Employee Self-Services, Training, KPI Performance, Hiring, etc.) into precise technical specifications, effectively reducing requirement gaps by <strong>20–30%</strong>.",
+          "Project Governance & Delivery: Optimized resource allocation to maintain a <strong>90% project success rate</strong>. Consistently delivered complex modules in <strong>15–20 days</strong> (outperforming the 20–25 days standard) while staying strictly within <strong>±5%</strong> of the initial budget.",
+          "Quality Assurance & Client Relations: Achieved <strong>90–95%</strong> system stability during peak payroll periods, helping clients reduce administrative manual workflows by up to <strong>50%</strong>. This directly contributed to a <strong>100% client retention rate</strong>.",
         ],
         kpis: [
-          { value: "14,000+", label: "Users Managed" },
-          { value: "90%", label: "Success Rate" },
+          { value: "14,000+", label: "End-Users" },
+          { value: "90%+", label: "Success Rate" },
           { value: "100%", label: "Client Retention" },
         ],
         tags: ["Vanilla JavaScript", "SPA Framework", "SQL Server", "Virtual Scrolling", "Java", "PWA", "UI/UX", "Design System", "Business Analysis", "Agile/Scrum"],
@@ -72,7 +76,7 @@ const en = {
       {
         period: "2024",
         role: "Employee of the Year 2024",
-        company: "VIETIN SOFT Co., Ltd",
+        company: "VIET TIN SOFTWARE SOLUTION COMPANY LIMITED",
         current: false,
         highlights: ["Honored as the Employee of the Year 2024 for outstanding contributions to the successful implementation of Paradise HR for major enterprise partners and elevating the overall quality of the product ecosystem."],
         kpis: [],
@@ -80,29 +84,30 @@ const en = {
         images: [bestEmp2024, bestEmpBanner],
       },
       {
-        period: "12/08/2023 – 06/2024",
-        role: "Software Engineer",
-        company: "VIETIN SOFT Co., Ltd",
+        period: "08/2023 – 06/2024",
+        role: "Software Development & System Architecture",
+        company: "VIET TIN SOFTWARE SOLUTION COMPANY LIMITED",
         current: false,
         highlights: [
-          "Engineered a proprietary Single Page Application (SPA) Framework in Vanilla JavaScript — zero external dependencies, achieving sub-second initial load times and <strong>40%</strong> reduction in bundle size.",
-          "Architected complex User Interface components: virtual scrolling and recursive tree views handling <strong>10,000+</strong> nodes at <strong>60fps</strong> with minimal memory footprint.",
-          "Designed SQL Server schemas for millions of audit logs — partition tables, covering indexes, materialized views, and N+1 query elimination.",
+          "Custom SPA Framework Development: Engineered a proprietary Single Page Application (SPA) Framework using Vanilla JavaScript. Eliminated heavy dependencies to achieve sub-second initial load times and a <strong>40% reduction in bundle size</strong>.",
+          "High-Performance UI Engineering: Architected complex components (virtual scrolling, recursive tree views) capable of rendering <strong>10,000+ nodes smoothly at 60 FPS</strong> with a minimal memory footprint.",
+          "Full-Stack Ecosystem Ownership: Led the development of the Paradise HR ecosystem and the 'Vào Ca' mobile web app. Optimized shift-management logic for high-concurrency requests, ensuring <strong>100% data integrity</strong> for thousands of daily check-ins.",
+          "Database Architecture & Optimization: Designed robust SQL Server schemas to manage millions of audit logs and massive HR datasets. Optimized T-SQL queries and stored procedures, dramatically reducing complex report generation time <strong>from minutes to seconds</strong>.",
         ],
         kpis: [],
-        tags: ["Vanilla JavaScript", "SQL Server", "Performance Optimization", "Design System"],
+        tags: ["Vanilla JavaScript", "SQL Server", "Performance Optimization", "Design System", "PWA", "Java"],
       },
       {
-        period: "12/06/2023 – 11/08/2023",
-        role: "Software Engineer Intern",
-        company: "VIETIN SOFT Co., Ltd",
+        period: "06/2023 – 08/2023",
+        role: "Intern Software Engineer",
+        company: "VIET TIN SOFTWARE SOLUTION COMPANY LIMITED",
         current: false,
         highlights: ["Learned enterprise system architecture and software development lifecycle.", "Assisted in developing core features and fixing bugs for the Paradise HR ecosystem."],
         kpis: [],
         tags: ["JavaScript", "Java", "SQL", "HTML/CSS"],
       },
       {
-        period: "09/2019 – 05/2024",
+        period: "06/2019 – 11/2028",
         role: "Software Engineering Student",
         company: "Saigon University (SGU)",
         companyDesc: "Bachelor of Software Engineering",

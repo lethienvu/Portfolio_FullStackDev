@@ -1,26 +1,31 @@
-import { createContext, useContext, useState, useCallback } from 'react';
+/* eslint-disable react-refresh/only-export-components */
+import { createContext, useContext, useState } from 'react';
 import vi from './vi';
 import en from './en';
+import ja from './ja';
+import zh from './zh';
 
-const TRANSLATIONS = { vi, en };
+const TRANSLATIONS = { vi, en, ja, zh };
 
 const LanguageContext = createContext(null);
 
 /**
  * LanguageProvider — wraps the app and provides language state.
- * lang: 'vi' | 'en'
+ * lang: 'vi' | 'en' | 'ja' | 'zh'
  * t: translation object for the current language
- * toggleLang: switches between 'vi' and 'en'
+ * setLang: switches between languages
  */
 export function LanguageProvider({ children }) {
   const [lang, setLang] = useState('vi');
 
-  const toggleLang = useCallback(() => {
+  // Keep toggleLang for compatibility if used elsewhere, but ideally we use setLang
+  const toggleLang = () => {
     setLang(prev => (prev === 'vi' ? 'en' : 'vi'));
-  }, []);
+  };
 
   const value = {
     lang,
+    setLang,
     toggleLang,
     t: TRANSLATIONS[lang],
   };
@@ -34,7 +39,7 @@ export function LanguageProvider({ children }) {
 
 /**
  * useLanguage — consume language context anywhere in the tree.
- * Usage:  const { t, lang, toggleLang } = useLanguage();
+ * Usage:  const { t, lang, setLang } = useLanguage();
  */
 export function useLanguage() {
   const ctx = useContext(LanguageContext);

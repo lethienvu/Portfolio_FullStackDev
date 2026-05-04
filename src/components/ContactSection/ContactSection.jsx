@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './ContactSection.css';
 import { useLanguage } from '../../i18n/LanguageContext.jsx';
 import avatarImg from '../../assets/contactImg/lethienvu_contact.jpeg';
+import qrZaloImg from '../../assets/contactImg/QR_Zalo.JPG';
 
 const MailIcon = () => (
   <svg
@@ -62,7 +63,15 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="contact" aria-labelledby="contact-heading" style={{ background: 'transparent' }}>
+    <section id="contact" className="contact" aria-labelledby="contact-heading" style={{ background: '#050505', position: 'relative' }}>
+      
+      {/* Liquid Glass Background Elements */}
+      <div className="contact__liquid-bg">
+        <div className="liquid-blob blob-1"></div>
+        <div className="liquid-blob blob-2"></div>
+        <div className="liquid-blob blob-3"></div>
+      </div>
+
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div className="contact__vcard">
           
@@ -112,19 +121,29 @@ export default function ContactSection() {
             </nav>
 
             <div className="contact__footer">
-              <div className="contact__actions">
-                <a href="tel:0945949065" className="action-btn action-btn--primary">
-                  Gọi ngay
-                </a>
-                <a href="mailto:lethienvu.se@gmail.com" className="action-btn action-btn--secondary">
-                  Gửi mail
+              <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                <div className="contact__actions" style={{ margin: 0 }}>
+                  <a href="tel:0945949065" className="action-btn action-btn--primary">
+                    Gọi ngay
+                  </a>
+                  <a href="mailto:lethienvu.se@gmail.com" className="action-btn action-btn--secondary">
+                    Gửi mail
+                  </a>
+                </div>
+                <a 
+                  href={`${import.meta.env.BASE_URL}vcard.vcf`} 
+                  download="LeThienVu_Contact.vcf" 
+                  className="action-btn action-btn--primary" 
+                  style={{ width: '100%', justifyContent: 'center' }}
+                >
+                  {t.nav.hire}
                 </a>
               </div>
               
               <div className="vcard__qr-container">
                 <p className="qr-title">Zalo QR</p>
                 <img 
-                  src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://zalo.me/0945949065" 
+                  src={qrZaloImg} 
                   alt="Zalo QR" 
                   className="vcard__qr" 
                 />

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useLanguage } from '../../i18n/LanguageContext';
 import './ClientsAndProducts.css';
 
 // Import logos khách hàng
 import lotteImg from '../../assets/customer/lotte.png';
 import lichienImg from '../../assets/customer/lichien.png';
-import stealflowerImg from '../../assets/customer/STEALFLOWER.removebg-preview.png';
+import stealflowerImg from '../../assets/customer/STEALFLOWER.removebg-preview.svg';
 import detmoldImg from '../../assets/customer/DETMOLD_packaging.jpg';
 import tvcImg from '../../assets/customer/tvc_logo.png';
 import navtImg from '../../assets/customer/NAVT.svg';
@@ -18,6 +18,7 @@ function LogoWithSkeleton({ src, alt }) {
       <img 
         src={src} 
         alt={alt} 
+        className="no-lightbox"
         onLoad={() => setLoaded(true)} 
         style={{ opacity: loaded ? 1 : 0, transition: 'opacity 0.3s ease' }}
       />
@@ -29,12 +30,12 @@ export default function ClientsAndProducts() {
   const { t } = useLanguage();
 
   const clients = [
+    { name: 'NAVT', logo: navtImg },
+    { name: 'Steel Flower', logo: stealflowerImg },
     { name: 'Lotte', logo: lotteImg },
     { name: 'Lichien', logo: lichienImg },
-    { name: 'Steel Flower', logo: stealflowerImg },
     { name: 'Detmold', logo: detmoldImg },
     { name: 'Tripod Vietnam', logo: tvcImg },
-    { name: 'NAVT', logo: navtImg },
   ];
 
   return (
@@ -49,7 +50,7 @@ export default function ClientsAndProducts() {
         {/* Clients Marquee */}
         <div className="cap-clients">
           <div className="cap-marquee">
-            {/* Render 3 identical groups for seamless infinite scroll on wide screens */}
+            {/* Render 3 identical groups for seamless infinite scroll */}
             {[0, 1, 2].map((groupIndex) => (
               <div 
                 key={groupIndex} 

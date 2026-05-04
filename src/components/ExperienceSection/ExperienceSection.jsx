@@ -10,7 +10,7 @@ import imgMem3 from '../../assets/experienceBg/thienvu_3.jpeg';
 import imgMem4 from '../../assets/experienceBg/thienVu_4.jpeg';
 import imgMem5 from '../../assets/experienceBg/sguPic.jpg';
 
-function TimelineItem({ item, clientsLabel }) {
+function TimelineItem({ item }) {
   return (
     <article className="timeline__item" aria-label={`${item.role} tại ${item.company}`}>
       <div className={`timeline__dot${item.current ? ' timeline__dot--current' : ''}`} aria-hidden="true" />
@@ -90,7 +90,7 @@ export default function ExperienceSection() {
                 {showCompany && (
                   <div className="timeline__company-header">
                     <div className="company-logo">
-                      <img src={job.company.includes('SGU') ? logoSGU : logoVTS} alt={job.company} />
+                      <img src={job.company.includes('SGU') ? logoSGU : logoVTS} alt={job.company} className="no-lightbox" />
                     </div>
                     <div className="company-info">
                       <div className="company-name">{job.company}</div>

@@ -4,11 +4,12 @@ import bestEmpBanner from '../assets/bestEmployee/bestEmp_Banner.jpeg';
 const vi = {
   // Navbar
   nav: {
+    home:       'Về tôi',
     experience: 'Kinh nghiệm',
     technical:  'Kỹ thuật',
     projects:   'Sản phẩm và giải pháp',
     contact:    'Liên hệ',
-    hire:       'Liên hệ tôi',
+    hire:       'Lưu vCard',
   },
 
   // Footer
@@ -19,6 +20,8 @@ const vi = {
 
   // Clients & Products
   clientsProducts: {
+    title: 'Khách hàng',
+    subtitle: 'Các đối tác đã tin tưởng và hợp tác',
     clients: 'Khách hàng tiêu biểu',
     products: 'Sản phẩm đã phát triển',
   },
@@ -26,53 +29,54 @@ const vi = {
   // Hero
   hero: {
     badge:       '#openToWork',
-    role:        'Kỹ sư Phần mềm Toàn diện (Fullstack Software Engineer)',
-    roleSubtitle:'Trưởng nhóm Triển khai & Kỹ thuật · Thiết kế Trải nghiệm Người dùng (UI/UX) · Frontend Developer · Backend Developer · Business Analyst · Tư vấn Hệ thống Hoạch định Nguồn lực Doanh nghiệp (ERP)',
-    desc:        'Kỹ sư phần mềm với kinh nghiệm triển khai hệ thống quản lý nguồn nhân lực quy mô lớn cho các tập đoàn đa quốc gia (Lotte, Nidec, Tripod, Haiphong Steel Flower). Chuyên về lập trình toàn diện, tối ưu hiệu suất, thiết kế kiến trúc và quản lý dự án.',
+    role:        'Fullstack Software Engineer',
+    roleSubtitle:'Implementation & Technical Leader · User Interface/User Experience (UI/UX) Design · Frontend Developer · Backend Developer · Business Analyst · Enterprise Resource Planning (ERP) Consultant',
+    desc:        'Là một <strong>Full-stack Engineer & Technical Implementation Lead</strong> với gần <strong>3 năm</strong> kinh nghiệm, tôi sở hữu sự kết hợp độc đáo giữa năng lực lập trình chuyên sâu và kinh nghiệm triển khai dự án trực tiếp. Tôi đã quản lý và đưa hệ thống nhân sự (HR) vào vận hành thành công cho hơn <strong>10 doanh nghiệp lớn</strong> với quy mô <strong>14.000+ người dùng</strong>. Với tư duy bao quát toàn bộ vòng đời dự án và khả năng tích hợp sâu <strong>Multi-agent AI</strong> vào quy trình làm việc để tối ưu hóa nguồn lực, tôi luôn đảm bảo hiệu suất dự án ở mức tối đa. Tôi tìm kiếm một doanh nghiệp có sự đồng điệu về văn hóa để gắn bó dài hạn (3-5 năm), cùng nhau kiến tạo những giá trị bền vững và các giải pháp phần mềm xuất sắc.',
     stats: {
-      exp:    '2.5+ năm kinh nghiệm',
+      exp:    'Kinh nghiệm bao quát toàn bộ quy trình phát triển phần mềm',
       users:  '14.000+ người dùng',
       faster: 'Tăng 200% hiệu suất với AI',
     },
     cta: {
       projects: 'Xem dự án',
-      contact:  'Liên hệ tôi',
+      contact:  'Lưu vCard',
     },
     card: {
       title:      'Fullstack Developer & Tech Lead',
-      contactBtn: 'Liên hệ tôi',
+      contactBtn: 'Lưu vCard',
     },
   },
 
   // Experience
   experience: {
     sectionLabel: 'Kinh nghiệm làm việc',
-    title:        'Lộ trình Nghề nghiệp',
-    subtitle:     'Triển khai và phát triển hệ thống phần mềm quản lý nguồn nhân lực Paradise HR (trên cả 3 nền tảng: Ứng dụng Desktop, Ứng dụng Web đơn trang (SPA) và Ứng dụng Di động) cho <strong>5+</strong> tập đoàn lớn, phục vụ tổng số hơn <strong>14.000</strong> người dùng cuối. Đồng thời, thực hiện xây dựng quy trình nghiệp vụ, phát triển các tính năng mới, tối ưu hiệu suất, và đảm bảo chất lượng sản phẩm.',
+    title:        'Dòng thời gian làm việc',
+    subtitle:     'Quản lý Dự án & Trưởng nhóm Triển khai và Phát triển Phần mềm & Kiến trúc Hệ thống tại VIET TIN SOFTWARE, bàn giao hệ thống HR toàn diện cho <strong>10+</strong> doanh nghiệp lớn, phục vụ tổng số hơn <strong>14.000</strong> người dùng cuối.',
     clientsLabel: 'Khách hàng tiêu biểu',
     jobs: [
       {
-        period:  '06/2024 – Hiện tại',
-        role:    'Trưởng nhóm Triển khai & Kỹ thuật (Implementation & Technical Leader)',
-        company: 'Công ty TNHH Phần mềm Việt Tín (VIETIN SOFT Co., Ltd)',
+        period:  '06/2023 – Hiện tại',
+        role:    'Quản lý Dự án & Trưởng nhóm Triển khai (Project Management & Implementation Lead)',
+        company: 'Công ty TNHH Giải pháp Phần mềm Việt Tín (VIET TIN SOFTWARE SOLUTION COMPANY LIMITED)',
         companyDesc: 'Đơn vị phát triển Hệ sinh thái Paradise HR phục vụ hàng chục ngàn nhân sự.',
         current: true,
         highlights: [
-          'Điều phối toàn bộ vòng đời triển khai hệ thống Paradise HR cho <strong>10+</strong> doanh nghiệp lớn: Lotte (<strong>~3.000</strong> nhân viên), Nidec Advanced Motor (<strong>~4.000</strong> nhân viên), Tripod Vietnam (2 nhà máy, <strong>~4.000</strong> nhân viên), Detmold Packaging (<strong>~2.000</strong> nhân viên), Haiphong Steel Flower (<strong>~300</strong> nhân viên). Tổng cộng <strong>14.000+</strong> người dùng.',
-          'Chuyển đổi <strong>150+</strong> quy trình nghiệp vụ quản lý nguồn nhân lực phức tạp (Hồ sơ nhân sự, Chấm công, Tính lương, Bảo hiểm xã hội, Tiền lương, Cổng thông tin nhân sự, Tuyển dụng, Đánh giá KPIs, Đào tạo, ...) thành đặc tả kỹ thuật chi tiết, giảm khoảng cách yêu cầu <strong>20–30%</strong>.',
-          'Bàn giao các module phức tạp trong <strong>15–20</strong> ngày (nhanh hơn tiêu chuẩn <strong>20–25</strong> ngày), trong biên ngân sách <strong>±5%</strong>. Tỷ lệ giữ chân khách hàng đạt 100%.',
+          'Triển khai Toàn diện: Điều phối toàn bộ vòng đời triển khai hệ thống Paradise HR cho <strong>10+ doanh nghiệp lớn</strong> (Lotte ~3.000 nhân viên, Nidec ~4.000, Detmold ~3.000, Tripod ~4.000, v.v.). Quản lý thành công hệ thống phục vụ tổng cộng hơn <strong>14.000+ người dùng cuối</strong>.',
+          'Chuyển đổi Nghiệp vụ sang Kỹ thuật: Phân tích <strong>150+ quy trình HR phức tạp</strong> (Hồ sơ nhân sự, Chấm công, Tính lương, Bảo hiểm xã hội, Cổng nhân viên, Đào tạo, KPI, Tuyển dụng, v.v.) thành đặc tả kỹ thuật chi tiết, giảm khoảng cách yêu cầu <strong>20–30%</strong>.',
+          'Quản trị & Bàn giao Dự án: Tối ưu phân bổ nguồn lực để duy trì <strong>tỷ lệ thành công 90%</strong>. Liên tục bàn giao module phức tạp trong <strong>15–20 ngày</strong> (vượt tiêu chuẩn 20–25 ngày) trong biên ngân sách <strong>±5%</strong>.',
+          'Đảm bảo Chất lượng & Quan hệ Khách hàng: Đạt <strong>độ ổn định hệ thống 90–95%</strong> trong các đợt cao điểm tính lương, giúp khách hàng giảm <strong>50%</strong> thao tác thủ công. Trực tiếp đóng góp vào tỷ lệ <strong>giữ chân khách hàng 100%</strong>.',
         ],
         kpis: [
-          { value: '14.000', label: 'Người dùng' },
-          { value: '90%',  label: 'Tỷ lệ thành công' },
-          { value: '100%', label: 'Giữ chân khách hàng' },
+          { value: '14.000+', label: 'Người dùng cuối' },
+          { value: '90%+',   label: 'Tỷ lệ thành công' },
+          { value: '100%',  label: 'Giữ chân khách hàng' },
         ],
         tags: ['Vanilla JavaScript', 'SPA Framework', 'SQL Server', 'HTML/CSS', 'Java', 'PWA', 'UI/UX', 'Design System', 'Business Analysis', 'Agile/Scrum'],
       },
       {
         period:  '2024',
         role:    'Nhân viên xuất sắc của năm 2024',
-        company: 'Công ty TNHH Phần mềm Việt Tín (VIETIN SOFT Co., Ltd)',
+        company: 'Công ty TNHH Giải pháp Phần mềm Việt Tín (VIET TIN SOFTWARE SOLUTION COMPANY LIMITED)',
         current: false,
         highlights: [
           'Được vinh danh danh hiệu Nhân viên xuất sắc nhất năm 2024 nhờ những đóng góp quan trọng trong việc triển khai thành công hệ thống Paradise HR cho các đối tác lớn và giải pháp tối ưu quy trình làm việc, tăng hiệu suất, nâng cao chất lượng hệ sinh thái sản phẩm.',
@@ -85,22 +89,23 @@ const vi = {
         ]
       },
       {
-        period:  '12/08/2023 – 06/2024',
-        role:    'Kỹ sư Phần mềm (Software Engineer)',
-        company: 'Công ty TNHH Phần mềm Việt Tín (VIETIN SOFT Co., Ltd)',
+        period:  '08/2023 – 06/2024',
+        role:    'Phát triển Phần mềm & Kiến trúc Hệ thống (Software Development & System Architecture)',
+        company: 'Công ty TNHH Giải pháp Phần mềm Việt Tín (VIET TIN SOFTWARE SOLUTION COMPANY LIMITED)',
         current: false,
         highlights: [
-          'Tự xây dựng Khung ứng dụng đơn trang (SPA Framework) bằng JavaScript thuần — không phụ thuộc thư viện ngoài, đạt thời gian tải dưới một giây và giảm <strong>40%</strong> kích thước gói.',
-          'Thiết kế thành phần giao diện người dùng phức tạp: cuộn ảo (virtual scrolling) và cây đệ quy (recursive tree view) xử lý <strong>10.000+</strong> nút ổn định tại <strong>60fps</strong>.',
-          'Tối ưu cấu trúc cơ sở dữ liệu SQL Server cho hàng triệu bản ghi nhật ký kiểm toán: phân vùng bảng (partition tables), chỉ mục bao phủ (covering indexes), khung nhìn vật chất hóa (materialized views), loại bỏ truy vấn N+1.',
+          'Phát triển SPA Framework tùy chỉnh: Tự xây dựng Khung ứng dụng đơn trang (SPA Framework) bằng JavaScript thuần. Loại bỏ phụ thuộc nặng để đạt thời gian tải dưới một giây và giảm <strong>40% kích thước gói</strong>.',
+          'Kỹ thuật UI Hiệu suất Cao: Thiết kế các thành phần phức tạp (cuộn ảo, cây đệ quy) có khả năng render <strong>10.000+ nút mượt mà tại 60 FPS</strong> với dung lượng bộ nhớ tối thiểu.',
+          'Sở hữu Hệ sinh thái Toàn diện: Dẫn đầu phát triển hệ sinh thái Paradise HR và ứng dụng di động Vào Ca. Tối ưu logic quản lý ca cho yêu cầu đồng thời cao, đảm bảo <strong>100% toàn vẹn dữ liệu</strong>.',
+          'Kiến trúc & Tối ưu Cơ sở Dữ liệu: Thiết kế cấu trúc SQL Server để quản lý hàng triệu bản ghi kiểm toán. Tối ưu T-SQL và stored procedures, giảm thời gian tạo báo cáo phức tạp <strong>từ vài phút xuống còn vài giây</strong>.',
         ],
         kpis: [],
-        tags: ['Vanilla JavaScript', 'SQL Server', 'Performance Optimization', 'Design System'],
+        tags: ['Vanilla JavaScript', 'SQL Server', 'Performance Optimization', 'Design System', 'PWA', 'Java'],
       },
       {
-        period:  '12/06/2023 – 11/08/2023',
-        role:    'Thực tập sinh Kỹ sư Phần mềm',
-        company: 'Công ty TNHH Phần mềm Việt Tín (VIETIN SOFT Co., Ltd)',
+        period:  '06/2023 – 08/2023',
+        role:    'Thực tập sinh Kỹ sư Phần mềm (Intern Software Engineer)',
+        company: 'Công ty TNHH Giải pháp Phần mềm Việt Tín (VIET TIN SOFTWARE SOLUTION COMPANY LIMITED)',
         current: false,
         highlights: [
           'Tìm hiểu kiến trúc hệ thống và quy trình phát triển phần mềm doanh nghiệp.',
@@ -110,7 +115,7 @@ const vi = {
         tags: ['JavaScript', 'Java', 'SQL', 'HTML/CSS'],
       },
       {
-        period:  '09/2019 – 05/2024',
+        period:  '06/2019 – 11/2024',
         role:    'Sinh viên Kỹ thuật Phần mềm',
         company: 'Đại học Sài Gòn (SGU)',
         companyDesc: 'Kỹ sư Phần mềm (Software Engineering)',
@@ -287,7 +292,7 @@ const vi = {
   contact: {
     sectionLabel: 'Liên hệ',
     title:        'Liên hệ',
-    subtitle:     'Nếu bạn đang tìm kiếm một người dẫn dắt có khả năng chuyển hóa các bài toán nghiệp vụ nhân sự phức tạp thành giải pháp kỹ thuật hiệu suất cao, hãy kết nối ngay để cùng tạo nên sự khác biệt.',
+    subtitle:     'Sẵn sàng đồng hành cùng bạn xây dựng giải pháp công nghệ. Hãy kết nối để cùng nhau biến ý tưởng thành hiện thực.',
     formTitle:    'Gửi tin nhắn',
     fields: {
       name:               'Họ và tên',
