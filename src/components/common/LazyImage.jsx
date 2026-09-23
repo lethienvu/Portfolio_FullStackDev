@@ -30,6 +30,7 @@ export function LazyImage({ src, alt, className, ...props }) {
       className={`${className} ${isLoaded ? 'loaded' : 'loading'}`}
       onLoad={() => setIsLoaded(true)}
       loading="lazy"
+      decoding="async"
       {...props}
     />
   );

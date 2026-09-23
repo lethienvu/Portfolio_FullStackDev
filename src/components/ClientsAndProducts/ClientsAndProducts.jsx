@@ -3,11 +3,12 @@ import { useLanguage } from '../../i18n/LanguageContext';
 import './ClientsAndProducts.css';
 
 // Import logos khách hàng
-import lotteImg from '../../assets/customer/lotte.png';
-import lichienImg from '../../assets/customer/lichien.png';
+// Serve this small logo as a separately cacheable public asset, not an inlined data URI.
+const lotteImg = `${import.meta.env.BASE_URL}customer/lotte.webp`;
+import lichienImg from '../../assets/customer/lichien.webp';
 import stealflowerImg from '../../assets/customer/STEALFLOWER.removebg-preview.svg';
-import detmoldImg from '../../assets/customer/DETMOLD_packaging.jpg';
-import tvcImg from '../../assets/customer/tvc_logo.png';
+import detmoldImg from '../../assets/customer/DETMOLD_packaging.webp';
+import tvcImg from '../../assets/customer/tvc_logo.webp';
 import navtImg from '../../assets/customer/NAVT.svg';
 
 function LogoWithSkeleton({ src, alt }) {
@@ -19,6 +20,10 @@ function LogoWithSkeleton({ src, alt }) {
         src={src} 
         alt={alt} 
         className="no-lightbox"
+        width="120"
+        height="60"
+        loading="lazy"
+        decoding="async"
         onLoad={() => setLoaded(true)} 
         style={{ opacity: loaded ? 1 : 0, transition: 'opacity 0.3s ease' }}
       />

@@ -4,10 +4,10 @@ import "./HeroSection.css";
 import { useLanguage } from "../../i18n/LanguageContext.jsx";
 import ProfileCard from "../ProfileCard/ProfileCard.jsx";
 
-import imgHeroMobile from "../../assets/hero-mobileApp.jpg";
-import imgHeroPweb from "../../assets/hero-pweb.jpg";
-import imgHeroPweb3 from "../../assets/hero-pweb3.jpg";
-import imgHeroVcshow from "../../assets/hero-vcshow.jpg";
+import imgHeroMobile from "../../assets/hero-mobileApp.webp";
+import imgHeroPweb from "../../assets/hero-pweb.webp";
+import imgHeroPweb3 from "../../assets/hero-pweb3.webp";
+import imgHeroVcshow from "../../assets/hero-vcshow.webp";
 
 const SCATTERED_IMGS = [imgHeroMobile, imgHeroPweb, imgHeroPweb3, imgHeroVcshow];
 
@@ -28,7 +28,16 @@ function ScatteredFrames({ onOpenLightbox }) {
             <span /><span /><span />
           </div>
           <div className="hero-scatter__img-wrap">
-            <img src={src} alt="" className="hero-scatter__img" />
+            <img
+              src={src}
+              alt="Project preview screenshot"
+              className="hero-scatter__img"
+              width="1300"
+              height={i === 0 ? "867" : i === 1 ? "975" : i === 2 ? "731" : "852"}
+              loading="lazy"
+              decoding="async"
+              fetchPriority={i === 1 ? "high" : "auto"}
+            />
             <div className="hero-scatter__overlay">
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 3h6m0 0v6m0-6L14 10M9 21H3m0 0v-6m0 6l7-7" />
@@ -192,7 +201,7 @@ export default function HeroSection({ onOpenLightbox }) {
       ),
     },
 
-    
+
     {
       name: "Antigravity",
       icon: (

@@ -47,7 +47,9 @@ export default function Lightbox({ images, index, onClose, onPrev, onNext }) {
         <img 
           src={images[index]} 
           alt={`Preview ${index + 1}`} 
-          className="global-lightbox__img" 
+          className="global-lightbox__img"
+          loading="eager"
+          decoding="async"
           onClick={(e) => e.stopPropagation()} 
         />
       </div>

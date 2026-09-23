@@ -2,13 +2,13 @@ import React from 'react';
 import './ExperienceSection.css';
 import { useLanguage } from '../../i18n/LanguageContext.jsx';
 import { HtmlText } from '../HtmlText.jsx';
-import logoSGU from '../../assets/sgu-logo.png';
+import logoSGU from '../../assets/sgu-logo.webp';
 import logoVTS from '../../assets/vtsLogo.svg';
-import imgMem1 from '../../assets/experienceBg/thienVu_1.jpeg';
-import imgMem2 from '../../assets/experienceBg/thienVu_2.jpeg';
-import imgMem3 from '../../assets/experienceBg/thienvu_3.jpeg';
-import imgMem4 from '../../assets/experienceBg/thienVu_4.jpeg';
-import imgMem5 from '../../assets/experienceBg/sguPic.jpg';
+import imgMem1 from '../../assets/experienceBg/thienVu_1.webp';
+import imgMem2 from '../../assets/experienceBg/thienVu_2.webp';
+import imgMem3 from '../../assets/experienceBg/thienvu_3.webp';
+import imgMem4 from '../../assets/experienceBg/thienVu_4.webp';
+import imgMem5 from '../../assets/experienceBg/sguPic.webp';
 
 function TimelineItem({ item }) {
   return (
@@ -52,7 +52,7 @@ function TimelineItem({ item }) {
         {item.images && item.images.length > 0 && (
           <div className="timeline__images">
             {item.images.map((imgUrl, idx) => (
-              <img key={idx} src={imgUrl} alt={`${item.role} ảnh ${idx + 1}`} className="timeline__event-img" />
+              <img key={idx} src={imgUrl} alt={`${item.role} ảnh ${idx + 1}`} className="timeline__event-img" width="400" height="200" loading="lazy" decoding="async" />
             ))}
           </div>
         )}
@@ -69,11 +69,11 @@ export default function ExperienceSection() {
     <section id="experience" className="experience" aria-labelledby="exp-heading">
       {/* Scattered memories background */}
       <div className="experience__memories" aria-hidden="true">
-        <img src={imgMem1} alt="" className="memory-img memory-img--1" />
-        <img src={imgMem2} alt="" className="memory-img memory-img--2" />
-        <img src={imgMem3} alt="" className="memory-img memory-img--3" />
-        <img src={imgMem4} alt="" className="memory-img memory-img--4" />
-        <img src={imgMem5} alt="" className="memory-img memory-img--5" />
+        <img src={imgMem1} alt="" className="memory-img memory-img--1" width="450" height="350" loading="lazy" decoding="async" />
+        <img src={imgMem2} alt="" className="memory-img memory-img--2" width="380" height="480" loading="lazy" decoding="async" />
+        <img src={imgMem3} alt="" className="memory-img memory-img--3" width="500" height="350" loading="lazy" decoding="async" />
+        <img src={imgMem4} alt="" className="memory-img memory-img--4" width="350" height="450" loading="lazy" decoding="async" />
+        <img src={imgMem5} alt="" className="memory-img memory-img--5" width="350" height="250" loading="lazy" decoding="async" />
       </div>
 
       <div className="container">
@@ -90,7 +90,7 @@ export default function ExperienceSection() {
                 {showCompany && (
                   <div className="timeline__company-header">
                     <div className="company-logo">
-                      <img src={job.company.includes('SGU') ? logoSGU : logoVTS} alt={job.company} className="no-lightbox" />
+                      <img src={job.company.includes('SGU') ? logoSGU : logoVTS} alt={job.company} className="no-lightbox" width="56" height="56" loading="lazy" decoding="async" />
                     </div>
                     <div className="company-info">
                       <div className="company-name">{job.company}</div>

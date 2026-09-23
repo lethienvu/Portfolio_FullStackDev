@@ -4,36 +4,36 @@ import { useLanguage } from '../../i18n/LanguageContext.jsx';
 import phoneFrame from '../../assets/phone-frame.svg';
 
 // ── Web (Laptop) screenshots ──────────────────────────────────────────────────
-import imgPWebLauncher      from '../../assets/pWeb-launcher.jpg';
-import imgPWebDashboard     from '../../assets/pWeb_dashboard.jpg';
-import imgPWebEmployeeList  from '../../assets/pWeb-employeeList.jpg';
-import imgPWebProfile       from '../../assets/pWeb-profile.jpg';
-import imgPWebDetmold       from '../../assets/pWeb-Detmold.jpg';
-import imgPWebDetmold2      from '../../assets/pWeb-Detmold2.jpg';
-import imgPWebSettings      from '../../assets/pWeb-settings.PNG';
-import imgPWebRequestCreate from '../../assets/request1.jpg';
-import imgNavtRecruitment   from '../../assets/navt-recruitment.jpeg';
-import imgDPVN              from '../../assets/dpvn.jpg';
-import imgVaoCaLanding      from '../../assets/VaoCa-LandingPage.JPG';
-import imgDevWeb            from '../../assets/DevWeb.png';
-import imgVCLandingPage     from '../../assets/VC_LandingPage.png';
-import imgPwebDb            from '../../assets/pweb_db.png';
-import imgPwebLoginNew      from '../../assets/pWeb_Login.png';
+import imgPWebLauncher      from '../../assets/pWeb-launcher.webp';
+import imgPWebDashboard     from '../../assets/pWeb_dashboard.webp';
+import imgPWebEmployeeList  from '../../assets/pWeb-employeeList.webp';
+import imgPWebProfile       from '../../assets/pWeb-profile.webp';
+import imgPWebDetmold       from '../../assets/pWeb-Detmold.webp';
+import imgPWebDetmold2      from '../../assets/pWeb-Detmold2.webp';
+import imgPWebSettings      from '../../assets/pWeb-settings.webp';
+import imgPWebRequestCreate from '../../assets/request1.webp';
+import imgNavtRecruitment   from '../../assets/navt-recruitment.webp';
+import imgDPVN              from '../../assets/dpvn.webp';
+import imgVaoCaLanding      from '../../assets/VaoCa-LandingPage.webp';
+import imgDevWeb            from '../../assets/DevWeb.webp';
+import imgVCLandingPage     from '../../assets/VC_LandingPage.webp';
+import imgPwebDb            from '../../assets/pweb_db.webp';
+import imgPwebLoginNew      from '../../assets/pWeb_Login.webp';
 
 // ── Mobile (Phone) screenshots ────────────────────────────────────────────────
-import imgPAppAttendance    from '../../assets/pApp-attendance.PNG';
-import imgPAppGps           from '../../assets/pApp-GPS.jpg';
-import imgPAppReport        from '../../assets/pApp-report.PNG';
-import imgPAppReport2       from '../../assets/pApp-report2.PNG';
-import imgPAppApproveLeave  from '../../assets/pApp_approveleave.jpg';
-import imgPAppTimesheet     from '../../assets/pApp_timesheet.PNG';
-import imgPAppHiringReq     from '../../assets/pApp_navt_hiringRequest.jpg';
-import imgVCQr              from '../../assets/VC-qr.PNG';
-import imgGPSCamera         from '../../assets/GPS-camera.JPG';
-import imgVCDashboard       from '../../assets/vc-dashboard.jpg';
-import imgPWebVaoCaWireframe from '../../assets/pWeb_vaoCaWireframe.jpg';
-import imgPWebHiringHr      from '../../assets/pWeb_navt_hiringhr.jpg';
-import imgPAppHiringInterview from '../../assets/pApp_navt_hiringinterview.png';
+import imgPAppAttendance    from '../../assets/pApp-attendance.webp';
+import imgPAppGps           from '../../assets/pApp-GPS.webp';
+import imgPAppReport        from '../../assets/pApp-report.webp';
+import imgPAppReport2       from '../../assets/pApp-report2.webp';
+import imgPAppApproveLeave  from '../../assets/pApp_approveleave.webp';
+import imgPAppTimesheet     from '../../assets/pApp_timesheet.webp';
+import imgPAppHiringReq     from '../../assets/pApp_navt_hiringRequest.webp';
+import imgVCQr              from '../../assets/VC-qr.webp';
+import imgGPSCamera         from '../../assets/GPS-camera.webp';
+import imgVCDashboard       from '../../assets/vc-dashboard.webp';
+import imgPWebVaoCaWireframe from '../../assets/pWeb_vaoCaWireframe.webp';
+import imgPWebHiringHr      from '../../assets/pWeb_navt_hiringhr.webp';
+import imgPAppHiringInterview from '../../assets/pApp_navt_hiringinterview.webp';
 
 // ── Slide Definitions ─────────────────────────────────────────────────────────
 // Each slide: laptop = web screenshot (16:10 landscape), phone = mobile screenshot (9:19.5 portrait)
@@ -150,19 +150,19 @@ const PHONE_IMGS  = SLIDES.map(s => s.phone);
 
 // ── Sub-components ────────────────────────────────────────────────────────────
 
-function ImageWithSkeleton({ src, alt, className, onClick, title, active, objectFit = 'cover', objectPosition = 'top' }) {
+function ImageWithSkeleton({ src, alt, className, onClick, title, width, height, objectFit = 'cover', objectPosition = 'top' }) {
   const [loaded, setLoaded] = useState(false);
 
   return (
     <div
-      className={`skeleton-wrapper ${active ? 'active' : ''}`}
+      className="skeleton-wrapper active"
       style={{
         position: 'absolute',
         inset: 0,
-        opacity: active ? 1 : 0,
-        pointerEvents: active ? 'all' : 'none',
+        opacity: 1,
+        pointerEvents: 'all',
         transition: 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
-        zIndex: active ? 2 : 1,
+        zIndex: 2,
       }}
     >
       {!loaded && (
@@ -183,7 +183,10 @@ function ImageWithSkeleton({ src, alt, className, onClick, title, active, object
         onClick={onClick}
         onLoad={() => setLoaded(true)}
         title={title}
+        width={width}
+        height={height}
         loading="eager"
+        decoding="async"
         style={{
           opacity: loaded ? 1 : 0,
           transition: 'opacity 0.5s ease',
@@ -199,13 +202,18 @@ function ImageWithSkeleton({ src, alt, className, onClick, title, active, object
 }
 
 function ProductShowcase({ current, setCurrent, onOpenLightbox, isLightboxOpen, content }) {
-  // Preload all images
+  // Smart on-demand preloading: only preload next slide
   useEffect(() => {
-    [...LAPTOP_IMGS, ...PHONE_IMGS].forEach((src) => {
-      const img = new Image();
-      img.src = src;
+    const nextIdx = (current + 1) % SLIDES.length;
+    const nextLaptop = SLIDES[nextIdx]?.laptop;
+    const nextPhone = SLIDES[nextIdx]?.phone;
+    [nextLaptop, nextPhone].forEach((src) => {
+      if (src) {
+        const img = new Image();
+        img.src = src;
+      }
     });
-  }, []);
+  }, [current]);
 
   // Auto-advance slides
   useEffect(() => {
@@ -233,19 +241,18 @@ function ProductShowcase({ current, setCurrent, onOpenLightbox, isLightboxOpen, 
           <div className="screen">
             <div className="header"></div>
             <div className="screen-content">
-              {SLIDES.map((slide, idx) => (
-                <ImageWithSkeleton
-                  key={`laptop-${slide.id}`}
-                  src={slide.laptop}
-                  alt={slide.title}
-                  className={`device-img ${idx === current ? 'active' : ''}`}
-                  onClick={() => onOpenLightbox(LAPTOP_IMGS, idx)}
-                  title="Xem toàn màn hình"
-                  active={idx === current}
-                  objectFit="cover"
-                  objectPosition="top"
-                />
-              ))}
+              <ImageWithSkeleton
+                key={`laptop-${SLIDES[current].id}`}
+                src={SLIDES[current].laptop}
+                alt={SLIDES[current].title}
+                className="device-img active"
+                onClick={() => onOpenLightbox(LAPTOP_IMGS, current)}
+                title="Xem toàn màn hình"
+                width="1300"
+                height="1350"
+                objectFit="cover"
+                objectPosition="top"
+              />
             </div>
           </div>
           <div className="keyboard"></div>
@@ -261,24 +268,31 @@ function ProductShowcase({ current, setCurrent, onOpenLightbox, isLightboxOpen, 
 
         {/* ── Phone Frame ───────────────────────────────── */}
         <div className="device-phone">
-          <img src={phoneFrame} alt="Phone Frame" className="phone-frame-img no-lightbox" />
+          <img
+            src={phoneFrame}
+            alt="Phone Frame"
+            className="phone-frame-img no-lightbox"
+            width="798"
+            height="1590"
+            loading="lazy"
+            decoding="async"
+          />
           <div className="device-phone__screen">
-            {SLIDES.map((slide, idx) => (
-              <ImageWithSkeleton
-                key={`phone-${slide.id}`}
-                src={slide.phone}
-                alt={slide.title}
-                className={`device-img ${idx === current ? 'active' : ''}`}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onOpenLightbox(PHONE_IMGS, idx);
-                }}
-                title="Xem toàn màn hình"
-                active={idx === current}
-                objectFit="cover"
-                objectPosition="top center"
-              />
-            ))}
+            <ImageWithSkeleton
+              key={`phone-${SLIDES[current].id}`}
+              src={SLIDES[current].phone}
+              alt={SLIDES[current].title}
+              className="device-img active"
+              onClick={(e) => {
+                e.stopPropagation();
+                onOpenLightbox(PHONE_IMGS, current);
+              }}
+              title="Xem toàn màn hình"
+              width="798"
+              height="1590"
+              objectFit="cover"
+              objectPosition="top center"
+            />
           </div>
           <div className="product-slider__overlay">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

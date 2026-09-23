@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './ContactSection.css';
 import { useLanguage } from '../../i18n/LanguageContext.jsx';
-import avatarImg from '../../assets/contactImg/lethienvu_contact.jpeg';
-import qrZaloImg from '../../assets/contactImg/QR_Zalo.JPG';
+import avatarImg from '../../assets/contactImg/lethienvu_contact.webp';
+import qrZaloImg from '../../assets/contactImg/QR_Zalo.webp';
 
 const MailIcon = () => (
   <svg
@@ -77,7 +77,7 @@ export default function ContactSection() {
           
           {/* Left: Avatar & QR Code */}
           <div className="vcard__avatar-section">
-            <img src={avatarImg} alt="Vu Le Thien Avatar" className="vcard__avatar-bg" />
+            <img src={avatarImg} alt="Vu Le Thien Avatar" className="vcard__avatar-bg" width="800" height="800" loading="lazy" decoding="async" />
           </div>
 
           {/* Right: Info & Actions */}
@@ -145,7 +145,11 @@ export default function ContactSection() {
                 <img 
                   src={qrZaloImg} 
                   alt="Zalo QR" 
-                  className="vcard__qr" 
+                  className="vcard__qr"
+                  width="300"
+                  height="300"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
