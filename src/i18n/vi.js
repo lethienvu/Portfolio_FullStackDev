@@ -29,17 +29,17 @@ const vi = {
   // Hero
   hero: {
     badge:       '#openToWork',
-    role:        'Fullstack Software Engineer',
-    roleSubtitle:'Implementation & Technical Leader · User Interface/User Experience (UI/UX) Design · Frontend Developer · Backend Developer · Business Analyst · Enterprise Resource Planning (ERP) Consultant',
-    desc:        'Là một <strong>Full-stack Engineer & Technical Implementation Lead</strong> với gần <strong>3 năm</strong> kinh nghiệm, tôi sở hữu sự kết hợp độc đáo giữa năng lực lập trình chuyên sâu và kinh nghiệm triển khai dự án trực tiếp. Tôi đã quản lý và đưa hệ thống nhân sự (HR) vào vận hành thành công cho hơn <strong>10 doanh nghiệp lớn</strong> với quy mô <strong>14.000+ người dùng</strong>. Với tư duy bao quát toàn bộ vòng đời dự án và khả năng tích hợp sâu <strong>Multi-agent AI</strong> vào quy trình làm việc để tối ưu hóa nguồn lực, tôi luôn đảm bảo hiệu suất dự án ở mức tối đa. Tôi tìm kiếm một doanh nghiệp có sự đồng điệu về văn hóa để gắn bó dài hạn (3-5 năm), cùng nhau kiến tạo những giá trị bền vững và các giải pháp phần mềm xuất sắc.',
+    role:        'Full-stack Engineer & Implementation Lead',
+    roleSubtitle:'Phần mềm doanh nghiệp · Triển khai HR/ERP · Hiệu năng và trải nghiệm người dùng',
+    desc:        'Xây dựng và triển khai hệ thống <strong>HR/ERP</strong> cho doanh nghiệp — từ phân tích quy trình nghiệp vụ, thiết kế trải nghiệm người dùng đến tối ưu hiệu năng và vận hành sản phẩm. Đã đồng hành cùng <strong>10+ doanh nghiệp</strong>, phục vụ hơn <strong>14.000 người dùng cuối</strong>.',
     stats: {
       exp:    'Kinh nghiệm bao quát toàn bộ quy trình phát triển phần mềm',
       users:  '14.000+ người dùng',
-      faster: 'Tăng 200% hiệu suất với AI',
+      faster: 'AI workflow có kiểm soát',
     },
     cta: {
-      projects: 'Xem dự án',
-      contact:  'Lưu vCard',
+      cv:       'Tải CV',
+      projects: 'Xem case studies',
     },
     card: {
       title:      'Fullstack Developer & Tech Lead',
@@ -55,6 +55,20 @@ const vi = {
     clientsLabel: 'Khách hàng tiêu biểu',
     jobs: [
       {
+        period:  '06/2026 – 11/2026',
+        role:    'Cố vấn & Điều phối Triển khai Dự án (Advisor & Project Delivery)',
+        company: 'Công ty Cổ phần ASOFT',
+        companyDesc: 'Tư vấn và triển khai giải pháp ERP cho doanh nghiệp sản xuất.',
+        current: false,
+        highlights: [
+          'Dự án <strong>Saigon Wicker</strong> (sản xuất bàn ghế, xuất khẩu): khảo sát và phân tích nghiệp vụ; tư vấn, thống nhất giải pháp ERP cho CRM, Bán hàng, Kho, Mua hàng, Sản xuất, Kế toán và HRM.',
+          'Dự án <strong>Việt Úc</strong> (sản xuất cửa nhôm và giải pháp bảo vệ “may đo”): khảo sát và phân tích nghiệp vụ; tư vấn, thống nhất giải pháp ERP cho CRM, Bán hàng, Kho, Mua hàng, Sản xuất và Kế toán.',
+          'Hỗ trợ triển khai, tư vấn và đào tạo onsite cho các dự án <strong>GENEPA, DBW, TRUNG THÀNH SILLWELL</strong> và các khách hàng khác.',
+        ],
+        kpis: [],
+        tags: ['ERP Consulting', 'Project Delivery', 'Business Analysis', 'CRM', 'Sales', 'Inventory', 'Procurement', 'Manufacturing', 'Accounting', 'HRM'],
+      },
+      {
         period:  '06/2023 – Hiện tại',
         role:    'Quản lý Dự án & Trưởng nhóm Triển khai (Project Management & Implementation Lead)',
         company: 'Công ty TNHH Giải pháp Phần mềm Việt Tín (VIET TIN SOFTWARE SOLUTION COMPANY LIMITED)',
@@ -64,12 +78,12 @@ const vi = {
           'Triển khai Toàn diện: Điều phối toàn bộ vòng đời triển khai hệ thống Paradise HR cho <strong>10+ doanh nghiệp lớn</strong> (Lotte ~3.000 nhân viên, Nidec ~4.000, Detmold ~3.000, Tripod ~4.000, v.v.). Quản lý thành công hệ thống phục vụ tổng cộng hơn <strong>14.000+ người dùng cuối</strong>.',
           'Chuyển đổi Nghiệp vụ sang Kỹ thuật: Phân tích <strong>150+ quy trình HR phức tạp</strong> (Hồ sơ nhân sự, Chấm công, Tính lương, Bảo hiểm xã hội, Cổng nhân viên, Đào tạo, KPI, Tuyển dụng, v.v.) thành đặc tả kỹ thuật chi tiết, giảm khoảng cách yêu cầu <strong>20–30%</strong>.',
           'Quản trị & Bàn giao Dự án: Tối ưu phân bổ nguồn lực để duy trì <strong>tỷ lệ thành công 90%</strong>. Liên tục bàn giao module phức tạp trong <strong>15–20 ngày</strong> (vượt tiêu chuẩn 20–25 ngày) trong biên ngân sách <strong>±5%</strong>.',
-          'Đảm bảo Chất lượng & Quan hệ Khách hàng: Đạt <strong>độ ổn định hệ thống 90–95%</strong> trong các đợt cao điểm tính lương, giúp khách hàng giảm <strong>50%</strong> thao tác thủ công. Trực tiếp đóng góp vào tỷ lệ <strong>giữ chân khách hàng 100%</strong>.',
+          'Đảm bảo Chất lượng & Quan hệ Khách hàng: Phối hợp theo dõi và xử lý vấn đề vận hành trong các đợt cao điểm tính lương, góp phần giảm khoảng <strong>50%</strong> thao tác thủ công cho các luồng đã triển khai và duy trì hợp tác với nhóm khách hàng trực tiếp phụ trách.',
         ],
         kpis: [
           { value: '14.000+', label: 'Người dùng cuối' },
           { value: '90%+',   label: 'Tỷ lệ thành công' },
-          { value: '100%',  label: 'Giữ chân khách hàng' },
+          { value: '10+',   label: 'Doanh nghiệp triển khai' },
         ],
         tags: ['Vanilla JavaScript', 'SPA Framework', 'SQL Server', 'HTML/CSS', 'Java', 'PWA', 'UI/UX', 'Design System', 'Business Analysis', 'Agile/Scrum'],
       },
@@ -96,7 +110,7 @@ const vi = {
         highlights: [
           'Phát triển SPA Framework tùy chỉnh: Tự xây dựng Khung ứng dụng đơn trang (SPA Framework) bằng JavaScript thuần. Loại bỏ phụ thuộc nặng để đạt thời gian tải dưới một giây và giảm <strong>40% kích thước gói</strong>.',
           'Kỹ thuật UI Hiệu suất Cao: Thiết kế các thành phần phức tạp (cuộn ảo, cây đệ quy) có khả năng render <strong>10.000+ nút mượt mà tại 60 FPS</strong> với dung lượng bộ nhớ tối thiểu.',
-          'Sở hữu Hệ sinh thái Toàn diện: Dẫn đầu phát triển hệ sinh thái Paradise HR và ứng dụng di động Vào Ca. Tối ưu logic quản lý ca cho yêu cầu đồng thời cao, đảm bảo <strong>100% toàn vẹn dữ liệu</strong>.',
+          'Sở hữu Hệ sinh thái Toàn diện: Dẫn đầu phát triển hệ sinh thái Paradise HR và ứng dụng di động Vào Ca. Tối ưu logic quản lý ca cho yêu cầu đồng thời cao, bổ sung kiểm tra trạng thái và dữ liệu đầu vào để duy trì tính nhất quán trong các luồng đã triển khai.',
           'Kiến trúc & Tối ưu Cơ sở Dữ liệu: Thiết kế cấu trúc SQL Server để quản lý hàng triệu bản ghi kiểm toán. Tối ưu T-SQL và stored procedures, giảm thời gian tạo báo cáo phức tạp <strong>từ vài phút xuống còn vài giây</strong>.',
         ],
         kpis: [],
@@ -152,14 +166,14 @@ const vi = {
       {
         icon:  'backend',
         title: 'Phát triển Hệ thống Phía sau (Back-end Development)',
-        desc:  'Tối ưu hóa SQL Server cho bảng nhật ký kiểm toán hàng triệu bản ghi (phân vùng bảng, chỉ mục bao phủ). Thiết kế giao diện lập trình ứng dụng RESTful (REST API) và kiến trúc xử lý nghiệp vụ phức tạp, đảm bảo <strong>100%</strong> toàn vẹn dữ liệu.',
+        desc:  'Tối ưu hóa SQL Server cho bảng nhật ký kiểm toán hàng triệu bản ghi (phân vùng bảng, chỉ mục bao phủ). Thiết kế giao diện lập trình ứng dụng RESTful (REST API) và kiến trúc xử lý nghiệp vụ phức tạp với kiểm tra dữ liệu và kiểm soát giao dịch phù hợp.',
         skills: ['Java', 'SQL Server', 'REST API', 'Tối ưu cơ sở dữ liệu', 'Xử lý đồng thời cao (High Concurrency)'],
         logos: [
           'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg',
           'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg',
           'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg'
         ],
-        metrics: [{ value: '95%', label: 'Tốc độ truy vấn' }, { value: '1.000.000+', label: 'Bản ghi kiểm toán' }, { value: '100%', label: 'Toàn vẹn dữ liệu' }],
+        metrics: [{ value: '95%', label: 'Tốc độ truy vấn' }, { value: '1.000.000+', label: 'Bản ghi kiểm toán' }, { value: 'ACID', label: 'Kiểm soát dữ liệu' }],
       },
       {
         icon:  'uiux',
@@ -185,13 +199,13 @@ const vi = {
       {
         icon:  'ai',
         title: 'Tích hợp AI & Tối ưu hóa Hiệu suất',
-        desc:  'Tích hợp AI chuyên sâu để tối ưu hiệu suất làm việc. Sử dụng LLM và các công cụ AI để tự động hóa quy trình phát triển, tăng <strong>200%</strong> hiệu suất và giảm thiểu sai sót kỹ thuật.',
-        skills: ['AI Integration', 'Agent Skills', 'Agent Henes', 'Prompt Engineering', 'Workflow Automation', 'Claude/Gemini API'],
+        desc:  'Ứng dụng LLM vào phân tích yêu cầu, tạo bản nháp tài liệu kỹ thuật và chuẩn hóa testcase, với bước rà soát của con người trước khi sử dụng kết quả trong quy trình làm việc.',
+        skills: ['AI Integration', 'AI Agent Workflows', 'Prompt Engineering', 'Workflow Automation', 'Claude/Gemini API'],
         logos: [
           'https://cdn.simpleicons.org/googlegemini',
           'https://cdn.simpleicons.org/githubcopilot'
         ],
-        metrics: [{ value: '200%', label: 'Tăng hiệu suất' }, { value: '-30%', label: 'Thời gian phát triển' }, { value: 'AI-Native', label: 'Tư duy' }],
+        metrics: [{ value: 'HITL', label: 'Human review' }, { value: 'LLM', label: 'Hỗ trợ tác vụ' }, { value: 'AI-Native', label: 'Tư duy' }],
       },
     ],
     demo: {

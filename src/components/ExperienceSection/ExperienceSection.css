@@ -171,6 +171,13 @@
   padding: 4px;
 }
 
+.company-logo__initials {
+  color: var(--color-accent);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  letter-spacing: -0.06em;
+}
+
 .company-info {
   display: flex;
   flex-direction: column;

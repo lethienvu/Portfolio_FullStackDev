@@ -31,15 +31,15 @@ const ja = {
     badge: "#OpenToWork",
     role: "Fullstack Software Engineer - Technical Implementation Leader",
     roleSubtitle: "Implementation & Technical Leader · User Interface/User Experience (UI/UX) Design · Frontend Developer · Backend Developer · Business Analyst · Enterprise Resource Planning (ERP) Consultant",
-    desc: "約<strong>3年間</strong>の経験を持つ<strong>フルスタックエンジニアおよび技術導入リーダー</strong>として、私は高度なプログラミング能力と直接的なプロジェクト導入の経験というユニークな組み合わせを持っています。これまで、<strong>14,000人以上のユーザー</strong>にサービスを提供する<strong>10社以上の大企業</strong>向けに、人事（HR）システムを管理および導入して成功を収めてきました。プロジェクトのライフサイクル全体を網羅する包括的な考え方と、リソースを最適化するために<strong>マルチエージェントAI</strong>をワークフローに深く統合する能力により、常にプロジェクトの効率を最大限に引き出します。私は、持続可能な価値と優れたソフトウェアソリューションを共に創造するために、長期的なコミットメント（3〜5年）で文化的に適合する企業を探しています。",
+    desc: "エンタープライズ向けの<strong>HR/ERPシステム</strong>を、業務プロセス分析・UX設計からパフォーマンス最適化・本番導入まで一貫して構築・導入しています。<strong>10社以上</strong>の導入を支援し、<strong>14,000人以上</strong>のエンドユーザーにサービスを提供してきました。",
     stats: {
       exp: "3年以上の経験",
       users: "14,000+ ユーザー",
-      faster: "AIにより200%高速化",
+      faster: "人によるレビュー付きAIワークフロー",
     },
     cta: {
-      projects: "プロジェクトを見る",
-      contact: "vCardを保存",
+      cv: "CVをダウンロード",
+      projects: "ケーススタディを見る",
     },
     card: {
       title: "フルスタック開発者 & テックリード",
@@ -55,6 +55,20 @@ const ja = {
     clientsLabel: "主要クライアント",
     jobs: [
       {
+        period: "06/2026 – 11/2026",
+        role: "アドバイザー & プロジェクトデリバリー",
+        company: "ASOFT Joint Stock Company",
+        companyDesc: "製造業向けERPのコンサルティングおよび導入支援。",
+        current: false,
+        highlights: [
+          "<strong>Saigon Wicker</strong>（輸出向け家具製造）：業務調査・分析を実施し、CRM、販売、在庫、購買、生産、会計、HRMを対象とするERPソリューションの提案と合意形成を支援しました。",
+          "<strong>Việt Úc</strong>（アルミドア製造・顧客別保護ソリューション）：業務調査・分析を実施し、CRM、販売、在庫、購買、生産、会計を対象とするERPソリューションの提案と合意形成を支援しました。",
+          "<strong>GENEPA、DBW、TRUNG THÀNH SILLWELL</strong>などで、導入支援、コンサルティング、オンサイトトレーニングを実施しました。",
+        ],
+        kpis: [],
+        tags: ["ERP Consulting", "Project Delivery", "Business Analysis", "CRM", "Sales", "Inventory", "Procurement", "Manufacturing", "Accounting", "HRM"],
+      },
+      {
         period: "06/2023 – 現在",
         role: "プロジェクト管理 & 導入リーダー",
         company: "VIET TIN SOFTWARE SOLUTION COMPANY LIMITED",
@@ -64,12 +78,12 @@ const ja = {
           "エンドツーエンドの導入: <strong>10社以上の大企業クライアント</strong>（Lotte ~3,000名、Nidec ~4,000名、Detmold ~3,000名、Tripod ~4,000名など）向けのParadise HRソフトウェアのフルライフサイクル導入を調整しました。合計で<strong>14,000人以上</strong>のエンドユーザーにサービスを提供するシステムの管理に成功しました。",
           "ビジネスから技術への要件定義: <strong>150以上の複雑な人事ビジネスルール</strong>（コアHR、勤怠管理、給与計算、社会保険、従業員セルフサービス、トレーニング、KPI評価、採用など）を正確な技術仕様に変換し、要件のギャップを<strong>20〜30％</strong>効果的に削減しました。",
           "プロジェクトのガバナンスとデリバリー: リソースの割り当てを最適化し、<strong>90％のプロジェクト成功率</strong>を維持しました。初期予算の<strong>±5％</strong>以内に厳密に収めながら、複雑なモジュールを一貫して<strong>15〜20日</strong>（標準の20〜25日を上回る）で納品しました。",
-          "品質保証とクライアントとの関係: 給与計算のピーク期間中に<strong>90〜95％</strong>のシステムの安定性を達成し、クライアントが手動の管理ワークフローを最大<strong>50％</strong>削減できるように支援しました。これは、<strong>100％のクライアント定着率</strong>に直接貢献しました。",
+          "品質保証とクライアントとの関係: 給与計算のピーク期間中に運用チームと連携して課題を監視・解決し、導入済みのワークフローにおける手作業を最大<strong>50％</strong>削減することに貢献しました。",
         ],
         kpis: [
           { value: "14,000+", label: "エンドユーザー" },
           { value: "90%+", label: "成功率" },
-          { value: "100%", label: "クライアント定着率" },
+          { value: "10+", label: "導入企業" },
         ],
         tags: ["Vanilla JavaScript", "SPA Framework", "SQL Server", "Virtual Scrolling", "Java", "PWA", "UI/UX", "Design System", "Business Analysis", "Agile/Scrum"],
       },
@@ -91,7 +105,7 @@ const ja = {
         highlights: [
           "カスタムSPAフレームワークの開発: Vanilla JavaScriptを使用して、独自のシングルページアプリケーション（SPA）フレームワークを構築しました。重い依存関係を排除し、1秒未満の初期読み込み時間と<strong>バンドルサイズの40％削減</strong>を達成しました。",
           "高性能なUIエンジニアリング: 最小限のメモリフットプリントで<strong>10,000以上のノードを60fpsでスムーズに</strong>レンダリングできる複雑なコンポーネント（仮想スクロール、再帰的ツリービュー）を設計しました。",
-          "フルスタックエコシステムのオーナーシップ: Paradise HRエコシステムと「Vào Ca」モバイルウェブアプリの開発を主導しました。同時リクエストの多いシフト管理ロジックを最適化し、数千回の毎日のチェックインにおいて<strong>100％のデータ整合性</strong>を確保しました。",
+          "フルスタックエコシステムのオーナーシップ: Paradise HRエコシステムと「Vào Ca」モバイルウェブアプリの開発を主導しました。同時リクエストの多いシフト管理ロジックに状態・入力検証を追加し、導入済みフローでデータの一貫性を維持しました。",
           "データベースのアーキテクチャと最適化: 何百万もの監査ログと大規模な人事データセットを管理するための堅牢なSQL Serverスキーマを設計しました。T-SQLクエリとストアドプロシージャを最適化し、複雑なレポートの生成時間を<strong>数分から数秒</strong>へと劇的に短縮しました。",
         ],
         kpis: [],
@@ -107,7 +121,7 @@ const ja = {
         tags: ["JavaScript", "Java", "SQL", "HTML/CSS"],
       },
       {
-        period: "06/2019 – 11/2028",
+        period: "06/2019 – 11/2024",
         role: "ソフトウェアエンジニアリング学生",
         company: "サイゴン大学 (SGU)",
         companyDesc: "ソフトウェアエンジニアリング学士",
@@ -145,13 +159,13 @@ const ja = {
       {
         icon: "backend",
         title: "バックエンド開発",
-        desc: "数百万のレコードを含む監査ログテーブルのためにSQL Serverを最適化しました（パーティションテーブル、カバリングインデックス）。<strong>100％</strong>のデータ整合性を保証するRESTful APIと複雑なビジネスロジックを設計しました。",
+        desc: "数百万のレコードを含む監査ログテーブルのためにSQL Serverを最適化しました（パーティションテーブル、カバリングインデックス）。トランザクション制御とデータ検証を備えたRESTful APIと複雑なビジネスロジックを設計しました。",
         skills: ["Java", "SQL Server", "REST API", "Database Optimization", "High Concurrency"],
         logos: ["https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg"],
         metrics: [
           { value: "95%", label: "クエリの高速化" },
           { value: "1,000,000+", label: "監査行" },
-          { value: "100%", label: "データの整合性" },
+          { value: "ACID", label: "データ制御" },
         ],
       },
       {
@@ -181,15 +195,15 @@ const ja = {
       {
         icon: "ai",
         title: "AI統合 & パフォーマンス最適化",
-        desc: "深いAIの統合を活用して開発ワークフローを最適化しています。LLMとAI駆動ツールを使用して開発プロセスを自動化し、生産性を<strong>200％</strong>向上させ、技術的なエラーを最小限に抑えています。",
-        skills: ["AI Integration", "Agent Skills", "Agent Henes", "Prompt Engineering", "Workflow Automation", "Claude/Gemini API"],
+        desc: "LLMを要件分析、技術文書のドラフト作成、テストケースの標準化に活用し、成果物をワークフローに使用する前に人によるレビューを実施します。",
+        skills: ["AI Integration", "AI Agent Workflows", "Prompt Engineering", "Workflow Automation", "Claude/Gemini API"],
         logos: [
           'https://cdn.simpleicons.org/googlegemini',
           'https://cdn.simpleicons.org/githubcopilot'
         ],
         metrics: [
-          { value: "200%", label: "生産性向上" },
-          { value: "-30%", label: "開発時間" },
+          { value: "HITL", label: "人によるレビュー" },
+          { value: "LLM", label: "タスク支援" },
           { value: "AI-Native", label: "マインドセット" },
         ],
       },

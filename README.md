@@ -1,59 +1,23 @@
-# Portfolio Full Stack Developer
+# Lê Thiên Vũ — Portfolio
 
-## Giới thiệu
+Portfolio của **Full-stack Engineer & Implementation Lead** tập trung vào phần mềm HR/ERP doanh nghiệp: từ phân tích quy trình, thiết kế trải nghiệm, phát triển sản phẩm đến triển khai vận hành.
 
-Dự án Portfolio thể hiện năng lực phát triển Full Stack từ khâu phân tích yêu cầu, thiết kế hệ thống, triển khai đến vận hành sản phẩm thực tế.
+## Năng lực trọng tâm
 
-## Lưu ý quan trọng về giao diện
+- **Enterprise delivery:** triển khai HR/ERP, phân tích nghiệp vụ, chuyển yêu cầu thành đặc tả kỹ thuật và điều phối bàn giao.
+- **Full-stack engineering:** JavaScript/React, Java, SQL Server, REST API, SPA và PWA.
+- **Performance & reliability:** virtual scrolling, tối ưu T-SQL/stored procedure, xử lý màn hình và audit log khối lượng lớn.
+- **AI-assisted workflow:** dùng LLM hỗ trợ phân tích yêu cầu, tạo tài liệu và chuẩn hóa testcase, có human review trước khi sử dụng.
 
-**Các hình nh và giao diện trong dự án này mang tính chất minh họa.** Do yêu cầu bảo mật dữ liệu người dùng và tuân thủ các quy định về quyền riêng tư, repository này chỉ cung cấp:
+## Case studies
 
-- Giao diện đơn giản hóa để minh họa cấu trúc và luồng hoạt động
-- Mô tả chuyên nghiệp về các tính năng đã triển khai
-- Kiến trúc hệ thống và quy trình phát triển
+1. **Paradise HR** — triển khai và phát triển nền tảng HR doanh nghiệp cho 10+ đợt triển khai, phục vụ 14.000+ người dùng cuối.
+2. **Vào Ca** — PWA web di động cho chấm công và quản lý ca, với luồng offline-oriented, đồng bộ trạng thái và kiểm tra vị trí.
+3. **Large-list & Audit-log performance** — virtual scrolling cho 10.000+ nodes cùng tối ưu SQL Server cho dữ liệu lớn.
 
-**Tất cả các chức năng được trình bày đều đã trải qua quy trình phát triển đầy đủ:**
-- Thu thập và phân tích yêu cầu
-- Thiết kế kiến trúc và database
-- Phát triển và kiểm thử
-- Triển khai đến người dùng thực tế
-- Vận hành và bảo trì
+## Lưu ý về dữ liệu
 
-## Kiến thức chuyên môn
-
-### Phân tích & Thiết kế
-- Thu thập và phân tích yêu cầu nghiệp vụ
-- Thiết kế kiến trúc hệ thống (System Design)
-- Thiết kế cơ sở dữ liệu (Database Design)
-- Thiết kế API RESTful/GraphQL
-- Lập kế hoạch sprint và quản lý backlog
-
-### Frontend Development
-- **Frameworks:** React, Vue.js, Angular
-- **State Management:** Redux, Zustand, Context API
-- **Styling:** CSS3, SASS, Tailwind CSS, Material-UI
-- **Build Tools:** Vite, Webpack, Rollup
-- **Testing:** Jest, React Testing Library, Cypress
-
-### Backend Development
-- **Languages:** Node.js, Python, Java, PHP
-- **Frameworks:** Express, NestJS, Django, Spring Boot
-- **Databases:** PostgreSQL, MySQL, MongoDB, Redis
-- **ORM/ODM:** Prisma, TypeORM, Sequelize, Mongoose
-- **Authentication:** JWT, OAuth2, Session-based
-
-### DevOps & Cloud
-- **Cloud Platforms:** AWS, Google Cloud, Azure
-- **Containerization:** Docker, Docker Compose
-- **CI/CD:** GitHub Actions, GitLab CI, Jenkins
-- **Monitoring:** CloudWatch, Prometheus, Grafana
-- **Version Control:** Git, GitHub, GitLab
-
-### Soft Skills
-- Làm việc nhóm theo Agile/Scrum
-- Code review và mentoring
-- Viết tài liệu kỹ thuật
-- Giao tiếp với stakeholders
+Ảnh và nội dung sản phẩm đã được đơn giản hóa để bảo vệ dữ liệu khách hàng và tuân thủ yêu cầu bảo mật. Các case study mô tả phạm vi đóng góp và kỹ thuật đã áp dụng, không công bố mã nguồn hoặc dữ liệu nghiệp vụ nội bộ.
 
 ## Công nghệ sử dụng trong dự án này
 

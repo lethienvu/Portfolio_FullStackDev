@@ -29,17 +29,17 @@ const en = {
   // Hero
   hero: {
     badge: "#OpenToWork",
-    role: "Fullstack Software Engineer",
-    roleSubtitle: "Implementation & Technical Leader · User Interface/User Experience (UI/UX) Design · Frontend Developer · Backend Developer · Business Analyst · Enterprise Resource Planning (ERP) Consultant",
-    desc: "As a <strong>Full-stack Engineer & Technical Implementation Lead</strong> with nearly <strong>3 years</strong> of experience, I possess a unique combination of in-depth programming capabilities and direct project implementation experience. I have managed and successfully deployed Human Resources (HR) systems for over <strong>10 major enterprises</strong> serving <strong>14,000+ users</strong>. With a comprehensive mindset encompassing the entire project lifecycle and the ability to deeply integrate <strong>Multi-agent AI</strong> into workflows to optimize resources, I consistently ensure maximum project efficiency. I am seeking a company with cultural alignment for a long-term commitment (3-5 years) to co-create sustainable values and outstanding software solutions.",
+    role: "Full-stack Engineer & Implementation Lead",
+    roleSubtitle: "Enterprise software · HR/ERP delivery · Performance and user experience",
+    desc: "I build and deliver <strong>HR/ERP systems</strong> for enterprises — from business-process analysis and UX design to performance engineering and production rollout. I have supported <strong>10+ enterprise implementations</strong> serving <strong>14,000+ end users</strong>.",
     stats: {
       exp: "3+ years experience",
       users: "14,000+ users",
-      faster: "200% faster with AI",
+      faster: "Human-reviewed AI workflows",
     },
     cta: {
-      projects: "View Projects",
-      contact: "Save vCard",
+      cv: "Download CV",
+      projects: "View Case Studies",
     },
     card: {
       title: "Fullstack Developer & Tech Lead",
@@ -55,6 +55,20 @@ const en = {
     clientsLabel: "Key Clients",
     jobs: [
       {
+        period: "06/2026 – 11/2026",
+        role: "Advisor & Project Delivery",
+        company: "ASOFT Joint Stock Company",
+        companyDesc: "ERP consulting and delivery for manufacturing businesses.",
+        current: false,
+        highlights: [
+          "<strong>Saigon Wicker</strong> (export furniture manufacturing): conducted discovery and business analysis; advised on and aligned an ERP solution across CRM, Sales, Inventory, Procurement, Manufacturing, Accounting, and HRM.",
+          "<strong>Việt Úc</strong> (aluminum-door manufacturing and tailored protection solutions): conducted discovery and business analysis; advised on and aligned an ERP solution across CRM, Sales, Inventory, Procurement, Manufacturing, and Accounting.",
+          "Supported implementation, consulting, and onsite training for <strong>GENEPA, DBW, TRUNG THÀNH SILLWELL</strong>, and other client projects.",
+        ],
+        kpis: [],
+        tags: ["ERP Consulting", "Project Delivery", "Business Analysis", "CRM", "Sales", "Inventory", "Procurement", "Manufacturing", "Accounting", "HRM"],
+      },
+      {
         period: "06/2023 – Present",
         role: "Project Management & Implementation Lead",
         company: "VIET TIN SOFTWARE SOLUTION COMPANY LIMITED",
@@ -64,12 +78,12 @@ const en = {
           "End-to-End Implementation: Orchestrated the full-lifecycle implementation of Paradise HR software for <strong>10+ major corporate clients</strong> (including Lotte ~3,000 employees, Nidec ~4,000, Detmold ~3,000, Tripod ~4,000, etc.). Successfully managed systems serving a combined workforce of over <strong>14,000+ end-users</strong>.",
           "Business-to-Technical Translation: Translated <strong>150+ intricate HR business rules</strong> (Core HR, Time & Attendance, Payroll, Social Insurance, Employee Self-Services, Training, KPI Performance, Hiring, etc.) into precise technical specifications, effectively reducing requirement gaps by <strong>20–30%</strong>.",
           "Project Governance & Delivery: Optimized resource allocation to maintain a <strong>90% project success rate</strong>. Consistently delivered complex modules in <strong>15–20 days</strong> (outperforming the 20–25 days standard) while staying strictly within <strong>±5%</strong> of the initial budget.",
-          "Quality Assurance & Client Relations: Achieved <strong>90–95%</strong> system stability during peak payroll periods, helping clients reduce administrative manual workflows by up to <strong>50%</strong>. This directly contributed to a <strong>100% client retention rate</strong>.",
+          "Quality Assurance & Client Relations: Partnered with operations teams to monitor and resolve issues during peak payroll periods, helping reduce manual work by up to <strong>50%</strong> for implemented workflows and sustain relationships with directly supported clients.",
         ],
         kpis: [
           { value: "14,000+", label: "End-Users" },
           { value: "90%+", label: "Success Rate" },
-          { value: "100%", label: "Client Retention" },
+          { value: "10+", label: "Enterprise Implementations" },
         ],
         tags: ["Vanilla JavaScript", "SPA Framework", "SQL Server", "Virtual Scrolling", "Java", "PWA", "UI/UX", "Design System", "Business Analysis", "Agile/Scrum"],
       },
@@ -91,7 +105,7 @@ const en = {
         highlights: [
           "Custom SPA Framework Development: Engineered a proprietary Single Page Application (SPA) Framework using Vanilla JavaScript. Eliminated heavy dependencies to achieve sub-second initial load times and a <strong>40% reduction in bundle size</strong>.",
           "High-Performance UI Engineering: Architected complex components (virtual scrolling, recursive tree views) capable of rendering <strong>10,000+ nodes smoothly at 60 FPS</strong> with a minimal memory footprint.",
-          "Full-Stack Ecosystem Ownership: Led the development of the Paradise HR ecosystem and the 'Vào Ca' mobile web app. Optimized shift-management logic for high-concurrency requests, ensuring <strong>100% data integrity</strong> for thousands of daily check-ins.",
+          "Full-Stack Ecosystem Ownership: Led development of the Paradise HR ecosystem and the 'Vào Ca' mobile web app. Optimized shift-management logic for high-concurrency requests with state and input validation to preserve data consistency across implemented flows.",
           "Database Architecture & Optimization: Designed robust SQL Server schemas to manage millions of audit logs and massive HR datasets. Optimized T-SQL queries and stored procedures, dramatically reducing complex report generation time <strong>from minutes to seconds</strong>.",
         ],
         kpis: [],
@@ -107,7 +121,7 @@ const en = {
         tags: ["JavaScript", "Java", "SQL", "HTML/CSS"],
       },
       {
-        period: "06/2019 – 11/2028",
+        period: "06/2019 – 11/2024",
         role: "Software Engineering Student",
         company: "Saigon University (SGU)",
         companyDesc: "Bachelor of Software Engineering",
@@ -145,13 +159,13 @@ const en = {
       {
         icon: "backend",
         title: "Back-end Development",
-        desc: "Optimized SQL Server for audit log tables containing millions of records (partition tables, covering indexes). Architected RESTful Application Programming Interfaces (REST APIs) and complex business logic ensuring <strong>100%</strong> data integrity.",
+          desc: "Optimized SQL Server for audit log tables containing millions of records (partition tables, covering indexes). Architected RESTful APIs and complex business logic with appropriate transaction controls and data validation.",
         skills: ["Java", "SQL Server", "REST API", "Database Optimization", "High Concurrency"],
         logos: ["https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg"],
         metrics: [
           { value: "95%", label: "Query Faster" },
           { value: "1,000,000+", label: "Audit Rows" },
-          { value: "100%", label: "Data Integrity" },
+            { value: "ACID", label: "Data Controls" },
         ],
       },
       {
@@ -181,15 +195,15 @@ const en = {
       {
         icon: "ai",
         title: "AI Integration & Performance Optimization",
-        desc: "Leveraging deep AI integration to optimize development workflows. Utilizing LLMs and AI-driven tools to automate development processes, boosting productivity by <strong>200%</strong> and minimizing technical errors.",
-        skills: ["AI Integration", "Agent Skills", "Agent Henes", "Prompt Engineering", "Workflow Automation", "Claude/Gemini API"],
+          desc: "Applied LLMs to requirement analysis, technical-document drafting, and testcase standardization, with human review before outputs enter working workflows.",
+          skills: ["AI Integration", "AI Agent Workflows", "Prompt Engineering", "Workflow Automation", "Claude/Gemini API"],
         logos: [
           'https://cdn.simpleicons.org/googlegemini',
           'https://cdn.simpleicons.org/githubcopilot'
         ],
         metrics: [
-          { value: "200%", label: "Productivity Boost" },
-          { value: "-30%", label: "Dev Time" },
+            { value: "HITL", label: "Human Review" },
+            { value: "LLM", label: "Task Support" },
           { value: "AI-Native", label: "Mindset" },
         ],
       },

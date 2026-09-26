@@ -61,6 +61,16 @@ function TimelineItem({ item }) {
   );
 }
 
+function CompanyMark({ job }) {
+  if (job.company.includes('SGU')) {
+    return <img src={logoSGU} alt={job.company} className="no-lightbox" width="56" height="56" loading="lazy" decoding="async" />;
+  }
+  if (job.company.includes('VIET TIN')) {
+    return <img src={logoVTS} alt={job.company} className="no-lightbox" width="56" height="56" loading="lazy" decoding="async" />;
+  }
+  return <span className="company-logo__initials" aria-label={job.company}>AS</span>;
+}
+
 export default function ExperienceSection() {
   const { t } = useLanguage();
   const e = t.experience;
@@ -90,7 +100,7 @@ export default function ExperienceSection() {
                 {showCompany && (
                   <div className="timeline__company-header">
                     <div className="company-logo">
-                      <img src={job.company.includes('SGU') ? logoSGU : logoVTS} alt={job.company} className="no-lightbox" width="56" height="56" loading="lazy" decoding="async" />
+                      <CompanyMark job={job} />
                     </div>
                     <div className="company-info">
                       <div className="company-name">{job.company}</div>

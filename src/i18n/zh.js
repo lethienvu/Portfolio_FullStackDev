@@ -31,15 +31,15 @@ const zh = {
     badge: "#OpenToWork",
     role: "Fullstack Software Engineer",
     roleSubtitle: "Implementation & Technical Leader · User Interface/User Experience (UI/UX) Design · Frontend Developer · Backend Developer · Business Analyst · Enterprise Resource Planning (ERP) Consultant",
-    desc: "作为一名拥有近<strong>3年</strong>经验的<strong>全栈工程师兼技术实施负责人</strong>，我拥有深入的编程能力和直接的项目实施经验的独特组合。我已经为超过<strong>10家大型企业</strong>（服务超过<strong>14,000名用户</strong>）成功管理并部署了人力资源 (HR) 系统。凭借涵盖整个项目生命周期的全面思维，以及将<strong>多代理AI</strong>深度整合到工作流中以优化资源的能力，我始终确保项目效率的最大化。我正在寻找一家文化契合的公司进行长期承诺（3-5年），共同创造可持续的价值和卓越的软件解决方案。",
+    desc: "为企业构建并交付<strong>HR/ERP系统</strong>——涵盖业务流程分析、UX设计、性能优化和生产上线。已支持<strong>10多家企业</strong>实施，服务超过<strong>14,000名最终用户</strong>。",
     stats: {
       exp: "3年以上经验",
       users: "14,000+ 用户",
-      faster: "借助 AI 提升 200% 速度",
+      faster: "人工审核的 AI 工作流",
     },
     cta: {
-      projects: "查看项目",
-      contact: "保存 vCard",
+      cv: "下载 CV",
+      projects: "查看案例研究",
     },
     card: {
       title: "全栈开发者 & 技术负责人",
@@ -55,6 +55,20 @@ const zh = {
     clientsLabel: "主要客户",
     jobs: [
       {
+        period: "06/2026 – 11/2026",
+        role: "顾问 & 项目交付",
+        company: "ASOFT Joint Stock Company",
+        companyDesc: "面向制造企业的 ERP 咨询与项目交付。",
+        current: false,
+        highlights: [
+          "<strong>Saigon Wicker</strong>（出口家具制造）：开展调研与业务分析；就 CRM、销售、库存、采购、生产、会计和 HRM 的 ERP 方案提供咨询并推动达成共识。",
+          "<strong>Việt Úc</strong>（铝门制造与客户定制保护方案）：开展调研与业务分析；就 CRM、销售、库存、采购、生产和会计的 ERP 方案提供咨询并推动达成共识。",
+          "为 <strong>GENEPA、DBW、TRUNG THÀNH SILLWELL</strong> 等项目提供实施支持、咨询及现场培训。",
+        ],
+        kpis: [],
+        tags: ["ERP Consulting", "Project Delivery", "Business Analysis", "CRM", "Sales", "Inventory", "Procurement", "Manufacturing", "Accounting", "HRM"],
+      },
+      {
         period: "06/2023 – 至今",
         role: "项目管理 & 实施负责人",
         company: "VIET TIN SOFTWARE SOLUTION COMPANY LIMITED",
@@ -64,12 +78,12 @@ const zh = {
           "端到端实施：统筹了 Paradise HR 软件在<strong>10多家大型企业客户</strong>（包括 Lotte ~3,000名员工, Nidec ~4,000名, Detmold ~3,000名, Tripod ~4,000名等）的全生命周期实施。成功管理了服务于超过<strong>14,000名最终用户</strong>合并劳动力的系统。",
           "业务到技术的转化：将<strong>150多项复杂的HR业务规则</strong>（核心人力、考勤、薪资、社保、员工自助服务、培训、KPI绩效、招聘等）转化为精确的技术规格，有效减少了<strong>20–30%</strong>的需求偏差。",
           "项目治理与交付：优化资源分配，保持<strong>90%的项目成功率</strong>。始终在<strong>15–20天</strong>内交付复杂的模块（优于标准的 20–25 天），同时严格将预算控制在初始预算的<strong>±5%</strong>以内。",
-          "质量保证与客户关系：在薪资高峰期实现<strong>90–95%</strong>的系统稳定性，帮助客户将行政手动工作流程减少高达<strong>50%</strong>。这直接促成了<strong>100%的客户留存率</strong>。",
+          "质量保证与客户关系：在薪资高峰期与运维团队协作监控并解决问题，帮助已实施流程减少多达<strong>50%</strong>的人工操作，并维护与直接支持客户的合作关系。",
         ],
         kpis: [
           { value: "14,000+", label: "最终用户" },
           { value: "90%+", label: "成功率" },
-          { value: "100%", label: "客户留存率" },
+          { value: "10+", label: "企业实施" },
         ],
         tags: ["Vanilla JavaScript", "SPA Framework", "SQL Server", "Virtual Scrolling", "Java", "PWA", "UI/UX", "Design System", "Business Analysis", "Agile/Scrum"],
       },
@@ -91,7 +105,7 @@ const zh = {
         highlights: [
           "自定义 SPA 框架开发：使用 Vanilla JavaScript 设计了一个专有的单页应用程序 (SPA) 框架。消除了繁重的依赖，实现了亚秒级的初始加载时间，并将<strong>捆绑包大小减少了40%</strong>。",
           "高性能 UI 工程：构建了复杂的组件（虚拟滚动、递归树视图），能够以最小的内存占用在 <strong>60 FPS 下流畅渲染 10,000 多个节点</strong>。",
-          "全栈生态系统所有权：领导了 Paradise HR 生态系统和 'Vào Ca' 移动 Web 应用程序的开发。针对高并发请求优化了排班逻辑，确保了成千上万次日常签到的 <strong>100% 数据完整性</strong>。",
+          "全栈生态系统所有权：领导了 Paradise HR 生态系统和 'Vào Ca' 移动 Web 应用程序的开发。为高并发排班逻辑加入状态与输入验证，以维护已实施流程中的数据一致性。",
           "数据库架构与优化：设计了强大的 SQL Server 模式来管理数百万条审计日志和大规模 HR 数据集。优化了 T-SQL 查询和存储过程，将复杂报告的生成时间<strong>从几分钟大幅缩短至几秒钟</strong>。",
         ],
         kpis: [],
@@ -107,7 +121,7 @@ const zh = {
         tags: ["JavaScript", "Java", "SQL", "HTML/CSS"],
       },
       {
-        period: "06/2019 – 11/2028",
+        period: "06/2019 – 11/2024",
         role: "软件工程专业学生",
         company: "西贡大学 (SGU)",
         companyDesc: "软件工程学士",
@@ -145,13 +159,13 @@ const zh = {
       {
         icon: "backend",
         title: "后端开发",
-        desc: "为包含数百万条记录的审计日志表优化了 SQL Server（分区表、覆盖索引）。构建了 RESTful 应用程序编程接口 (REST API) 和复杂的业务逻辑，确保了 <strong>100%</strong> 的数据完整性。",
+        desc: "为包含数百万条记录的审计日志表优化了 SQL Server（分区表、覆盖索引）。构建了带有适当事务控制和数据验证的 RESTful API 与复杂业务逻辑。",
         skills: ["Java", "SQL Server", "REST API", "Database Optimization", "High Concurrency"],
         logos: ["https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg"],
         metrics: [
           { value: "95%", label: "查询更快" },
           { value: "1,000,000+", label: "审计行数" },
-          { value: "100%", label: "数据完整性" },
+          { value: "ACID", label: "数据控制" },
         ],
       },
       {
@@ -181,15 +195,15 @@ const zh = {
       {
         icon: "ai",
         title: "AI 集成与性能优化",
-        desc: "利用深度的 AI 集成来优化开发工作流程。利用 LLM 和 AI 驱动的工具自动化开发流程，将生产力提高了 <strong>200%</strong> 并最大程度地减少了技术错误。",
-        skills: ["AI Integration", "Agent Skills", "Agent Henes", "Prompt Engineering", "Workflow Automation", "Claude/Gemini API"],
+        desc: "将 LLM 应用于需求分析、技术文档初稿和测试用例标准化，并在成果进入工作流程前进行人工审核。",
+        skills: ["AI Integration", "AI Agent Workflows", "Prompt Engineering", "Workflow Automation", "Claude/Gemini API"],
         logos: [
           'https://cdn.simpleicons.org/googlegemini',
           'https://cdn.simpleicons.org/githubcopilot'
         ],
         metrics: [
-          { value: "200%", label: "生产力提升" },
-          { value: "-30%", label: "开发时间" },
+          { value: "HITL", label: "人工审核" },
+          { value: "LLM", label: "任务支持" },
           { value: "AI-Native", label: "思维方式" },
         ],
       },

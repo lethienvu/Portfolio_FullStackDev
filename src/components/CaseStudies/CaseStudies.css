@@ -1,0 +1,17 @@
+.case-studies { padding-block: var(--space-9); background: #0a0a0a; }
+.case-studies__header { max-width: 760px; margin: 0 auto var(--space-7); text-align: center; }
+.case-studies__eyebrow, .case-study__label, .case-study__stack-label { margin: 0; color: var(--color-accent, #818cf8); font-size: var(--text-sm); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.case-studies__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); }
+.case-study { overflow: hidden; border: 1px solid rgba(255,255,255,.12); border-radius: 20px; background: rgba(255,255,255,.035); box-shadow: 0 16px 36px rgba(0,0,0,.18); }
+.case-study__image { width: 100%; aspect-ratio: 16 / 9; display: block; object-fit: cover; object-position: top; border-bottom: 1px solid rgba(255,255,255,.1); }
+.case-study__body { padding: var(--space-5); }
+.case-study h3 { margin: var(--space-2) 0 var(--space-4); color: #fff; font-size: clamp(1.35rem, 2vw, 1.7rem); }
+.case-study__details { display: grid; gap: var(--space-3); margin: 0; }
+.case-study__details div { display: grid; gap: 4px; }
+.case-study__details dt { color: rgba(255,255,255,.65); font-size: var(--text-sm); font-weight: 700; }
+.case-study__details dd { margin: 0; color: rgba(255,255,255,.88); font-size: var(--text-sm); line-height: 1.6; }
+.case-study__stack-label { margin-top: var(--space-4); }
+.case-study__stack { display: flex; flex-wrap: wrap; gap: 7px; margin: var(--space-2) 0 0; padding: 0; list-style: none; }
+.case-study__stack li { padding: 5px 9px; border-radius: 999px; color: rgba(255,255,255,.84); background: rgba(129,140,248,.13); font-size: 12px; }
+@media (max-width: 1000px) { .case-studies__grid { grid-template-columns: 1fr; max-width: 700px; margin: auto; } .case-study { display: grid; grid-template-columns: minmax(220px, .8fr) 1.2fr; } .case-study__image { height: 100%; aspect-ratio: auto; } }
+@media (max-width: 640px) { .case-studies { padding-block: var(--space-7); } .case-study { display: block; } .case-study__image { aspect-ratio: 16 / 9; } .case-study__body { padding: var(--space-4); } }

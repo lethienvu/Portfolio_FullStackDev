@@ -9,6 +9,7 @@ import VerticalToggle from "./components/VerticalToggle/VerticalToggle";
 const ExperienceSection = lazy(() => import("./components/ExperienceSection/ExperienceSection"));
 const TechDeepDive = lazy(() => import("./components/TechDeepDive/TechDeepDive"));
 const ClientsAndProducts = lazy(() => import("./components/ClientsAndProducts/ClientsAndProducts"));
+const CaseStudies = lazy(() => import("./components/CaseStudies/CaseStudies"));
 const ProductImageSection = lazy(() => import("./components/ProductImageSection/ProductImageSection"));
 const ContactSection = lazy(() => import("./components/ContactSection/ContactSection"));
 const Lightbox = lazy(() => import("./components/common/Lightbox.jsx"));
@@ -179,6 +180,7 @@ export default function App() {
           <DeferredSection minHeight="700px"><ExperienceSection /></DeferredSection>
           <DeferredSection minHeight="500px"><TechDeepDive /></DeferredSection>
           <DeferredSection minHeight="450px"><ClientsAndProducts /></DeferredSection>
+          <DeferredSection minHeight="900px"><CaseStudies /></DeferredSection>
           <DeferredSection minHeight="700px">
             <ProductImageSection onOpenLightbox={openLightbox} isLightboxOpen={lightboxData.isOpen} />
           </DeferredSection>
