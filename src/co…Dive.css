@@ -1,0 +1,50 @@
+
+/* Expanded business-CV skills layout */
+.human-skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.human-skills__group:nth-child(1), .human-skills__group:nth-child(4) { grid-column: span 2; }
+.human-skills__group:nth-child(4) { border-color: color-mix(in srgb, var(--color-accent) 40%, var(--color-border)); }
+@media (max-width: 768px) { .human-skills__group:nth-child(1), .human-skills__group:nth-child(4) { grid-column: auto; } }
+
+/* Recruiter-first five capability cards */
+.human-skills { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-3); }
+.human-skills__group,
+.human-skills__group:nth-child(1),
+.human-skills__group:nth-child(4) { grid-column: auto; padding: var(--space-4); }
+.human-skills__group header { gap: var(--space-2); padding-bottom: var(--space-3); margin-bottom: var(--space-3); }
+.human-skills__number { font-size: 10px; }
+.human-skills__group h3 { font-size: var(--text-lg); line-height: 1.2; }
+.human-skills__group header p { font-size: 11px; line-height: 1.4; }
+.human-skills__group ul { gap: 9px; }
+.human-skills__group li { padding-left: 12px; font-size: 11px; line-height: 1.4; }
+.human-skills__group li::before { top: .55em; width: 5px; height: 5px; }
+@media (max-width: 1100px) { .human-skills { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 768px) { .human-skills { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .human-skills { grid-template-columns: 1fr; } }
+
+/* Vietnamese-first bilingual capability cards */
+.human-skills__group h3 { font-size: 13px; font-weight: var(--weight-bold); }
+.human-skills__group header p { min-height: 44px; }
+@media (min-width: 769px) and (max-width: 1100px) { .human-skills { grid-template-columns: repeat(5, minmax(0, 1fr)); } .human-skills__group { padding: 12px; } .human-skills__group h3 { font-size: 12px; } .human-skills__group header p, .human-skills__group li { font-size: 10px; } }
+
+/* Project Delivery uses a dedicated two-part visual treatment */
+.human-skills__delivery .human-skills__group { height: 100%; }
+.human-skills__delivery li:first-child { padding: 10px; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-accent-light); }
+.human-skills__delivery li:first-child strong { color: var(--color-accent-dark); }
+.human-skills__delivery li:first-child small { color: var(--color-ink-2); }
+.human-skills__delivery li:nth-child(2) { margin-top: 14px; }
+
+
+.erp-modules { display: grid; gap: 7px; margin-top: 9px; }
+.erp-modules__row { display: block; padding: 0 0 7px; border-bottom: 1px solid var(--color-border); }
+.erp-modules__row:last-child { padding-bottom: 0; border-bottom: 0; }
+.erp-modules__row strong { color: var(--color-ink); font-size: 10px; font-weight: var(--weight-semibold); line-height: 1.35; }
+.erp-modules__row strong::after { content: ' - '; color: var(--color-ink-3); font-weight: var(--weight-regular); }
+.erp-modules__row span { color: var(--color-ink-2); font-size: 10px; line-height: 1.35; }
+
+/* Compact ERP module mini-cards */
+.erp-modules { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; margin-top: 9px; }
+.erp-module-card { display: grid; gap: 2px; min-width: 0; padding: 7px 8px; border: 1px solid var(--color-border); border-radius: 6px; background: var(--color-bg-alt); }
+.erp-module-card strong { color: var(--color-ink); font-size: 9px; font-weight: var(--weight-semibold); line-height: 1.25; overflow-wrap: anywhere; }
+.erp-module-card span { color: var(--color-ink-3); font-size: 9px; line-height: 1.3; }
+html[data-theme="dark"] .erp-module-card { background: rgba(52,211,153,.06); border-color: rgba(52,211,153,.22); }
+@media (max-width: 480px) { .erp-modules { grid-template-columns: 1fr; } }

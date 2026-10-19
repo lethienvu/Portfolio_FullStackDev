@@ -4,10 +4,10 @@ import bestEmpBanner from '../assets/bestEmployee/bestEmp_Banner.jpeg';
 const en = {
   // Navbar
   nav: {
-    home: "Home",
+    home: "About me",
     experience: "Experience",
-    technical: "Technical",
-    projects: "Products",
+    technical: "Skills & Knowledge",
+    projects: "Featured Projects",
     contact: "Contact",
     hire: "Save vCard",
   },
@@ -15,7 +15,7 @@ const en = {
   // Footer
   footer: {
     built: "Built with React + Vite.",
-    aiNote: "Developed by Lê Thiên Vũ with AI assistance (Claude / Gemini)."
+    aiNote: "Designed and built by Lê Thiên Vũ."
   },
 
   // Clients & Products
@@ -29,8 +29,8 @@ const en = {
   // Hero
   hero: {
     badge: "#OpenToWork",
-    role: "Full-stack Engineer & Implementation Lead",
-    roleSubtitle: "Enterprise software · HR/ERP delivery · Performance and user experience",
+    role: "Software Engineer | ERP Implementation Specialist — Kỹ sư Phần mềm | Chuyên viên Triển khai ERP",
+    roleSubtitle: "Full-stack Technical Delivery · HR/ERP Implementation · UI/UX Design · Frontend Developer · Backend Developer · Business Analysis · ERP Consulting",
     desc: "I build and deliver <strong>HR/ERP systems</strong> for enterprises — from business-process analysis and UX design to performance engineering and production rollout. I have supported <strong>10+ enterprise implementations</strong> serving <strong>14,000+ end users</strong>.",
     stats: {
       exp: "3+ years experience",
@@ -42,7 +42,7 @@ const en = {
       projects: "View Case Studies",
     },
     card: {
-      title: "Fullstack Developer & Tech Lead",
+      title: "Software Engineer | ERP Implementation Specialist — Kỹ sư Phần mềm | Chuyên viên Triển khai ERP",
       contactBtn: "Save vCard",
     },
   },
@@ -51,7 +51,7 @@ const en = {
   experience: {
     sectionLabel: "Work History",
     title: "Career Timeline",
-    subtitle: "Project Management & Implementation Lead and Software Development & System Architecture at VIET TIN SOFTWARE, delivering end-to-end HR ecosystems for <strong>10+</strong> major corporate clients serving <strong>14,000+</strong> end-users.",
+    subtitle: "Experience in implementation, business analysis, and technical coordination for HR/ERP systems across <strong>10+</strong> enterprises serving <strong>14,000+</strong> end users.",
     clientsLabel: "Key Clients",
     jobs: [
       {
@@ -163,7 +163,7 @@ const en = {
         skills: ["Java", "SQL Server", "REST API", "Database Optimization", "High Concurrency"],
         logos: ["https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg"],
         metrics: [
-          { value: "95%", label: "Query Faster" },
+          { value: "T-SQL", label: "Query optimization" },
           { value: "1,000,000+", label: "Audit Rows" },
             { value: "ACID", label: "Data Controls" },
         ],
@@ -175,7 +175,7 @@ const en = {
         skills: ["Figma", "User Flow", "Responsive Design", "Wireframing", "PWA"],
         logos: ["https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"],
         metrics: [
-          { value: "100%", label: "Responsive" },
+          { value: "Responsive", label: "Design system" },
           { value: "PWA", label: "Offline Mode" },
           { value: "3+", label: "Major Systems" },
         ],
@@ -246,7 +246,7 @@ const en = {
           "Proprietary Single Page Application (SPA) Framework in Vanilla JavaScript — sub-second load, 40% smaller bundle",
           "Virtual Scrolling for <strong>10,000+</strong> employee nodes at stable <strong>60fps</strong>",
           "SQL Server optimization: partition tables, covering indexes — sub-second queries",
-          "Modules delivered in <strong>15–20</strong> days (vs. <strong>20–25</strong> days standard), <strong>100%</strong> client retention",
+          "Modules delivered in <strong>15–20</strong> days in selected delivery flows, within an agreed delivery scope",
         ],
         tags: ["Vanilla JavaScript", "SPA Framework", "SQL Server", "Java", "PWA", "UI/UX"],
       },
@@ -256,8 +256,8 @@ const en = {
         title: "Vào Ca",
         emoji: "📱",
         bgColor: "linear-gradient(135deg, #d1fae5, #a7f3d0)",
-        desc: "Mobile-web application for employees to check in for shifts, view schedules, and track overtime. Optimized for high-concurrency requests, ensuring <strong>100%</strong> data integrity when large numbers of employees access simultaneously.",
-        bullets: ["Progressive Web App (PWA) — installable like a native app with offline-first IndexedDB sync", "High-concurrency shift logic — <strong>100%</strong> data integrity guaranteed", "Push notifications for upcoming shifts"],
+        desc: "Mobile-web application for employees to check in for shifts, view schedules, and track overtime. Designed for high-concurrency flows with state synchronization and input validation.",
+        bullets: ["Progressive Web App (PWA) — installable like a native app with offline-first IndexedDB sync", "High-concurrency shift logic with state and input validation", "Push notifications for upcoming shifts"],
         tags: ["PWA", "IndexedDB", "Service Worker", "Push API"],
       },
       {
@@ -305,7 +305,7 @@ const en = {
       messagePlaceholder: "I'd like to discuss a collaboration opportunity...",
       submit: "Send Message",
     },
-    success: "✅ Thank you! I will get back to you within 24 hours.",
+    success: "✅ Thank you! I will get back to you as soon as possible.",
   },
 };
 

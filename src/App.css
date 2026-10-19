@@ -37,6 +37,61 @@
 }
 
 /* ---------- Liquid Glass Navbar ---------- */
+.top-menubar {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: var(--z-navbar);
+  min-height: 64px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.58);
+  background: rgba(246, 244, 238, 0.54);
+  box-shadow: 0 10px 30px rgba(31, 27, 20, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+}
+
+.top-menubar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(110deg, rgba(255,255,255,.38), transparent 36%, rgba(255,255,255,.16) 72%, rgba(255,255,255,.36));
+}
+
+.top-menubar__glass {
+  position: absolute;
+  inset: 0;
+  filter: url(#glass-distortion);
+  opacity: .2;
+  pointer-events: none;
+}
+
+.top-menubar__content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  min-height: 64px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--container-px);
+}
+
+.top-menubar__content .radio-container { grid-column: 2; }
+.top-menubar__content .lang-select { grid-column: 3; justify-self: end; }
+
+@media (max-width: 768px) {
+  .top-menubar { min-height: 58px; }
+  .top-menubar__content {
+    min-height: 58px;
+    grid-template-columns: 1fr auto;
+    gap: var(--space-2);
+    padding: 0 12px;
+  }
+  .top-menubar__content .radio-container { grid-column: 1; justify-self: start; }
+  .top-menubar__content .lang-select { grid-column: 2; }
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -621,3 +676,21 @@
     border-width: var(--size-border-thin);
   }
 }
+
+/* Three-zone menubar: brand, centred navigation, and a matched utility cluster. */
+.top-menubar { min-height: 44px; border-bottom: 0; background: color-mix(in srgb, var(--color-bg) 78%, transparent); box-shadow: none; backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); }
+.top-menubar::after { display: none; }
+.top-menubar__content { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); min-height: 44px; width: min(100%, 1120px); max-width: none; padding: 0 clamp(.75rem, 2vw, 1.5rem); }
+.top-menubar__brand { display: grid; grid-column: 1; justify-self: end; width: 40px; height: 40px; margin-right: clamp(1.5rem, 4vw, 4.5rem); place-items: center; border-radius: 50%; color: var(--color-ink); transition: background-color 180ms ease, transform 180ms ease; }
+.top-menubar__brand:hover { background: color-mix(in srgb, var(--color-ink) 6%, transparent); }
+.top-menubar__brand:active { transform: scale(.94); }
+.top-menubar__brand:focus-visible { outline: 2px solid var(--color-accent); outline-offset: -3px; }
+.top-menubar__brand img { display: block; width: 26px; height: 26px; object-fit: contain; }
+.top-menubar__content .radio-container { grid-column: 2; justify-self: center; }
+.top-menubar__utilities { display: flex; grid-column: 3; justify-self: start; align-items: center; min-height: 44px; gap: clamp(.5rem, 1vw, .85rem); margin-left: clamp(1.5rem, 4vw, 4.5rem); }
+@media (max-width: 700px) { .top-menubar__content { grid-template-columns: 40px minmax(0, 1fr); padding: 0 .5rem; } .top-menubar__brand { grid-column: 1; justify-self: start; margin-right: 0; } .top-menubar__content .radio-container { grid-column: 2; width: 100%; } .top-menubar__utilities { display: none; } }
+
+/* Use one rhythm token for every gap around the three menubar groups. */
+.top-menubar__content { --menubar-group-gap: clamp(1.4rem, 2.2vw, 1.8rem); }
+.top-menubar__brand { margin-right: var(--menubar-group-gap); }
+.top-menubar__utilities { gap: var(--menubar-group-gap); margin-left: var(--menubar-group-gap); }

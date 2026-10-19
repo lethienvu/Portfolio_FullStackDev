@@ -4,6 +4,8 @@ import { useLanguage } from "./i18n/LanguageContext.jsx";
 import { useScrollAnimation } from "./hooks/useScrollAnimation.js";
 import HeroSection from "./components/HeroSection/HeroSection";
 import VerticalToggle from "./components/VerticalToggle/VerticalToggle";
+import LanguageSelect from "./components/LanguageSelect/LanguageSelect";
+import ThemeSkySwitch from "./components/ThemeSkySwitch/ThemeSkySwitch";
 
 // Code splitting: Lazy load below-the-fold sections
 const ExperienceSection = lazy(() => import("./components/ExperienceSection/ExperienceSection"));
@@ -11,8 +13,8 @@ const TechDeepDive = lazy(() => import("./components/TechDeepDive/TechDeepDive")
 const ClientsAndProducts = lazy(() => import("./components/ClientsAndProducts/ClientsAndProducts"));
 const CaseStudies = lazy(() => import("./components/CaseStudies/CaseStudies"));
 const ProductImageSection = lazy(() => import("./components/ProductImageSection/ProductImageSection"));
-const ContactSection = lazy(() => import("./components/ContactSection/ContactSection"));
 const Lightbox = lazy(() => import("./components/common/Lightbox.jsx"));
+
 
 function SectionFallback() {
   return (
@@ -46,24 +48,6 @@ function DeferredSection({ children, minHeight = "200px" }) {
     <div ref={placeholderRef} style={{ minHeight }}>
       {shouldRender ? <Suspense fallback={<SectionFallback />}>{children}</Suspense> : null}
     </div>
-  );
-}
-
-function LangToggle() {
-  const { lang, setLang } = useLanguage();
-  return (
-    <select
-      className="lang-select"
-      value={lang}
-      onChange={(e) => setLang(e.target.value)}
-      aria-label="Select Language"
-      title="Select Language"
-    >
-      <option value="vi">Tiếng Việt</option>
-      <option value="en">English</option>
-      <option value="ja">日本語</option>
-      <option value="zh">中文</option>
-    </select>
   );
 }
 
@@ -124,9 +108,29 @@ function Footer() {
   );
 }
 
+function PortfolioNavigation({ theme, onThemeToggle }) {
+  return (
+    <header className="top-menubar" aria-label="Portfolio navigation">
+      <div className="top-menubar__content">
+        <a className="top-menubar__brand" href="#hero" aria-label="Lê Thiên Vũ — Giới thiệu">
+          <img src={`${import.meta.env.BASE_URL}vu-logo-mark.svg`} alt="" width="28" height="28" />
+        </a>
+        <VerticalToggle />
+        <div className="top-menubar__utilities"><ThemeSkySwitch theme={theme} onToggle={onThemeToggle} /><LanguageSelect /></div>
+      </div>
+    </header>
+  );
+}
+
+
 export default function App() {
   useScrollAnimation();
+  const { lang } = useLanguage();
   const [lightboxData, setLightboxData] = useState({ isOpen: false, images: [], index: 0 });
+  const [theme, setTheme] = useState(() => localStorage.getItem("portfolio-theme") || "light");
+  const toggleTheme = useCallback(() => {
+    setTheme((current) => (current === "light" ? "dark" : "light"));
+  }, []);
 
   const openLightbox = useCallback((images, index = 0) => {
     setLightboxData({ isOpen: true, images, index });
@@ -159,6 +163,15 @@ export default function App() {
     }
   }, [openLightbox]);
 
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem("portfolio-theme", theme);
+  }, [theme]);
+
   return (
     <>
       <svg style={{ display: "none" }}>
@@ -169,56 +182,28 @@ export default function App() {
           </feDisplacementMap>
         </filter>
       </svg>
-      <div className="floating-top-bar">
-        <LangToggle />
-      </div>
-      <VerticalToggle />
+      <PortfolioNavigation theme={theme} onThemeToggle={toggleTheme} />
       <div className="page-wrapper" onClick={handleGlobalImageClick}>
         <main id="main-content">
           <HeroSection onOpenLightbox={openLightbox} />
 
-          <DeferredSection minHeight="700px"><ExperienceSection /></DeferredSection>
-          <DeferredSection minHeight="500px"><TechDeepDive /></DeferredSection>
-          <DeferredSection minHeight="450px"><ClientsAndProducts /></DeferredSection>
-          <DeferredSection minHeight="900px"><CaseStudies /></DeferredSection>
-          <DeferredSection minHeight="700px">
-            <ProductImageSection onOpenLightbox={openLightbox} isLightboxOpen={lightboxData.isOpen} />
-          </DeferredSection>
-
-          <div
-            style={{
-              position: "relative",
-              overflow: "hidden",
-              backgroundColor: "#050505",
-            }}
-          >
-            <div
-              className="uiverse-midnight-sky"
-              aria-hidden="true"
-              style={{
-                position: "absolute",
-                inset: 0,
-                zIndex: 0,
-                minHeight: "100%",
-              }}
-            >
-              <div className="sky-canvas">
-                <div className="stars stars-1"></div>
-                <div className="stars stars-2"></div>
-                <div className="stars stars-3"></div>
-
-                <div className="meteor m1"></div>
-                <div className="meteor m2"></div>
-                <div className="meteor m3"></div>
-
-                <div className="moon"></div>
-              </div>
-            </div>
-
-            <DeferredSection minHeight="550px"><ContactSection /></DeferredSection>
-
-            <Footer />
+          <div id="skills-knowledge" className="portfolio-zone portfolio-zone--skills" aria-label="Skills and knowledge">
+            <DeferredSection minHeight="500px"><TechDeepDive /></DeferredSection>
+            <DeferredSection minHeight="450px"><ClientsAndProducts /></DeferredSection>
           </div>
+
+          <div className="portfolio-zone portfolio-zone--experience">
+            <DeferredSection minHeight="700px"><ExperienceSection /></DeferredSection>
+          </div>
+
+          <div id="featured-projects" className="portfolio-zone portfolio-zone--projects" aria-label="Featured projects">
+            <DeferredSection minHeight="900px"><CaseStudies /></DeferredSection>
+            <DeferredSection minHeight="700px">
+              <ProductImageSection onOpenLightbox={openLightbox} isLightboxOpen={lightboxData.isOpen} />
+            </DeferredSection>
+          </div>
+
+          <Footer />
         </main>
       </div>
 

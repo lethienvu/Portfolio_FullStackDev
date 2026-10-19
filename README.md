@@ -1,6 +1,6 @@
 # Lê Thiên Vũ — Portfolio
 
-Portfolio của **Full-stack Engineer & Implementation Lead** tập trung vào phần mềm HR/ERP doanh nghiệp: từ phân tích quy trình, thiết kế trải nghiệm, phát triển sản phẩm đến triển khai vận hành.
+Portfolio của **Software Engineer | ERP Implementation Specialist — Kỹ sư Phần mềm | Chuyên viên Triển khai ERP** tập trung vào phần mềm HR/ERP doanh nghiệp: từ phân tích quy trình, thiết kế trải nghiệm, phát triển sản phẩm đến triển khai vận hành.
 
 ## Năng lực trọng tâm
 

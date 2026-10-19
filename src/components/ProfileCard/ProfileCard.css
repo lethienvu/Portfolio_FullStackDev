@@ -82,12 +82,13 @@
 }
 .pcard__about {
   display: block;
-  font-size: var(--text-md);
   color: var(--color-white);
   margin-top: var(--space-3);
   line-height: var(--leading-card);
   opacity: 0.92;
 }
+.pcard__about-primary { display: block; font-size: var(--text-md); font-weight: var(--weight-bold); }
+.pcard__about-secondary { display: block; margin-top: 2px; font-size: var(--text-sm); opacity: 0.78; }
 
 /* ── Bottom row ── */
 .pcard__bottom-row {

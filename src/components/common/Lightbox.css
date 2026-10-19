@@ -178,3 +178,10 @@
     display: none;
   }
 }
+
+.global-lightbox__close:focus-visible,
+.global-lightbox__nav-btn:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+  opacity: 1;
+}

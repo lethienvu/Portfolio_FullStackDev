@@ -4,10 +4,10 @@ import bestEmpBanner from '../assets/bestEmployee/bestEmp_Banner.jpeg';
 const zh = {
   // Navbar
   nav: {
-    home: "首页",
+    home: "关于我",
     experience: "经历",
-    technical: "技术能力",
-    projects: "产品与解决方案",
+    technical: "技能与知识",
+    projects: "精选项目",
     contact: "联系",
     hire: "保存 vCard",
   },
@@ -15,7 +15,7 @@ const zh = {
   // Footer
   footer: {
     built: "使用 React + Vite 构建。",
-    aiNote: "由 Lê Thiên Vũ 在 AI（Claude / Gemini）的协助下开发。"
+    aiNote: "由 Lê Thiên Vũ 设计并开发。"
   },
 
   // Clients & Products
@@ -29,8 +29,8 @@ const zh = {
   // Hero
   hero: {
     badge: "#OpenToWork",
-    role: "Fullstack Software Engineer",
-    roleSubtitle: "Implementation & Technical Leader · User Interface/User Experience (UI/UX) Design · Frontend Developer · Backend Developer · Business Analyst · Enterprise Resource Planning (ERP) Consultant",
+    role: "Software Engineer | ERP Implementation Specialist — Kỹ sư Phần mềm | Chuyên viên Triển khai ERP",
+    roleSubtitle: "Full-stack Technical Delivery · HR/ERP 实施 · UI/UX 设计 · 前端开发 · 后端开发 · 业务分析 · ERP 顾问",
     desc: "为企业构建并交付<strong>HR/ERP系统</strong>——涵盖业务流程分析、UX设计、性能优化和生产上线。已支持<strong>10多家企业</strong>实施，服务超过<strong>14,000名最终用户</strong>。",
     stats: {
       exp: "3年以上经验",
@@ -42,7 +42,7 @@ const zh = {
       projects: "查看案例研究",
     },
     card: {
-      title: "全栈开发者 & 技术负责人",
+      title: "Software Engineer | ERP Implementation Specialist — Kỹ sư Phần mềm | Chuyên viên Triển khai ERP",
       contactBtn: "保存 vCard",
     },
   },
@@ -163,7 +163,7 @@ const zh = {
         skills: ["Java", "SQL Server", "REST API", "Database Optimization", "High Concurrency"],
         logos: ["https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg"],
         metrics: [
-          { value: "95%", label: "查询更快" },
+          { value: "T-SQL", label: "查询优化" },
           { value: "1,000,000+", label: "审计行数" },
           { value: "ACID", label: "数据控制" },
         ],
@@ -175,7 +175,7 @@ const zh = {
         skills: ["Figma", "User Flow", "Responsive Design", "Wireframing", "PWA"],
         logos: ["https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"],
         metrics: [
-          { value: "100%", label: "响应式" },
+          { value: "Responsive", label: "响应式设计" },
           { value: "PWA", label: "离线模式" },
           { value: "3+", label: "主要系统" },
         ],
@@ -246,7 +246,7 @@ const zh = {
           "使用 Vanilla JavaScript 的专有单页应用程序 (SPA) 框架 — 亚秒级加载，捆绑包缩小 40%",
           "在稳定的 <strong>60fps</strong> 下实现 <strong>10,000+</strong> 员工节点的虚拟滚动",
           "SQL Server 优化：分区表、覆盖索引 — 亚秒级查询",
-          "在 <strong>15–20</strong> 天内交付模块（标准为 <strong>20–25</strong> 天），客户留存率达到 <strong>100%</strong>",
+          "在选定交付流程中于 <strong>15–20</strong> 天内完成模块，并遵循约定的交付范围",
         ],
         tags: ["Vanilla JavaScript", "SPA Framework", "SQL Server", "Java", "PWA", "UI/UX"],
       },
@@ -256,8 +256,8 @@ const zh = {
         title: "Vào Ca",
         emoji: "📱",
         bgColor: "linear-gradient(135deg, #d1fae5, #a7f3d0)",
-        desc: "供员工进行班次签到、查看日程安排和追踪加班的移动Web应用程序。针对高并发请求进行了优化，确保大量员工同时访问时的 <strong>100%</strong> 数据完整性。",
-        bullets: ["渐进式Web应用程序 (PWA) — 可像原生应用一样安装，具有离线优先的 IndexedDB 同步功能", "高并发排班逻辑 — 保证 <strong>100%</strong> 数据完整性", "即将到来的班次的推送通知"],
+        desc: "供员工进行班次签到、查看日程安排和追踪加班的移动 Web 应用程序。为高并发流程设计了状态同步和输入校验。",
+        bullets: ["渐进式Web应用程序 (PWA) — 可像原生应用一样安装，具有离线优先的 IndexedDB 同步功能", "高并发排班逻辑，具备状态和输入校验", "即将到来的班次的推送通知"],
         tags: ["PWA", "IndexedDB", "Service Worker", "Push API"],
       },
       {

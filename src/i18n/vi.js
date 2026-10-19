@@ -4,10 +4,10 @@ import bestEmpBanner from '../assets/bestEmployee/bestEmp_Banner.jpeg';
 const vi = {
   // Navbar
   nav: {
-    home:       'Về tôi',
+    home:       'Giới thiệu',
     experience: 'Kinh nghiệm',
-    technical:  'Kỹ thuật',
-    projects:   'Sản phẩm',
+    technical:  'Chuyên môn',
+    projects:   'Dự án nổi bật',
     contact:    'Liên hệ',
     hire:       'Lưu vCard',
   },
@@ -15,7 +15,7 @@ const vi = {
   // Footer
   footer: {
     built: 'Xây dựng với React + Vite.',
-    aiNote: 'Phát triển bởi Lê Thiên Vũ với sự hỗ trợ của AI (Claude / Gemini).',
+    aiNote: 'Thiết kế và phát triển bởi Lê Thiên Vũ.',
   },
 
   // Clients & Products
@@ -29,20 +29,20 @@ const vi = {
   // Hero
   hero: {
     badge:       '#openToWork',
-    role:        'Full-stack Engineer & Implementation Lead',
-    roleSubtitle:'Phần mềm doanh nghiệp · Triển khai HR/ERP · Hiệu năng và trải nghiệm người dùng',
-    desc:        'Xây dựng và triển khai hệ thống <strong>HR/ERP</strong> cho doanh nghiệp — từ phân tích quy trình nghiệp vụ, thiết kế trải nghiệm người dùng đến tối ưu hiệu năng và vận hành sản phẩm. Đã đồng hành cùng <strong>10+ doanh nghiệp</strong>, phục vụ hơn <strong>14.000 người dùng cuối</strong>.',
+    role:        'Software Engineer | ERP Implementation Specialist — Kỹ sư Phần mềm | Chuyên viên Triển khai ERP',
+    roleSubtitle:'Full-stack Technical Delivery · Triển khai HR/ERP · Thiết kế UI/UX · Frontend Developer · Backend Developer · Business Analysis · Tư vấn ERP',
+    desc:        'Với gần 4 năm kinh nghiệm trong lĩnh vực phần mềm, tôi có kinh nghiệm ở cả hai vai trò phát triển và triển khai hệ thống ERP/HRM. Từ thiết kế giao diện, xây dựng logic nghiệp vụ, tối ưu hiệu suất hệ thống đến phân tích yêu cầu, giải quyết bài toán thực tế và đồng hành cùng khách hàng triển khai các giải pháp phù hợp với đặc thù từng doanh nghiệp.\n\nTôi đề cao tinh thần trách nhiệm, tư duy cải tiến và sự chủ động, không ngừng tối ưu quy trình làm việc và ứng dụng AI nhằm nâng cao hiệu suất, chất lượng công việc.\n\nTôi mong muốn tìm kiếm một môi trường có văn hóa làm việc và định hướng phát triển tương đồng, nơi tôi có thể phát huy năng lực, đóng góp giá trị thực tiễn và gắn bó lâu dài.',
     stats: {
-      exp:    'Kinh nghiệm bao quát toàn bộ quy trình phát triển phần mềm',
-      users:  '14.000+ người dùng',
-      faster: 'AI workflow có kiểm soát',
+      exp:    'năm kinh nghiệm',
+      users:  'người dùng',
+      faster: 'tăng hiệu suất nhờ AI Agent & Workflow AI',
     },
     cta: {
       cv:       'Tải CV',
       projects: 'Xem case studies',
     },
     card: {
-      title:      'Fullstack Developer & Tech Lead',
+      title:      'Software Engineer | ERP Implementation Specialist — Kỹ sư Phần mềm | Chuyên viên Triển khai ERP',
       contactBtn: 'Lưu vCard',
     },
   },
@@ -51,7 +51,7 @@ const vi = {
   experience: {
     sectionLabel: 'Kinh nghiệm làm việc',
     title:        'Dòng thời gian làm việc',
-    subtitle:     'Quản lý Dự án & Trưởng nhóm Triển khai và Phát triển Phần mềm & Kiến trúc Hệ thống tại VIET TIN SOFTWARE, bàn giao hệ thống HR toàn diện cho <strong>10+</strong> doanh nghiệp lớn, phục vụ tổng số hơn <strong>14.000</strong> người dùng cuối.',
+    subtitle:     'Kinh nghiệm triển khai, phân tích nghiệp vụ và phối hợp kỹ thuật cho hệ thống HR/ERP tại <strong>10+</strong> doanh nghiệp, phục vụ hơn <strong>14.000</strong> người dùng cuối.',
     clientsLabel: 'Khách hàng tiêu biểu',
     jobs: [
       {
@@ -173,7 +173,7 @@ const vi = {
           'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg',
           'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg'
         ],
-        metrics: [{ value: '95%', label: 'Tốc độ truy vấn' }, { value: '1.000.000+', label: 'Bản ghi kiểm toán' }, { value: 'ACID', label: 'Kiểm soát dữ liệu' }],
+        metrics: [{ value: 'T-SQL', label: 'Tối ưu truy vấn' }, { value: '1.000.000+', label: 'Bản ghi kiểm toán' }, { value: 'ACID', label: 'Kiểm soát dữ liệu' }],
       },
       {
         icon:  'uiux',
@@ -183,7 +183,7 @@ const vi = {
         logos: [
           'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg'
         ],
-        metrics: [{ value: '100%', label: 'Đáp ứng' }, { value: 'PWA', label: 'Chế độ ngoại tuyến' }, { value: '3+', label: 'Hệ thống lớn' }],
+        metrics: [{ value: 'Responsive', label: 'Thiết kế đáp ứng' }, { value: 'PWA', label: 'Chế độ ngoại tuyến' }, { value: '3+', label: 'Hệ thống lớn' }],
       },
       {
         icon:  'techlead',
@@ -256,10 +256,10 @@ const vi = {
         title:    'Vào Ca',
         emoji:    '📱',
         bgColor:  'linear-gradient(135deg, #d1fae5, #a7f3d0)',
-        desc:     'Ứng dụng Web Di động cho nhân viên điểm danh ca làm việc, xem lịch phân ca và theo dõi làm thêm giờ (OT). Tối ưu cho yêu cầu đồng thời cao, đảm bảo <strong>100%</strong> toàn vẹn dữ liệu khi nhiều nhân viên thao tác đồng thời.',
+        desc:     'Ứng dụng Web Di động cho nhân viên điểm danh ca làm việc, xem lịch phân ca và theo dõi làm thêm giờ (OT). Thiết kế cho yêu cầu đồng thời cao với kiểm tra dữ liệu và đồng bộ trạng thái phù hợp.',
         bullets: [
           'Ứng dụng Web tiến bộ (PWA) — cài đặt như ứng dụng gốc, hoạt động ngoại tuyến với IndexedDB',
-          'Logic quản lý ca làm việc tối ưu cho xử lý đồng thời cao, <strong>100%</strong> toàn vẹn dữ liệu',
+          'Logic quản lý ca làm việc cho xử lý đồng thời cao, có kiểm tra dữ liệu và trạng thái',
           'Thông báo đẩy (Push Notification) nhắc lịch ca sắp bắt đầu',
         ],
         tags: ['PWA', 'IndexedDB', 'Service Worker', 'Push API'],
@@ -317,7 +317,7 @@ const vi = {
       messagePlaceholder: 'Tôi muốn thảo luận về cơ hội hợp tác...',
       submit:             'Gửi tin nhắn',
     },
-    success: '✅ Cảm ơn bạn! Tôi sẽ phản hồi trong vòng 24 giờ.',
+    success: '✅ Cảm ơn bạn! Tôi sẽ phản hồi sớm nhất có thể.',
   },
 };
 

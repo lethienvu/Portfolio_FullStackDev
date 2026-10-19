@@ -1,0 +1,3 @@
+Với gần 4 năm kinh nghiệm làm việc trong lĩnh vực phần mềm, tôi vừa thực hiện công việc của 1 nhà phát triển phần mềm, thiết kế giao diện, tối ưu hiệu suất hệ thống, xây dựng logic vận hành cốt lõi, tôi vừa đảm nhận công việc của 1 người triển khai phần mềm, tiếp cận và giải quyết các bài toán nghiệp vụ thực tế, lắng nghe và đồng hành cùng khách hàng triển khai các hệ thống ERP/HRM may đo cho từng doanh nghiệp.
+Tôi làm việc với tinh thần trách nhiệm cao, đề xuất cải tiến quy trình làm việc, chủ động tích hợp AI vào công việc để tối ưu hiệu suất
+Tôi đang tìm kiếm 1 công ty có văn hóa làm việc tương đồng với tư duy và cách làm việc của tôi để gắn bó lâu dài, cùng nhau phát triển.

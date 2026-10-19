@@ -4,10 +4,10 @@ import bestEmpBanner from '../assets/bestEmployee/bestEmp_Banner.jpeg';
 const ja = {
   // Navbar
   nav: {
-    home: "ホーム",
+    home: "自己紹介",
     experience: "経歴",
-    technical: "技術力",
-    projects: "製品とソリューション",
+    technical: "スキル・知識",
+    projects: "注目プロジェクト",
     contact: "連絡先",
     hire: "vCardを保存",
   },
@@ -15,7 +15,7 @@ const ja = {
   // Footer
   footer: {
     built: "React + Viteで構築されています。",
-    aiNote: "Lê Thiên VũによってAI（Claude / Gemini）の支援を受けて開発されました。"
+    aiNote: "Lê Thiên Vũによって設計・開発されました。"
   },
 
   // Clients & Products
@@ -29,8 +29,8 @@ const ja = {
   // Hero
   hero: {
     badge: "#OpenToWork",
-    role: "Fullstack Software Engineer - Technical Implementation Leader",
-    roleSubtitle: "Implementation & Technical Leader · User Interface/User Experience (UI/UX) Design · Frontend Developer · Backend Developer · Business Analyst · Enterprise Resource Planning (ERP) Consultant",
+    role: "Software Engineer | ERP Implementation Specialist — Kỹ sư Phần mềm | Chuyên viên Triển khai ERP",
+    roleSubtitle: "Full-stack Technical Delivery · HR/ERP導入 · UI/UXデザイン · フロントエンド開発 · バックエンド開発 · 業務分析 · ERPコンサルティング",
     desc: "エンタープライズ向けの<strong>HR/ERPシステム</strong>を、業務プロセス分析・UX設計からパフォーマンス最適化・本番導入まで一貫して構築・導入しています。<strong>10社以上</strong>の導入を支援し、<strong>14,000人以上</strong>のエンドユーザーにサービスを提供してきました。",
     stats: {
       exp: "3年以上の経験",
@@ -42,7 +42,7 @@ const ja = {
       projects: "ケーススタディを見る",
     },
     card: {
-      title: "フルスタック開発者 & テックリード",
+      title: "Software Engineer | ERP Implementation Specialist — Kỹ sư Phần mềm | Chuyên viên Triển khai ERP",
       contactBtn: "vCardを保存",
     },
   },
@@ -163,7 +163,7 @@ const ja = {
         skills: ["Java", "SQL Server", "REST API", "Database Optimization", "High Concurrency"],
         logos: ["https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg", "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg"],
         metrics: [
-          { value: "95%", label: "クエリの高速化" },
+          { value: "T-SQL", label: "クエリ最適化" },
           { value: "1,000,000+", label: "監査行" },
           { value: "ACID", label: "データ制御" },
         ],
@@ -175,7 +175,7 @@ const ja = {
         skills: ["Figma", "User Flow", "Responsive Design", "Wireframing", "PWA"],
         logos: ["https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"],
         metrics: [
-          { value: "100%", label: "レスポンシブ" },
+          { value: "Responsive", label: "レスポンシブ設計" },
           { value: "PWA", label: "オフラインモード" },
           { value: "3+", label: "主要システム" },
         ],

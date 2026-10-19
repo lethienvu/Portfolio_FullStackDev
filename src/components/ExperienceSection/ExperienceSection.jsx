@@ -1,119 +1,25 @@
-import React from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './ExperienceSection.css';
 import { useLanguage } from '../../i18n/LanguageContext.jsx';
 import { HtmlText } from '../HtmlText.jsx';
 import logoSGU from '../../assets/sgu-logo.webp';
 import logoVTS from '../../assets/vtsLogo.svg';
-import imgMem1 from '../../assets/experienceBg/thienVu_1.webp';
-import imgMem2 from '../../assets/experienceBg/thienVu_2.webp';
-import imgMem3 from '../../assets/experienceBg/thienvu_3.webp';
-import imgMem4 from '../../assets/experienceBg/thienVu_4.webp';
-import imgMem5 from '../../assets/experienceBg/sguPic.webp';
 
-function TimelineItem({ item }) {
-  return (
-    <article className="timeline__item" aria-label={`${item.role} tại ${item.company}`}>
-      <div className={`timeline__dot${item.current ? ' timeline__dot--current' : ''}`} aria-hidden="true" />
-
-      <div className="timeline__period">{item.period}</div>
-      <h3 className="timeline__role">{item.role}</h3>
-
-      <div className="timeline__card">
-        {item.kpis && item.kpis.length > 0 && (
-          <div className="exp-kpi-row" role="list" aria-label="Key metrics">
-            {item.kpis.map(kpi => (
-              <div key={kpi.label} className="exp-kpi" role="listitem">
-                <div className="exp-kpi-value">{kpi.value}</div>
-                <div className="exp-kpi-label">{kpi.label}</div>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {item.highlights && item.highlights.length > 0 && (
-          <ul className="timeline__highlights" style={{ marginTop: 'var(--space-4)' }} role="list">
-            {item.highlights.map((text, i) => (
-              <li key={i} className="timeline__highlight" role="listitem">
-                <span className="timeline__highlight-icon" aria-hidden="true">✓</span>
-                <HtmlText>{text}</HtmlText>
-              </li>
-            ))}
-          </ul>
-        )}
-
-        {item.tags && item.tags.length > 0 && (
-          <div className="timeline__tags" role="list" aria-label="Technologies used">
-            {item.tags.map(tag => (
-              <span key={tag} className="tag" role="listitem">{tag}</span>
-            ))}
-          </div>
-        )}
-
-        {item.images && item.images.length > 0 && (
-          <div className="timeline__images">
-            {item.images.map((imgUrl, idx) => (
-              <img key={idx} src={imgUrl} alt={`${item.role} ảnh ${idx + 1}`} className="timeline__event-img" width="400" height="200" loading="lazy" decoding="async" />
-            ))}
-          </div>
-        )}
-      </div>
-    </article>
-  );
+function CompanyMark({ company }) {
+  if (company.includes('SGU')) return <img src={logoSGU} alt={company} />;
+  if (company.includes('VIET TIN')) return <img src={logoVTS} alt={company} />;
+  return <span aria-label={company}>AS</span>;
 }
 
-function CompanyMark({ job }) {
-  if (job.company.includes('SGU')) {
-    return <img src={logoSGU} alt={job.company} className="no-lightbox" width="56" height="56" loading="lazy" decoding="async" />;
-  }
-  if (job.company.includes('VIET TIN')) {
-    return <img src={logoVTS} alt={job.company} className="no-lightbox" width="56" height="56" loading="lazy" decoding="async" />;
-  }
-  return <span className="company-logo__initials" aria-label={job.company}>AS</span>;
+function DetailDialog({ job, onClose }) {
+  const closeButtonRef = useRef(null);
+  useEffect(() => { const onKey = (event) => event.key === 'Escape' && onClose(); window.addEventListener('keydown', onKey); closeButtonRef.current?.focus(); return () => window.removeEventListener('keydown', onKey); }, [onClose]);
+  if (!job) return null;
+  return <div className="experience-dialog__backdrop" role="presentation" onMouseDown={onClose}><section className="experience-dialog" role="dialog" aria-modal="true" aria-labelledby="experience-dialog-title" onMouseDown={(event) => event.stopPropagation()}><button ref={closeButtonRef} className="experience-dialog__close" onClick={onClose} aria-label="Close experience details">×</button><div className="experience-dialog__period">{job.period}</div><h3 id="experience-dialog-title">{job.role}</h3><div className="experience-dialog__company"><CompanyMark company={job.company} /><div><strong>{job.company}</strong>{job.companyDesc && <p>{job.companyDesc}</p>}</div></div>{job.kpis?.length > 0 && <div className="experience-dialog__kpis">{job.kpis.map((kpi) => <div key={kpi.label}><strong>{kpi.value}</strong><span>{kpi.label}</span></div>)}</div>}<ul>{job.highlights?.map((highlight) => <li key={highlight}><HtmlText>{highlight}</HtmlText></li>)}</ul><div className="experience-dialog__tags">{job.tags?.map((tag) => <span key={tag}>{tag}</span>)}</div></section></div>;
 }
 
 export default function ExperienceSection() {
-  const { t } = useLanguage();
-  const e = t.experience;
-
-  return (
-    <section id="experience" className="experience" aria-labelledby="exp-heading">
-      {/* Scattered memories background */}
-      <div className="experience__memories" aria-hidden="true">
-        <img src={imgMem1} alt="" className="memory-img memory-img--1" width="450" height="350" loading="lazy" decoding="async" />
-        <img src={imgMem2} alt="" className="memory-img memory-img--2" width="380" height="480" loading="lazy" decoding="async" />
-        <img src={imgMem3} alt="" className="memory-img memory-img--3" width="500" height="350" loading="lazy" decoding="async" />
-        <img src={imgMem4} alt="" className="memory-img memory-img--4" width="350" height="450" loading="lazy" decoding="async" />
-        <img src={imgMem5} alt="" className="memory-img memory-img--5" width="350" height="250" loading="lazy" decoding="async" />
-      </div>
-
-      <div className="container">
-        <header className="experience__header">
-          <h2 id="exp-heading" className="section-title">{e.title}</h2>
-          <p className="section-subtitle"><HtmlText>{e.subtitle}</HtmlText></p>
-        </header>
-
-        <div className="timeline" role="list" aria-label="Career timeline">
-          {e.jobs.map((job, i) => {
-            const showCompany = i === 0 || e.jobs[i - 1].company !== job.company;
-            return (
-              <React.Fragment key={i}>
-                {showCompany && (
-                  <div className="timeline__company-header">
-                    <div className="company-logo">
-                      <CompanyMark job={job} />
-                    </div>
-                    <div className="company-info">
-                      <div className="company-name">{job.company}</div>
-                      {job.companyDesc && <div className="company-desc">{job.companyDesc}</div>}
-                    </div>
-                  </div>
-                )}
-                <TimelineItem item={job} clientsLabel={e.clientsLabel} />
-              </React.Fragment>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
+  const { t, lang } = useLanguage(); const [selected, setSelected] = useState(null); const e = t.experience;
+  const detailLabel = lang === 'vi' ? 'Xem chi tiết' : lang === 'ja' ? '詳細を見る' : lang === 'zh' ? '查看详情' : 'View details';
+  return <section id="experience" className="experience" aria-labelledby="exp-heading"><div className="container"><header className="experience__header"><h2 id="exp-heading" className="section-title">{e.title}</h2><p className="section-subtitle"><HtmlText>{e.subtitle}</HtmlText></p></header><div className="experience-tree" role="list">{e.jobs.map((job) => <button className={`experience-node${job.current ? ' experience-node--current' : ''}`} key={`${job.company}-${job.role}-${job.period}`} onClick={() => setSelected(job)} role="listitem" aria-haspopup="dialog"><span className="experience-node__branch" aria-hidden="true" /><span className="experience-node__date">{job.period}</span><span className="experience-node__company"><CompanyMark company={job.company} /></span><span className="experience-node__content"><strong>{job.role}</strong><small>{job.company}</small></span><span className="experience-node__detail">{detailLabel} →</span></button>)}</div></div><DetailDialog job={selected} onClose={() => setSelected(null)} /></section>;
 }

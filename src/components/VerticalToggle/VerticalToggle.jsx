@@ -8,10 +8,10 @@ export default function VerticalToggle() {
 
   const sections = useMemo(() => [
     { id: 'hero', label: t.nav.home },
+    { id: 'skills-knowledge', label: t.nav.technical },
     { id: 'experience', label: t.nav.experience },
-    { id: 'product-images', label: t.nav.projects },
-    { id: 'contact', label: t.nav.contact }
-  ], [t.nav.home, t.nav.experience, t.nav.projects, t.nav.contact]);
+    { id: 'featured-projects', label: t.nav.projects }
+  ], [t.nav.home, t.nav.technical, t.nav.experience, t.nav.projects]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -39,21 +39,19 @@ export default function VerticalToggle() {
   };
 
   return (
-    <div className="radio-container">
+    <nav className="radio-container" aria-label="Portfolio sections">
       {sections.map((section) => (
-        <>
-          <input
-            key={section.id}
-            id={`radio-${section.id}`}
-            name="navigation"
-            type="radio"
-            checked={activeSection === section.id}
-            onChange={() => handleSectionChange(section.id)}
-          />
-          <label htmlFor={`radio-${section.id}`}>{section.label}</label>
-        </>
+        <button
+          className={`radio-container__item${activeSection === section.id ? ' is-active' : ''}`}
+          key={section.id}
+          type="button"
+          onClick={() => handleSectionChange(section.id)}
+          aria-current={activeSection === section.id ? 'page' : undefined}
+        >
+          <i aria-hidden="true" />
+          <span>{section.label}</span>
+        </button>
       ))}
-      <div className="liquid-slider"></div>
-    </div>
+    </nav>
   );
 }

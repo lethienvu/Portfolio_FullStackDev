@@ -47,6 +47,7 @@ function XIcon() {
 export default function ProfileCard() {
   const { t } = useLanguage();
   const card = t.hero.card;
+  const [primaryTitle, secondaryTitle] = card.title.split(' — ');
 
   return (
     <div className="pcard" role="complementary" aria-label="Profile card">
@@ -73,7 +74,7 @@ export default function ProfileCard() {
       <div className="pcard__bottom">
         <div className="pcard__content">
           <span className="pcard__name">Lê Thiên Vũ</span>
-          <span className="pcard__about">{card.title}</span>
+          <span className="pcard__about"><span className="pcard__about-primary">{primaryTitle}</span>{secondaryTitle && <span className="pcard__about-secondary">{secondaryTitle}</span>}</span>
         </div>
 
         <div className="pcard__bottom-row">

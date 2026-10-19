@@ -1,0 +1,39 @@
+.intro-isometric-mark { position: absolute; inset: 0; z-index: 0; display: grid; place-items: center; overflow: hidden; pointer-events: none; isolation: isolate; opacity: .16; }
+.intro-isometric-mark svg { display: block; width: min(68vw, 52rem); height: auto; overflow: visible; transform: translate(8%, 1%); }
+.intro-isometric-mark__ambient { position: absolute; width: min(46vw, 36rem); aspect-ratio: 1.7; border-radius: 50%; background: var(--color-black-30); filter: blur(clamp(16px, 3vw, 30px)); opacity: .36; transform: translate(14%, 14%); z-index: -1; }
+.intro-isometric-mark__mark { transform-origin: 50% 50%; will-change: transform; }
+.intro-isometric-mark__depth path { stroke-linejoin: round; stroke-linecap: round; }
+.intro-isometric-mark__top path { fill: color-mix(in srgb, var(--color-ink) 10%, var(--color-bg)); }
+.intro-isometric-mark__front path { fill: color-mix(in srgb, var(--color-ink) 16%, var(--color-bg)); }
+.intro-isometric-mark__side path { fill: color-mix(in srgb, var(--color-ink) 23%, var(--color-bg)); }
+.intro-isometric-mark__specular { fill: none !important; stroke: var(--color-white-40); stroke-width: 1.25; vector-effect: non-scaling-stroke; opacity: .66; }
+html[data-theme="dark"] .intro-isometric-mark { opacity: .28; }
+html[data-theme="dark"] .intro-isometric-mark__top path { fill: color-mix(in srgb, var(--color-ink) 16%, var(--color-bg)); }
+html[data-theme="dark"] .intro-isometric-mark__front path { fill: color-mix(in srgb, var(--color-ink) 24%, var(--color-bg)); }
+html[data-theme="dark"] .intro-isometric-mark__side path { fill: color-mix(in srgb, var(--color-ink) 33%, var(--color-bg)); }
+html[data-theme="dark"] .intro-isometric-mark__ambient { background: var(--color-black-50); }
+@media (max-width: 700px) { .intro-isometric-mark { opacity: .11; } .intro-isometric-mark svg { width: min(112vw, 36rem); transform: translate(18%, -19%); } }
+@media (prefers-reduced-motion: reduce) { .intro-isometric-mark__mark { transition: none !important; } }
+
+/* Keep the object legible as a recessed sculpture, not a watermark. */
+.intro-isometric-mark { z-index: 1; opacity: .28; transform: translateY(var(--intro-mark-scroll, 0px)); transition: transform 180ms ease-out; }
+.intro-isometric-mark svg { width: min(72vw, 59rem); transform: translate(18%, -1%); }
+.intro-isometric-mark__ambient { width: min(52vw, 42rem); opacity: .28; transform: translate(22%, 19%); }
+html[data-theme="dark"] .intro-isometric-mark { opacity: .35; }
+@media (prefers-reduced-motion: reduce) { .intro-isometric-mark { transform: none; transition: none; } }
+
+/* Deliberate three-face neutral sculpture: top, front and side remain visually distinct. */
+.intro-isometric-mark { opacity: .68; }
+.intro-isometric-mark__top path { fill: #e1e1e5; }
+.intro-isometric-mark__front path { fill: #b9b9c0; }
+.intro-isometric-mark__side path { fill: #87878f; }
+.intro-isometric-mark__ambient { opacity: .44; }
+html[data-theme="dark"] .intro-isometric-mark { opacity: .76; }
+html[data-theme="dark"] .intro-isometric-mark__top path { fill: #77777f; }
+html[data-theme="dark"] .intro-isometric-mark__front path { fill: #55555c; }
+html[data-theme="dark"] .intro-isometric-mark__side path { fill: #35353a; }
+
+/* Requested scale reduction: half of the current Intro sculpture while preserving its position and three-face depth. */
+.intro-isometric-mark svg { width: min(36vw, 29.5rem); }
+.intro-isometric-mark__ambient { width: min(26vw, 21rem); }
+@media (max-width: 700px) { .intro-isometric-mark svg { width: min(56vw, 18rem); } .intro-isometric-mark__ambient { width: min(40vw, 13rem); } }

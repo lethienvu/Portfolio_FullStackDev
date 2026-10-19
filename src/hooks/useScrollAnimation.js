@@ -1,32 +1,36 @@
 import { useEffect } from 'react';
 
+// Progressive reveal for the real portfolio sections. It observes once, then releases
+// each element to keep scrolling inexpensive on long pages.
 export function useScrollAnimation() {
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-on-scroll');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: '50px'
-      }
-    );
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const selector = [
+      'section:not(#hero)',
+      '.timeline__item',
+      '.tech__card',
+      '.project-card',
+      '.case-study',
+      '.experience-node',
+    ].join(', ');
+    const elements = [...document.querySelectorAll(selector)];
 
-    // Delay để tránh observe quá nhiều elements cùng lúc
-    const timeoutId = setTimeout(() => {
-      const elements = document.querySelectorAll('section:not(.animate-on-scroll), .timeline__item:not(.animate-on-scroll), .tech__card:not(.animate-on-scroll), .project-card:not(.animate-on-scroll)');
-      elements.forEach((el) => observer.observe(el));
-    }, 100);
+    if (prefersReducedMotion) {
+      elements.forEach((element) => element.classList.add('animate-on-scroll', 'animated'));
+      return undefined;
+    }
 
-    return () => {
-      clearTimeout(timeoutId);
-      observer.disconnect();
-    };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('animate-on-scroll', 'animated');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -6%' });
+
+    // Let the first paint settle, then hydrate motion without blocking the hero.
+    const timeoutId = window.setTimeout(() => elements.forEach((element) => observer.observe(element)), 80);
+    return () => { window.clearTimeout(timeoutId); observer.disconnect(); };
   }, []);
 }
 
