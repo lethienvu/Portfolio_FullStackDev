@@ -78,7 +78,7 @@
 
 .project-card__text {
   font-size: var(--text-base);
-  line-height: 1.7;
+  line-height: var(--leading-loose);
   color: var(--color-ink-2);
 }
 

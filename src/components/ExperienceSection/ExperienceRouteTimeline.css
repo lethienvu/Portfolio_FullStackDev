@@ -1,0 +1,65 @@
+/* Adapted scroll-drawn route timeline; all styles remain scoped to .experience-route. */
+.experience-route.u318 { position: relative; width: min(100%, 88rem); height: auto; min-height: 0; margin-inline: auto; overflow: visible; color: var(--color-ink); }
+.experience-route .u318-sc { position: relative; overflow: visible; outline: none; }
+.experience-route .u318-sc:focus-visible { outline: 2px solid var(--color-accent); outline-offset: -4px; }
+.experience-route .u318-map { position: relative; height: 850px; }
+.experience-route .u318-map svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+/* Thin atmospheric bands follow the actual path and stay behind all content. */
+.experience-route .u318-phase {
+  fill: none;
+  stroke-width: 88;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  opacity: .12;
+}
+.experience-route .u318-phase--viettin { stroke: var(--color-accent-light); }
+.experience-route .u318-phase--asoft { stroke: var(--color-success); opacity: .075; }
+.experience-route .u318-guide { fill: none; stroke: var(--color-border-strong); stroke-width: 3; stroke-dasharray: 2 8; stroke-linecap: round; }
+.experience-route .u318-route { fill: none; stroke: var(--color-accent); stroke-width: 4; stroke-linecap: round; }
+.experience-route .u318-award-arrow { fill: none; stroke: var(--color-ink-3); stroke-width: 1; stroke-linecap: round; opacity: .25; }
+.experience-route .u318-award-arrowhead { fill: var(--color-ink-3); opacity: .25; }
+.experience-route .u318-dot { fill: var(--color-bg-alt); stroke: var(--color-border-strong); stroke-width: 4; filter: drop-shadow(0 2px 4px color-mix(in srgb, var(--color-ink) 18%, transparent)); transition: stroke .3s ease, filter .3s ease; }
+.experience-route .u318-dotc { fill: var(--color-accent); transform-box: fill-box; transform-origin: 50% 50%; transform: scale(0); transition: transform .45s cubic-bezier(.34, 1.45, .64, 1); }
+.experience-route .u318-stop { pointer-events: none; }
+.experience-route .u318-stop.on .u318-dot { stroke: var(--color-accent); filter: none; }
+.experience-route .u318-stop.on .u318-dotc { transform: scale(1); }
+.experience-route .u318-pl { fill: var(--color-ink); filter: drop-shadow(0 2px 3px color-mix(in srgb, var(--color-ink) 24%, transparent)); }
+.experience-route .u318-card { position: absolute; z-index: 2; top: var(--card-y); display: grid; grid-template-columns: 2.7rem minmax(0, 1fr); grid-template-rows: auto auto auto; gap: .12rem var(--space-3); width: clamp(15.5rem, 20vw, 18.5rem); padding: var(--space-4); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-bg-alt); box-shadow: var(--shadow-sm); color: var(--color-ink); cursor: pointer; opacity: 0; text-align: left; transform: translateY(10px) scale(.94); transition: opacity .35s ease, transform .5s cubic-bezier(.34, 1.45, .64, 1), border-color 180ms ease, box-shadow 180ms ease; }
+/* Center each card on its own horizontal milestone; spacing follows viewport width, not only height. */
+.experience-route .u318-card { left: clamp(.5rem, calc(var(--route-x) - 8.5rem), calc(100% - 18rem)); }
+/* The second milestone card is deliberately anchored to the left of its route dot. */
+.experience-route .u318-card--left-of-dot { left: clamp(.5rem, calc(var(--route-x) - 20.45rem), calc(100% - 20.8rem)); width: clamp(17.5rem, 22vw, 20rem); }
+/* Third milestone: lower and 30% farther left to balance the diagonal route. */
+.experience-route .u318-card--offset-left { left: clamp(.5rem, calc(var(--route-x) - 18rem), calc(100% - 19rem)); }
+/* Fifth milestone: shift right to keep the upper route balanced. */
+.experience-route .u318-card--offset-right { left: clamp(.5rem, calc(var(--route-x) + 2rem), calc(100% - 19rem)); }
+/* Latest milestone: lift and pull left to keep it inside the upper-right route area. */
+.experience-route .u318-card--upper-left { left: clamp(.5rem, calc(var(--route-x) - 22rem), calc(100% - 19rem)); }
+.experience-route .u318-card.on { opacity: 1; transform: none; }
+.experience-route .u318-card--award { left: auto; right: clamp(.5rem, 3vw, 2rem); display: block; width: 18.75rem; min-height: 11.3rem; padding: 0; overflow: hidden; border: 0; border-radius: 1.55rem; background: transparent; box-shadow: none; }
+.experience-route .u318-award__face { position: relative; display: block; height: 11.3rem; overflow: hidden; border-radius: 1.55rem; background: linear-gradient(45deg, #fffbf0, #ffdd87); box-shadow: 0 7px 14px color-mix(in srgb, #b1985e 34%, transparent); color: #424c50; transition: box-shadow .3s ease; }
+.experience-route svg.u318-award__trophy { position: absolute; top: 50%; right: 50%; width: 50%; height: 50%; transform: translate(50%, -50%);}
+.experience-route .u318-award__rank { position: absolute; top: 1rem; left: 1rem; color: #ffc64b; font-family: var(--font-display); font-size: var(--text-5xl); font-weight: var(--weight-bold); line-height: 1; letter-spacing: var(--tracking-tight); }
+.experience-route .u318-award__line { position: absolute; top: 8.5rem; left: 50%; transform: translateX(-50%); width: 100%; height: 2rem; background: linear-gradient(to right, transparent 8%, #ffe8a080 20%, #f7b73380 50%, #ffe8a080 75%, transparent 92%); }
+.experience-route .u318-award__face strong { position: absolute; bottom: 1.375rem; left: 50%; transform: translateX(-50%); color: #6e4a32; font-size: var(--text-sm); font-weight: var(--weight-bold); line-height: var(--leading-tight); text-wrap: nowrap; }
+.experience-route .u318-award__company-logo { position: absolute; top: 1rem; right: 1.2rem; display: block; width: 5.8rem; height: 1.7rem; }
+.experience-route .u318-award__company-logo img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: right center; }
+.experience-route .u318-card--award:hover, .experience-route .u318-card--award:focus-visible { border: 0; box-shadow: none; }
+.experience-route .u318-card--award:hover .u318-award__face, .experience-route .u318-card--award:focus-visible .u318-award__face { box-shadow: 0 10px 16px #b1985e; }
+.experience-route .u318-card:hover, .experience-route .u318-card:focus-visible { border-color: var(--color-accent); box-shadow: var(--shadow-md); outline: none; }
+.experience-route .u318-card__mark { grid-row: span 3; display: grid; place-items: center; width: 2.7rem; height: 2.7rem; overflow: hidden; border: 1px solid var(--color-border); border-radius: var(--radius-sm); color: var(--color-accent); font-size: var(--text-xs); font-weight: var(--weight-bold); }
+.experience-route .u318-card__mark img { width: 100%; height: 100%; object-fit: contain; padding: 3px; }
+
+.experience-route .u318-card__role { color: var(--color-ink); font-size: var(--text-sm); font-weight: var(--weight-semibold); line-height: var(--leading-tight); }
+.experience-route .u318-card__company { color: var(--color-ink-2); font-size: var(--text-xs); font-weight: var(--weight-medium); line-height: var(--leading-tight); white-space: normal; }
+.experience-route .u318-card__period { display: block; color: var(--color-accent); font-size: var(--text-xs); font-weight: var(--weight-semibold); line-height: var(--leading-tight); }
+html[data-theme="dark"] .experience-route.u318 { background: var(--color-surface); box-shadow: var(--shadow-lg); }
+html[data-theme="dark"] .experience-route .u318-hd, html[data-theme="dark"] .experience-route .u318-card { background: var(--color-surface); }
+html[data-theme="dark"] .experience-route .u318-dot { fill: var(--color-surface); }
+/* The cards are readable immediately; scroll only enhances their route-state motion. */
+.experience-route .u318-card { opacity: 1; transform: none; }
+@media (max-width: 760px) { .experience-route.u318 { width: 100%; border-radius: var(--radius-md); }.experience-route .u318-map { min-width: 760px; transform: none; margin-left: 0; }.experience-route .u318-card { width: 14rem; padding: var(--space-3); left: clamp(.5rem, calc(var(--route-x) - 7rem), calc(100% - 14.5rem)); }.experience-route .u318-card--award { right: 1rem; width: 16rem; padding: 0; }.experience-route .u318-card__role, .experience-route .u318-card__company, .experience-route .u318-card__period { font-size: var(--text-xs); } }
+@media (prefers-reduced-motion: reduce) { .experience-route .u318-route, .experience-route .u318-dot, .experience-route .u318-dotc, .experience-route .u318-card, .experience-route .u318-pl { transition: none; } }
+
+@media (max-width: 760px) { .experience-route .u318-sc { overflow-x: auto; overscroll-behavior-inline: contain; } }

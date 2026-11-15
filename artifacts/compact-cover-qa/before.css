@@ -1,0 +1,94 @@
+.u049 { --px:0; --py:0; --ux-surface:var(--color-surface); --ux-ink:var(--color-ink); --ux-ink-2:var(--color-ink-2); --ux-accent:var(--color-accent); --ux-ease:cubic-bezier(.2,.8,.2,1); --ux-spring:cubic-bezier(.34,1.45,.64,1); position:relative; min-width:0; min-height:480px; border-radius:30px; overflow:hidden; isolation:isolate; color:var(--ux-ink); background:transparent; box-shadow:var(--shadow-md); transition:transform .6s var(--ux-ease),box-shadow .6s var(--ux-ease); cursor:pointer; display:flex; flex-direction:column; justify-content:flex-end; }
+.u049.is-open { transform:translateY(-4px); box-shadow:var(--shadow-md); }
+.u049 .u049-art { position:absolute; inset:-20px; z-index:-2; }
+.u049 .u049-art > * { position:absolute; inset:0; width:100%; height:100%; transition:transform .9s var(--ux-ease); }
+.u049 .u049-l1 { transform:translate(calc(var(--px)*-6px),calc(var(--py)*-4px)) scale(1.02); }
+.u049 .u049-l1 img { width:100%; height:100%; object-fit:cover; display:block; }
+.u049.is-open .u049-l1 { transform:translate(calc(var(--px)*-6px),calc(var(--py)*-4px - 10px)) scale(1.06); }
+.u049 .u049-top { position:absolute; left:20px; right:16px; top:18px; display:flex; align-items:center; justify-content:space-between; }
+.u049 .u049-tag { min-height:28px; padding:4px 11px; border-radius:999px; display:inline-flex; align-items:center; background:var(--ux-surface); color:var(--ux-ink); font-size:var(--text-sm); font-weight:var(--weight-semibold); }
+.u049 .u049-body { position:relative; margin:220px var(--space-4) var(--space-4); }
+.u049 .u049-t { margin:8px 0 0; font-family:var(--font-display); font-size:var(--text-4xl); line-height:1.12; font-weight:800; letter-spacing:-.04em; overflow-wrap:anywhere; transform:none; transition:transform .7s var(--ux-spring); }
+.u049 .u049-reveal { display:block; visibility:visible; }
+.u049 .u049-reveal > * { min-height:0; overflow:hidden; }
+.u049 .u049-sum { margin:12px 0 0; font-size:var(--text-md); line-height:1.6; color:var(--ux-ink-2); opacity:1; transform:none; transition:opacity .3s,transform .5s var(--ux-ease);  }
+.u049 .u049-foot { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:16px; opacity:1; transform:none; transition:opacity .3s,transform .5s var(--ux-ease);  }
+.u049.is-open .u049-reveal { visibility:visible; }
+.u049.is-open .u049-sum { margin-top:12px; max-height:none; opacity:1; transform:none; transition:opacity .45s .12s,transform .6s var(--ux-spring) .12s; }
+.u049.is-open .u049-foot { margin-top:16px; max-height:none; opacity:1; transform:none; transition:opacity .45s .2s,transform .6s var(--ux-spring) .2s; }
+.u049 .u049-by { flex-basis:100%; margin:0; font-size:var(--text-sm); font-weight:var(--weight-medium); line-height:1.5; }
+.u049 .u049-by > span { font-weight:var(--weight-regular); }
+.u049 .u049-by small { display:block; margin-top:8px; font-size:var(--text-sm); font-weight:400; color:var(--ux-ink-2); }
+.u049 .u049-cta { min-height:44px; padding:0 16px; border:0; border-radius:999px; display:inline-flex; align-items:center; gap:6px; background:var(--color-accent); color:var(--color-white); font:inherit; font-size:var(--text-md); font-weight:650; cursor:pointer; transition:transform .35s var(--ux-spring); }
+.u049 .u049-cta:hover { transform:translateX(2px); }
+.u049 .u049-cta:active { transform:scale(.94); }
+.u049 .u049-cta svg { width:14px; height:14px; fill:none; stroke:currentColor; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
+.u049:focus-visible,.u049 :focus-visible { outline:2px solid var(--ux-accent); outline-offset:4px; }
+@media(prefers-reduced-motion:reduce) { .u049,.u049 * { transition:none!important; animation:none!important; } .u049.is-open,.u049 .u049-art > * { transform:none!important; } }
+/* The incumbent currently has no global dark semantic palette; scope its neutrals. */
+
+.u049.is-open .u049-t { transform:none; }
+/* Touch layouts keep useful copy visible rather than a blank hover-only reserve. */
+@media (hover: none), (max-width: 640px) {
+  .u049 .u049-reveal { visibility:visible; }
+  .u049 .u049-sum, .u049 .u049-foot { opacity:1; transform:none; }
+}
+
+/* Clear imagery above; a content-sized gradient darkens only the copy area. */
+.u049::before { content:''; position:absolute; inset:0; z-index:-1; pointer-events:none; background:linear-gradient(180deg, transparent 0%, transparent 24%, rgb(0 0 0 / 12%) 42%, rgb(0 0 0 / 72%) 66%, rgb(0 0 0 / 94%) 100%); }
+.u049 { --ux-ink: var(--color-white); --ux-ink-2: var(--color-white); }
+.u049 .u049-body { isolation:isolate; text-shadow:0 1px 2px rgb(0 0 0 / 45%); }
+.u049 .u049-body::before { content:''; position:absolute; inset:-64px calc(-1 * var(--space-4)) calc(-1 * var(--space-4)); z-index:-1; pointer-events:none; background:linear-gradient(180deg, transparent, rgb(0 0 0 / 65%) 64px, rgb(0 0 0 / 30%) 100%); }
+.u049 .u049-tag { background:var(--color-black-50); color:var(--color-white); text-shadow:0 1px 2px rgb(0 0 0 / 45%); }
+
+.u049 .u049-highlight { flex-basis:100%; margin:0; padding-left:var(--space-3); border-left:2px solid var(--color-white-50); color:var(--color-white); font-size:var(--text-sm); line-height:1.5; font-weight:var(--weight-semibold); }
+
+/* Editorial CTA: one native button is the keyboard target for each card. */
+.u049 .u049-cta { width:100%; justify-content:space-between; min-height:44px; margin-top:8px; padding:0; border-radius:0; background:transparent; color:#f5f3eb; font-weight:500; text-align:left; transition:color 220ms var(--ux-ease); }
+.u049 .u049-cta:hover,.u049 .u049-cta:active { transform:none; }
+.u049-cta-icon { display:grid; place-items:center; flex:none; width:40px; height:40px; border-radius:50%; background:var(--color-white-10); color:var(--color-white); transition:background-color 220ms var(--ux-ease); }
+.u049 .u049-cta svg { width:20px; height:20px; stroke-width:1.6; transition:transform 220ms var(--ux-ease); }
+.u049:hover .u049-cta-icon,.u049:focus-within .u049-cta-icon { background:var(--color-white-30); }
+.u049:hover .u049-cta svg,.u049:focus-within .u049-cta svg { transform:translate(2px,-2px); }
+.u049 .u049-cta:focus-visible { outline:2px solid var(--color-white); outline-offset:5px; border-radius:4px; }
+@media(prefers-reduced-motion:reduce) { .u049 .u049-cta svg { transform:none!important; } }
+
+/* Preserve the top of the recruitment screenshot when cropped. */
+.u049--hiring .u049-l1 img { object-position:center top; }
+
+/* Six product cards: restrained hierarchy without changing the section grid. */
+.u049--editorial { min-height:500px; }
+.u049--editorial::before { background:none; }
+.u049--editorial .u049-top { top:20px; left:24px; right:24px; }
+.u049--editorial .u049-tag { min-height:0; padding:5px 8px; border-radius:6px; font-size:11px; font-weight:400; letter-spacing:.06em; background:var(--color-black-30); }
+.u049--editorial .u049-body { margin:220px 24px 24px; }
+.u049--editorial .u049-body::before { inset:-100px -24px -24px; background:linear-gradient(to bottom, transparent 0, rgb(0 0 0 / 72%) 100px, rgb(0 0 0 / 90%) 100%); }
+.u049--editorial .u049-t { margin:0; min-height:2.36em; font-size:clamp(25px,2.25vw,32px); line-height:1.18; font-weight:650; letter-spacing:-.035em; }
+.u049--editorial .u049-sum { display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:3; overflow:hidden; margin:12px 0 0; min-height:4.65em; font-size:14px; line-height:1.55; font-weight:400; color:rgb(255 255 255 / 85%); }
+.u049--editorial .u049-foot { display:block; margin-top:16px; }
+.u049--editorial .u049-by { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:12px; line-height:1.5; font-weight:400; color:rgb(255 255 255 / 75%); }
+.u049--editorial .u049-by > span { display:none; }
+.u049--editorial .u049-cta { margin-top:20px; font-size:14px; font-weight:400; }
+.u049--editorial .u049-cta-icon { width:36px; height:36px; }
+@media(max-width:480px) {
+ .u049--editorial .u049-body { margin:200px 20px 20px; }
+ .u049--editorial .u049-body::before { left:-20px; right:-20px; bottom:-20px; }
+ .u049--editorial .u049-top { left:20px; right:20px; }
+}
+
+/* Implementation clients: content-sized identity cards, isolated from product cards. */
+.case-studies__grid--enterprise { align-items:stretch; grid-auto-rows:1fr; }
+.enterprise-card { position:relative; min-width:0; display:flex; flex-direction:column; padding:24px; border:1px solid var(--color-border); border-radius:var(--radius-lg); background:var(--color-bg-alt); color:var(--color-ink); transition:transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease; }
+.enterprise-card__identity { display:flex; align-items:center; height:56px; margin-bottom:20px; padding-right:44px; }
+.enterprise-card__identity img { display:block; width:auto; height:auto; max-width:min(140px,100%); max-height:56px; object-fit:contain; }
+.enterprise-card__category { margin:0 0 8px; color:var(--color-ink-2); font-size:12px; line-height:1.5; }
+.enterprise-card h4 { margin:0; max-width:100%; font-family:var(--font-display); font-size:24px; line-height:1.2; font-weight:650; letter-spacing:-.025em; overflow-wrap:break-word; text-wrap:balance; }
+.enterprise-card__summary { margin:12px 0 12px; color:var(--color-ink-2); font-size:14px; line-height:1.55; text-wrap:pretty; }
+.enterprise-card__cta { position:static; display:grid; place-items:center; align-self:flex-end; width:44px; height:44px; flex-shrink:0; margin:auto -8px -8px 0; padding:0; border:0; border-radius:50%; background:transparent; color:var(--color-accent); cursor:pointer; }
+.enterprise-card__cta::after { content:''; position:absolute; inset:0; border-radius:var(--radius-lg); }
+.enterprise-card__cta svg { width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+.enterprise-card:has(:focus-visible) { outline:3px solid var(--color-accent); outline-offset:4px; }
+.enterprise-card__cta:focus-visible { outline:none; }
+@media(hover:hover) { .enterprise-card:hover { transform:translateY(-2px); border-color:var(--color-border-strong); box-shadow:var(--shadow-md); } }
+@media(prefers-reduced-motion:reduce) { .enterprise-card { transition:none; } .enterprise-card:hover { transform:none; } }
+@media(max-width:640px) { .case-studies__grid--enterprise { grid-auto-rows:auto; } }

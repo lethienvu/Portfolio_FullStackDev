@@ -1,0 +1,11 @@
+.u021-theme { display: grid; width: 28px; height: 32px; place-items: center; }
+.u021-theme *, .u021-theme *::before, .u021-theme *::after { box-sizing: border-box; }
+.u021-theme__switch { display: grid; width: 28px; height: 28px; place-items: center; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; color: var(--color-ink-2); cursor: pointer; transition: color 180ms ease, transform 180ms ease; }
+.u021-theme__switch:hover { background: transparent; color: var(--color-accent); }
+.u021-theme__switch:active { transform: scale(.88); }
+.u021-theme__switch:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; border-radius: 3px; }
+.u021-theme__switch img { width: 18px; height: 18px; object-fit: contain; opacity: .86; transition: opacity 180ms ease, transform 280ms var(--ease-apple); }
+.u021-theme__switch:hover img { opacity: 1; transform: rotate(14deg); }
+html[data-theme="dark"] .u021-theme__switch { background: transparent; color: var(--color-ink-2); }
+html[data-theme="dark"] .u021-theme__switch:hover { background: transparent; color: var(--color-accent); }
+@media (prefers-reduced-motion: reduce) { .u021-theme__switch { transition: none; } }

@@ -1,70 +1,57 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { HtmlText } from '../HtmlText.jsx';
 import './HeroSection.css';
 import { useLanguage } from '../../i18n/LanguageContext.jsx';
 import ProfileCard from '../ProfileCard/ProfileCard.jsx';
 
-import imgHeroMobile from '../../assets/hero-mobileApp.webp';
-import imgHeroPweb from '../../assets/hero-pweb.webp';
-import imgHeroPweb3 from '../../assets/hero-pweb3.webp';
-import imgHeroVcshow from '../../assets/hero-vcshow.webp';
-import navtLogo from '../../assets/customer/NAVT.svg';
-import steelFlowerLogo from '../../assets/customer/STEALFLOWER.removebg-preview.svg';
-import lichienLogo from '../../assets/customer/lichien.webp';
-import detmoldLogo from '../../assets/customer/DETMOLD_packaging.webp';
-import tripodLogo from '../../assets/customer/tvc_logo.webp';
-import genepaLogo from '../../assets/customer/genepa-logo.svg';
-import sgwLogo from '../../assets/customer/sgw-logo.png';
-import vietUcLogo from '../../assets/customer/VietUc_Logo.png';
-
-const PROJECT_PREVIEWS = [
-  { src: imgHeroMobile, title: 'Mobile operations app', type: 'Field-workflow solution', result: 'Responsive task delivery' },
-  { src: imgHeroPweb, title: 'Enterprise web portal', type: 'Business workflow', result: 'Streamlined daily tasks' },
-  { src: imgHeroPweb3, title: 'Operations web dashboard', type: 'System visibility', result: 'Clearer operational tracking' },
-  { src: imgHeroVcshow, title: 'ERP reporting dashboard', type: 'Performance optimization', result: '50% faster report processing' },
-];
-// Public sources verified 2026-10-14. “Không công bố” means no reliable public headcount was found.
-const CLIENTS = [
-  { nameEn: 'Nidec Advanced Motor (Vietnam) Co., Ltd.', nameVi: 'Công ty TNHH Nidec Advanced Motor (Việt Nam)', logo: navtLogo, className: 'hero__client-logo--navt' },
-  { nameEn: 'Haiphong Steel Flower Electrical & Machinery Company Limited', nameVi: 'Công ty TNHH Điện tử & Máy móc Steel Flower Hải Phòng', logo: steelFlowerLogo, className: 'hero__client-logo--steel-flower' },
-  { nameEn: 'LOTTE Vietnam Co., Ltd.', nameVi: 'Công ty TNHH Lotte Việt Nam', logo: `${import.meta.env.BASE_URL}customer/lotte.webp`, className: 'hero__client-logo--lotte' },
-  { nameEn: 'Lichien Vietnam Paper Products Co., Ltd.', nameVi: 'Công ty TNHH Sản phẩm Giấy Lichien Việt Nam', logo: lichienLogo, className: 'hero__client-logo--lichien' },
-  { nameEn: 'Detmold Packaging Vietnam Co., Ltd.', nameVi: 'Công ty TNHH Detmold Packaging Việt Nam', logo: detmoldLogo, className: 'hero__client-logo--detmold' },
-  { nameEn: 'Tripod Vietnam Co., Ltd.', nameVi: 'Công ty TNHH Tripod Việt Nam', logo: tripodLogo, className: 'hero__client-logo--tripod' },
-  { nameEn: 'GENEPA Vietnam Co., Ltd.', nameVi: 'Công ty TNHH Genepa Việt Nam', logo: genepaLogo, className: 'hero__client-logo--genepa' },
-  { nameEn: 'Viet Uc Manufacturing Trading Service Co., Ltd.', nameVi: 'Công ty TNHH Sản xuất Thương mại Dịch vụ Việt Úc', logo: vietUcLogo, className: 'hero__client-logo--viet-uc' },
-  { nameEn: 'SGW Joint Stock Company', nameVi: 'Công ty Cổ phần SGW', logo: sgwLogo, className: 'hero__client-logo--sgw' },
-];
-
-function ScatteredFrames({ onOpenLightbox }) {
-  const previewSources = PROJECT_PREVIEWS.map(({ src }) => src);
-
-  return (
-    <div className="hero-scatter" aria-label="Project previews">
-      {PROJECT_PREVIEWS.map(({ src, title, type, result }, index) => (
-        <button
-          key={src}
-          type="button"
-          className={`hero-scatter__card hero-scatter__card--${index}`}
-          onClick={() => onOpenLightbox(previewSources, index)}
-          aria-label={`Open ${title}: ${type}. ${result}.`}
-        >
-          <img src={src} alt={`${title} preview`} className="hero-scatter__img" width="1300" height="900" loading="lazy" decoding="async" />
-          <span className="hero-scatter__caption">
-            <strong>{title}</strong>
-            <span>{type} · {result}</span>
-          </span>
-          <span className="hero-scatter__hint" aria-hidden="true">View work ↗</span>
-        </button>
-      ))}
-    </div>
-  );
-}
-
-export default function HeroSection({ onOpenLightbox }) {
+export default function HeroSection() {
   const { t, lang } = useLanguage();
   const h = t.hero;
   const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
+  const descriptionRef = useRef(null);
+  const descriptionAnimationRef = useRef(null);
+
+  const toggleDescription = () => {
+    const description = descriptionRef.current;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!description || prefersReducedMotion) {
+      setIsDescriptionExpanded((expanded) => !expanded);
+      return;
+    }
+
+    descriptionAnimationRef.current?.cancel();
+    const startHeight = description.getBoundingClientRect().height;
+    const nextExpanded = !isDescriptionExpanded;
+
+    description.style.height = 'auto';
+    setIsDescriptionExpanded(nextExpanded);
+
+    requestAnimationFrame(() => {
+      const endHeight = description.getBoundingClientRect().height;
+      description.style.height = `${startHeight}px`;
+      description.style.overflow = 'clip';
+
+      const animation = description.animate(
+        [
+          { height: `${startHeight}px`, opacity: 0.94, filter: 'blur(.35px)' },
+          { height: `${endHeight}px`, opacity: 1, filter: 'blur(0)' },
+        ],
+        { duration: nextExpanded ? 460 : 340, easing: 'cubic-bezier(.16, 1, .3, 1)', fill: 'both' },
+      );
+      descriptionAnimationRef.current = animation;
+
+      animation.onfinish = () => {
+        // A finished fill-mode animation still owns `height`; clear it explicitly
+        // so the following collapse can measure and animate from the real layout.
+        description.style.height = `${endHeight}px`;
+        animation.cancel();
+        description.style.height = '';
+        description.style.overflow = '';
+        if (descriptionAnimationRef.current === animation) descriptionAnimationRef.current = null;
+      };
+    });
+  };
   const specialties = [
     'Solution Architecture & System Design',
     'Database Management (SQL)',
@@ -74,9 +61,9 @@ export default function HeroSection({ onOpenLightbox }) {
     'AI Integration & Automation',
   ];
   const stats = [
-    { value: '3+', label: h.stats.exp, detail: 'Kinh nghiệm triển khai & phát triển sản phẩm' },
-    { value: '15K+', label: h.stats.users, detail: 'Người dùng cuối được hỗ trợ qua các đợt triển khai' },
-    { value: '50%', label: h.stats.faster, detail: 'Case study hiệu năng · đo thời gian xử lý báo cáo trước/sau tối ưu', href: '#case-studies' },
+    { value: '4+', label: 'Năm thực chiến', detail: 'Phát triển & triển khai hệ thống ERP/HRM' },
+    { value: '15K+', label: 'Người dùng sản phẩm', detail: 'Đồng hành vận hành hệ thống ở quy mô lớn' },
+    { value: 'x2–x3', label: 'Hiệu suất cá nhân', detail: 'Ứng dụng AI vào quy trình làm việc' },
   ];
   return (
     <section id="hero" className="hero" aria-labelledby="hero-heading">
@@ -85,7 +72,6 @@ export default function HeroSection({ onOpenLightbox }) {
           <h1 id="hero-heading" className="hero__headline hero__entrance">
             <span className="hero__identity">
               <span className="hero__name">Lê Thiên <em>Vũ</em></span>
-              <span className="hero__profile-details">TP. Hồ Chí Minh · Available for ERP & software delivery</span>
             </span>
             <span className="hero__value-headline">Thiết kế và triển khai hệ thống ERP tích hợp — từ kiến trúc, dữ liệu đến <em>tự động hóa AI.</em></span>
             <span className="hero__role" aria-label="Fullstack Software Engineer and ERP Implementation Specialist">
@@ -104,11 +90,11 @@ export default function HeroSection({ onOpenLightbox }) {
               </span>
             </span>
           </h1>
-          <div className={`hero__desc hero__entrance ${isDescriptionExpanded ? 'hero__desc--expanded' : ''}`}>
+          <div ref={descriptionRef} className={`hero__desc hero__entrance ${isDescriptionExpanded ? 'hero__desc--expanded' : ''}`}>
             <p id="hero-description"><HtmlText>{h.desc}</HtmlText></p>
-            <button type="button" className="hero__desc-toggle" aria-expanded={isDescriptionExpanded} aria-controls="hero-description" onClick={() => setIsDescriptionExpanded((expanded) => !expanded)}>
+            <button type="button" className="hero__desc-toggle" aria-expanded={isDescriptionExpanded} aria-controls="hero-description" onClick={toggleDescription}>
               {isDescriptionExpanded ? (lang === 'vi' ? 'Thu gọn' : 'Show less') : (lang === 'vi' ? 'Xem thêm' : 'Read more')}
-              <span aria-hidden="true">{isDescriptionExpanded ? '↑' : '↓'}</span>
+              <span className="hero__desc-toggle-icon" aria-hidden="true" />
             </button>
           </div>
           <ul className="hero__specialties" aria-label="Core specialties">
@@ -123,28 +109,26 @@ export default function HeroSection({ onOpenLightbox }) {
           <aside className="hero__graphics hero__visual-entrance" aria-label="Profile and portfolio showcase">
             <div className="hero__orb" aria-hidden="true" />
             <div className="hero__card-wrapper"><ProfileCard /></div>
-            <ScatteredFrames onOpenLightbox={onOpenLightbox} />
-          </aside>
-          <div className="hero__stats hero__stats--right" role="list" aria-label="Career highlights">
-            {stats.map(({ value, label, detail, href }) => (
-              <div key={label} className="hero__stat-item" role="listitem">
-                <strong>{value}</strong><span>{label}</span><small>{detail}</small>
-                {href && <a href={href}>Xem case study <span aria-hidden="true">↘</span></a>}
-              </div>
-            ))}
-          </div>
-          <section className="hero__clients hero__clients-entrance" aria-label="Clients I have worked with">
-            <p className="hero__clients-label"><span>Trusted by teams at</span></p>
-            <ul className="hero__clients-list">
-              {CLIENTS.map((client) => (
-                <li key={client.nameEn} className={`hero__client-logo ${client.className}`} tabIndex="0" aria-label={`${client.nameEn}. ${client.nameVi}`}>
-                  <img src={client.logo} alt={client.nameEn} width="96" height="42" loading="lazy" decoding="async" />
-                  <div className="hero__client-popover" role="tooltip"><strong lang="en">{client.nameEn}</strong><span lang="vi">{client.nameVi}</span></div>
-                </li>
+            <div className="hero__stat-cards" role="list" aria-label="Career highlights">
+              {stats.map(({ value, label, detail }, index) => (
+                <div key={label} className={`hero__stat-card hero__stat-card--${index}`} role="listitem">
+                  <strong>{value}</strong><span>{label}</span><small>{detail}</small>
+                </div>
               ))}
-            </ul>
-          </section>
+            </div>
+          </aside>
         </div>
+        <footer className="hero__footer hero__entrance" aria-label="Thông tin hồ sơ và trạng thái website">
+          <div className="hero__profile-details">
+            <span><img src={`${import.meta.env.BASE_URL}birthday.svg`} alt="" aria-hidden="true" /><small>Năm sinh</small><strong>2000</strong></span>
+            <span><img src={`${import.meta.env.BASE_URL}gender.svg`} alt="" aria-hidden="true" /><small>Giới tính</small><strong>Nam</strong></span>
+            <span><img src={`${import.meta.env.BASE_URL}city.svg`} alt="" aria-hidden="true" /><small>Địa điểm</small><strong>TP. Hồ Chí Minh</strong></span>
+            <span><small>Học vị · Trường Đại học Sài Gòn</small><strong>Kỹ sư phần mềm (Bachelor of Engineering)</strong></span>
+          </div>
+          <div className="hero__site-status" aria-label="Thông tin cập nhật website">
+            <span><small>Cập nhật gần nhất</small><strong>20.10.2026 · Version 2.6.0.2</strong></span>
+          </div>
+        </footer>
       </div>
     </section>
   );

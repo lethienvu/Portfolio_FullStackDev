@@ -1,5 +1,5 @@
-import bestEmp2024 from '../assets/bestEmployee/bestEmp2024.jpeg';
-import bestEmpBanner from '../assets/bestEmployee/bestEmp_Banner.jpeg';
+import bestEmp2024 from '../assets/bestEmployee/bestEmp2024.webp';
+import bestEmpBanner from '../assets/bestEmployee/bestEmp_Banner.webp';
 
 const ja = {
   // Navbar
@@ -295,6 +295,18 @@ const ja = {
     sectionLabel: "お問い合わせ",
     title: "連絡先",
     subtitle: "複雑なビジネスロジックと高パフォーマンスの技術アーキテクチャを結びつけるリーダーをお探しなら、ぜひつながって、一緒に業務の卓越性を推進しましょう。",
+    editorialLabel: 'LET’S CONNECT',
+    editorialTitle: '協業の機会についてお話ししましょう',
+    editorialDescription: 'ソフトウェア開発、エンタープライズソリューション、実務でのAI活用について、いつでもお話しできます。',
+    emailCta: 'メールを送る',
+    linkedinCta: 'LinkedInを見る',
+    channelEmail: 'メール',
+    channelPhone: '電話 / Zalo',
+    portfolio: 'ポートフォリオ',
+    qrLabel: 'Zaloでつながる',
+    copy: 'コピー',
+    copied: 'コピーしました',
+    copyFeedback: 'コピーしました。',
     formTitle: "メッセージを送信",
     fields: {
       name: "氏名",

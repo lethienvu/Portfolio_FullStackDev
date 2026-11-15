@@ -1,0 +1,116 @@
+[
+  {
+    "width": 1440,
+    "height": 900,
+    "overflow": false,
+    "image": 1300
+  },
+  {
+    "closed": true,
+    "focus": "u049-cta",
+    "inert": false
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "overflow": false,
+    "image": 1300
+  },
+  {
+    "switched": "true"
+  },
+  {
+    "closed": true,
+    "focus": "u049-cta",
+    "inert": false
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "overflow": false,
+    "image": 261
+  },
+  {
+    "closed": true,
+    "focus": "u049-cta",
+    "inert": false
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "overflow": false,
+    "image": 1300
+  },
+  {
+    "closed": true,
+    "focus": "u049-cta",
+    "inert": false
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "overflow": false,
+    "image": 1300
+  },
+  {
+    "switched": "true"
+  },
+  {
+    "closed": true,
+    "focus": "u049-cta",
+    "inert": false
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "overflow": false,
+    "image": 261
+  },
+  {
+    "closed": true,
+    "focus": "u049-cta",
+    "inert": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "image": 1300
+  },
+  {
+    "closed": true,
+    "focus": "u049-cta",
+    "inert": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "image": 1300
+  },
+  {
+    "switched": "true"
+  },
+  {
+    "closed": true,
+    "focus": "u049-cta",
+    "inert": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "image": 261
+  },
+  {
+    "closed": true,
+    "focus": "u049-cta",
+    "inert": false
+  },
+  {
+    "lightbox": 2
+  },
+  {
+    "readerRemaining": 1
+  }
+]

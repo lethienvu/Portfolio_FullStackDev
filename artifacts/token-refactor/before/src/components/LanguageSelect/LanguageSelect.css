@@ -1,0 +1,45 @@
+.u031-language { --u031-surface: var(--color-surface); --u031-surface-2: var(--color-bg-alt); --u031-ink: var(--color-ink); --u031-ink-muted: var(--color-ink-3); --u031-line: var(--color-border); --u031-accent: var(--color-accent); --u031-accent-soft: var(--color-accent-light); --u031-shadow: color-mix(in srgb, var(--color-ink) 22%, transparent); position: relative; isolation: isolate; font-family: var(--font-body); }
+.u031-language *, .u031-language *::before, .u031-language *::after { box-sizing: border-box; }
+.u031-language :focus-visible { outline: 2px solid var(--u031-accent); outline-offset: 3px; }
+.u031-language__trigger { display: flex; align-items: center; gap: 8px; width: 152px; height: 36px; padding: 0 8px; border: 0; border-radius: 10px; background: transparent; color: var(--u031-ink); text-align: left; cursor: pointer; box-shadow: inset 0 0 0 1.5px transparent; transition: box-shadow .25s cubic-bezier(.2,.8,.2,1), background-color .25s cubic-bezier(.2,.8,.2,1); }
+.u031-language__trigger:hover { background: color-mix(in srgb, var(--u031-accent) 9%, transparent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--u031-accent) 32%, transparent); }.u031-language.is-open .u031-language__trigger { background: color-mix(in srgb, var(--u031-accent) 11%, transparent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--u031-accent) 42%, transparent), 0 0 0 3px color-mix(in srgb, var(--u031-accent) 12%, transparent); }
+.u031-language__flag { display: grid; flex: none; width: 22px; height: 22px; place-items: center; overflow: hidden; border-radius: 7px; font-size: 17px; line-height: 1; filter: saturate(1.08); }.u031-language__value { flex: 1; min-width: 0; }.u031-language__value b { display: block; overflow: hidden; font-size: 12px; font-weight: 650; line-height: 1.1; text-overflow: ellipsis; white-space: nowrap; }.u031-language__value small { display: block; overflow: hidden; color: var(--u031-ink-muted); font-size: 9px; line-height: 1.1; text-overflow: ellipsis; white-space: nowrap; }.u031-language__caret { width: 15px; height: 15px; fill: none; stroke: var(--u031-ink-muted); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; transition: transform .45s cubic-bezier(.34,1.45,.64,1); }.u031-language.is-open .u031-language__caret { transform: rotate(180deg); }
+.u031-language__list { --u031-surface: var(--color-surface); --u031-surface-2: var(--color-bg-alt); --u031-ink: var(--color-ink); --u031-ink-muted: var(--color-ink-3); --u031-line: var(--color-border); --u031-accent: var(--color-accent); --u031-accent-soft: var(--color-accent-light); position: fixed; z-index: 1000; width: 220px; margin: 0; padding: 6px; overflow: hidden; border: 1px solid rgba(255, 255, 255, .76); border-radius: 14px; background: linear-gradient(135deg, rgba(255, 255, 255, .34), rgba(255, 255, 255, .12)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .58), inset 0 -1px 0 rgba(255, 255, 255, .12); backdrop-filter: saturate(190%) blur(32px); -webkit-backdrop-filter: saturate(190%) blur(32px); list-style: none; outline: none; transform-origin: 50% 0; animation: u031-language-pop .28s cubic-bezier(.34,1.45,.64,1) both; }
+@keyframes u031-language-pop { from { opacity: 0; transform: translateY(-6px) scaleY(.92); } to { opacity: 1; transform: none; } }.u031-language__highlight { position: absolute; top: 6px; right: 6px; left: 6px; height: 42px; border-radius: 10px; background: var(--u031-surface-2); pointer-events: none; transform: translateY(calc(var(--u031-index, 0) * 42px)); transition: transform .35s cubic-bezier(.34,1.45,.64,1); }.u031-language__option { position: relative; display: flex; align-items: center; gap: 9px; height: 42px; padding: 0 8px; border-radius: 10px; cursor: pointer; font-size: 12px; font-weight: 620; color: var(--u031-ink); transition: color 160ms ease; }.u031-language__option:hover { color: var(--u031-accent); }.u031-language__option .u031-language__flag { width: 22px; height: 22px; border-radius: 7px; font-size: 17px; }.u031-language__option > span:not(.u031-language__flag) { display: flex; flex: 1; align-items: baseline; min-width: 0; }.u031-language__option small { margin-left: 4px; color: var(--u031-ink-muted); font-size: 10px; font-weight: 500; }.u031-language__check { width: 18px; height: 18px; margin-left: auto; fill: none; stroke: var(--u031-accent); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; opacity: 0; transform: scale(.4); transition: opacity .2s, transform .4s cubic-bezier(.34,1.45,.64,1); }.u031-language__option[aria-selected="true"] .u031-language__check { opacity: 1; transform: none; }
+html[data-theme="dark"] .u031-language__list { border-color: rgba(255, 255, 255, .26); background: linear-gradient(135deg, rgba(29, 35, 41, .48), rgba(14, 18, 23, .22)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18), inset 0 -1px 0 rgba(255, 255, 255, .06); }
+@media (prefers-reduced-motion: reduce) { .u031-language *, .u031-language *::before, .u031-language *::after { transition-duration: .001ms !important; animation-duration: .001ms !important; } }
+@media (max-width: 700px) { .u031-language { display: none; } }
+
+/* Compact menubar trigger: globe icon replaces the selected flag/value without changing listbox behavior. */
+.u031-language { display: grid; width: 36px; height: 36px; place-items: center; }
+.u031-language__trigger { display: grid; width: 32px; height: 32px; place-items: center; padding: 0; border: 1px solid color-mix(in srgb, var(--color-ink) 12%, transparent); border-radius: 50%; background: color-mix(in srgb, var(--color-bg-alt) 62%, transparent); box-shadow: inset 0 1px 0 var(--color-white-40); color: var(--color-ink-2); transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, transform 180ms ease; }
+.u031-language__trigger:hover, .u031-language.is-open .u031-language__trigger { border-color: color-mix(in srgb, var(--color-ink) 22%, transparent); background: color-mix(in srgb, var(--color-ink) 6%, transparent); color: var(--color-ink); }
+.u031-language__trigger:active { transform: scale(.92); }
+.u031-language__globe { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.65; }
+.u031-language__trigger .u031-language__flag, .u031-language__trigger .u031-language__value, .u031-language__trigger .u031-language__caret { display: none; }
+html[data-theme="dark"] .u031-language__trigger { border-color: color-mix(in srgb, var(--color-ink) 16%, transparent); background: color-mix(in srgb, var(--color-bg-alt) 72%, transparent); color: var(--color-ink-2); }
+html[data-theme="dark"] .u031-language__trigger:hover, html[data-theme="dark"] .u031-language.is-open .u031-language__trigger { background: color-mix(in srgb, var(--color-ink) 10%, transparent); color: var(--color-ink); }
+
+/* Icon-only utility: no chip/outlined button treatment. */
+.u031-language { width: 28px; height: 32px; }
+.u031-language__trigger { width: 28px; height: 28px; border: 0; border-radius: 0; background: transparent; box-shadow: none; color: var(--color-ink-2); }
+.u031-language__trigger:hover, .u031-language.is-open .u031-language__trigger { border-color: transparent; background: transparent; color: var(--color-accent); }
+.u031-language__trigger:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; border-radius: 3px; }
+.u031-language__translate { width: 18px; height: 18px; object-fit: contain; opacity: .86; transition: opacity 180ms ease, transform 280ms var(--ease-apple); }
+.u031-language__trigger:hover .u031-language__translate, .u031-language.is-open .u031-language__translate { opacity: 1; transform: translateY(-1px); }
+html[data-theme="dark"] .u031-language__trigger { border: 0; background: transparent; color: var(--color-ink-2); }
+html[data-theme="dark"] .u031-language__trigger:hover, html[data-theme="dark"] .u031-language.is-open .u031-language__trigger { background: transparent; color: var(--color-accent); }
+
+/* Keep the menubar language icon borderless in every interactive state. */
+.u031-language__trigger,
+.u031-language__trigger:hover,
+.u031-language__trigger:focus,
+.u031-language.is-open .u031-language__trigger,
+html[data-theme="dark"] .u031-language__trigger,
+html[data-theme="dark"] .u031-language__trigger:hover,
+html[data-theme="dark"] .u031-language.is-open .u031-language__trigger { border-color: transparent; }
+
+/* The legacy hover/open inset shadow is the visible ring; suppress it for the icon-only trigger. */
+.u031-language__trigger:hover,
+.u031-language.is-open .u031-language__trigger,
+.u031-language__trigger:focus:not(:focus-visible) { box-shadow: none; }

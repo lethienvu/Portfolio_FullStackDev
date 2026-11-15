@@ -134,3 +134,12 @@ This is a starting point. Add your own conventions, style, and rules as you figu
 - [Default AGENTS.md](/reference/AGENTS.default)
 - [Automations vs heartbeat](/automation#automations-vs-heartbeat)
 - [Heartbeat](/gateway/heartbeat)
+
+## CSS design-token maintenance
+
+- Inspect `src/styles/tokens.css` and scoped custom properties before styling.
+- Reuse existing semantic tokens; never add a duplicate token with the same meaning.
+- Keep global token definitions authoritative in `src/styles/tokens.css`; retain scoped component/runtime variables where appropriate.
+- Preserve visual appearance, responsive behavior, animations and theme behavior during architecture refactors. Report visible inconsistencies separately rather than silently redesigning.
+- Keep structural values, intrinsic calculations and image-specific geometry literal when tokenization adds no meaning. Standard media-query conditions cannot consume CSS custom properties.
+- Validate unresolved variables, accessibility/contrast, interactions and before/after screenshots for desktop/tablet/mobile and both theme states. Never claim unrun checks passed.

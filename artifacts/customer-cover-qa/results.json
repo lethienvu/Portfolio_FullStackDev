@@ -1,0 +1,392 @@
+{
+  "results": [
+    {
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "cards": [
+        {
+          "height": 280,
+          "width": 448,
+          "clipped": false,
+          "image": {
+            "natural": 1300,
+            "width": 446,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 448,
+          "clipped": false,
+          "image": {
+            "natural": 922,
+            "width": 446,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 448,
+          "clipped": false,
+          "image": {
+            "natural": 1300,
+            "width": 446,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 448,
+          "clipped": false,
+          "image": {
+            "natural": 1300,
+            "width": 446,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 448,
+          "clipped": false,
+          "image": {
+            "natural": 1300,
+            "width": 446,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 448,
+          "clipped": false,
+          "image": {
+            "natural": 1300,
+            "width": 446,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 448,
+          "clipped": false,
+          "image": {
+            "natural": 1600,
+            "width": 446,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 448,
+          "clipped": false,
+          "image": {
+            "natural": 1600,
+            "width": 446,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 448,
+          "clipped": false,
+          "image": {
+            "natural": 1600,
+            "width": 446,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 448,
+          "clipped": false,
+          "image": {
+            "natural": 1600,
+            "width": 446,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 448,
+          "clipped": false,
+          "image": {
+            "natural": 1600,
+            "width": 446,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 448,
+          "clipped": false,
+          "image": {
+            "natural": 1008,
+            "width": 72,
+            "height": 24
+          }
+        }
+      ],
+      "focusRestored": true
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "overflow": false,
+      "cards": [
+        {
+          "height": 280,
+          "width": 356,
+          "clipped": false,
+          "image": {
+            "natural": 1300,
+            "width": 354,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 356,
+          "clipped": false,
+          "image": {
+            "natural": 922,
+            "width": 354,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 356,
+          "clipped": false,
+          "image": {
+            "natural": 1300,
+            "width": 354,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 356,
+          "clipped": false,
+          "image": {
+            "natural": 1300,
+            "width": 354,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 356,
+          "clipped": false,
+          "image": {
+            "natural": 1300,
+            "width": 354,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 356,
+          "clipped": false,
+          "image": {
+            "natural": 1300,
+            "width": 354,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 356,
+          "clipped": false,
+          "image": {
+            "natural": 1600,
+            "width": 354,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 356,
+          "clipped": false,
+          "image": {
+            "natural": 1600,
+            "width": 354,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 356,
+          "clipped": false,
+          "image": {
+            "natural": 1600,
+            "width": 354,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 356,
+          "clipped": false,
+          "image": {
+            "natural": 1600,
+            "width": 354,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 356,
+          "clipped": false,
+          "image": {
+            "natural": 1600,
+            "width": 354,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 356,
+          "clipped": false,
+          "image": {
+            "natural": 1008,
+            "width": 72,
+            "height": 24
+          }
+        }
+      ],
+      "focusRestored": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "cards": [
+        {
+          "height": 280,
+          "width": 366,
+          "clipped": false,
+          "image": {
+            "natural": 1300,
+            "width": 364,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 366,
+          "clipped": false,
+          "image": {
+            "natural": 922,
+            "width": 364,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 366,
+          "clipped": false,
+          "image": {
+            "natural": 1300,
+            "width": 364,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 366,
+          "clipped": false,
+          "image": {
+            "natural": 1300,
+            "width": 364,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 366,
+          "clipped": false,
+          "image": {
+            "natural": 1300,
+            "width": 364,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 366,
+          "clipped": false,
+          "image": {
+            "natural": 1300,
+            "width": 364,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 366,
+          "clipped": false,
+          "image": {
+            "natural": 1600,
+            "width": 364,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 366,
+          "clipped": false,
+          "image": {
+            "natural": 1600,
+            "width": 364,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 366,
+          "clipped": false,
+          "image": {
+            "natural": 1600,
+            "width": 364,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 366,
+          "clipped": false,
+          "image": {
+            "natural": 1600,
+            "width": 364,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 366,
+          "clipped": false,
+          "image": {
+            "natural": 1600,
+            "width": 364,
+            "height": 278
+          }
+        },
+        {
+          "height": 280,
+          "width": 366,
+          "clipped": false,
+          "image": {
+            "natural": 1008,
+            "width": 72,
+            "height": 24
+          }
+        }
+      ],
+      "focusRestored": true
+    },
+    {
+      "reducedMotion": "1e-05s"
+    }
+  ],
+  "errors": []
+}

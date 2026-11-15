@@ -1,5 +1,5 @@
-import bestEmp2024 from '../assets/bestEmployee/bestEmp2024.jpeg';
-import bestEmpBanner from '../assets/bestEmployee/bestEmp_Banner.jpeg';
+import bestEmp2024 from '../assets/bestEmployee/bestEmp2024.webp';
+import bestEmpBanner from '../assets/bestEmployee/bestEmp_Banner.webp';
 
 const zh = {
   // Navbar
@@ -295,6 +295,18 @@ const zh = {
     sectionLabel: "联系我",
     title: "联系方式",
     subtitle: "如果您正在寻找一位能够将复杂的业务逻辑与高性能技术架构相结合的领导者，让我们建立联系，共同推动卓越运营。",
+    editorialLabel: 'LET’S CONNECT',
+    editorialTitle: '一起探讨合作机会',
+    editorialDescription: '我愿意就软件开发、企业解决方案和工作中的人工智能应用与您交流。',
+    emailCta: '发送邮件',
+    linkedinCta: '查看 LinkedIn',
+    channelEmail: '电子邮件',
+    channelPhone: '电话 / Zalo',
+    portfolio: '作品集',
+    qrLabel: '通过 Zalo 联系',
+    copy: '复制',
+    copied: '已复制',
+    copyFeedback: '已复制。',
     formTitle: "发送消息",
     fields: {
       name: "姓名",

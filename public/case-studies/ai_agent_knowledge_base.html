@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="light" name="color-scheme"/><title>AI Agent Engineering &amp; ERP Knowledge Base | Case Study</title><style>
+:root{--ink:#172a37;--body:#344957;--muted:#506371;--bg:#f5f7f8;--surface:#fff;--line:#d7e1e7;--navy:#0f2c43;--accent:#16726b;--warm:#99501b;--radius:22px;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg)}h1,h2,h3,p{margin-top:0}p{line-height:1.7}a{color:inherit}.wrap{width:min(1160px,calc(100% - 64px));margin:auto}.eyebrow{font-size:11px;letter-spacing:.16em;font-weight:800;color:#14675f;text-transform:uppercase}.section{padding:90px 0}.section.white{background:#fff}.section.dark{background:var(--navy);color:#fff}.section h2{font-size:clamp(34px,4.6vw,58px);letter-spacing:-.05em;line-height:1.07;margin:17px 0 23px}.lead{max-width:760px;color:var(--body);font-size:16px}.section.dark .lead{color:#cce0e9}.mast{background:var(--navy);color:#fff;overflow:hidden}.mast .wrap{padding-top:100px;padding-bottom:100px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:55px}.mast .eyebrow,.dark .eyebrow{color:#8edbd0}.mast h1{font-size:clamp(48px,6vw,87px);letter-spacing:-.065em;line-height:1.04;margin:20px 0}.mast h1 em{color:#f0a870;font-style:normal}.mast p{color:#d5e8f0;font-size:17px;line-height:1.8;max-width:600px}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:25px}.chip{display:inline-block;border-radius:40px;padding:9px 13px;border:1px solid #638295;color:#e0f2f4;font-size:11px;font-weight:700}.hero-panel{padding:23px;border-radius:24px;background:#1b3b52;border:1px solid #4b7084;box-shadow:0 26px 70px #08192577}.panel-label{color:#addbdf;font-size:11px;font-weight:800;letter-spacing:.1em;margin-bottom:18px}.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.mini{padding:22px 15px;background:#123047;border:1px solid #456b7d;border-radius:14px;font-size:14px;font-weight:700}.mini b{display:block;color:#b3dadd;font-size:10px;margin-bottom:8px}.mini.warm{background:#563c30;border-color:#946849}.mini-bottom{text-align:center;background:#123047;border:1px dashed #7fa5b0;margin-top:10px;padding:15px;border-radius:12px;color:#dcf7ea;font-size:13px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}.metric{border:1px solid var(--line);padding:26px;border-radius:18px;background:#fff}.metric strong{font-size:37px;letter-spacing:-.05em;display:block}.metric span{font-size:12px;color:var(--body);line-height:1.5}.split{display:grid;grid-template-columns:.85fr 1.15fr;gap:45px}.cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}.card{background:#fff;border:1px solid var(--line);border-radius:19px;padding:25px}.card small{color:var(--warm);font-weight:800;letter-spacing:.1em}.card h3{font-size:19px;letter-spacing:-.025em;margin:13px 0}.card p{font-size:14px;color:var(--body);margin:0}.arch{border:1px solid #cbdbe4;background:#eff4f6;border-radius:23px;padding:25px;margin:32px 0 18px}.arch-head{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:22px}.arch-head strong{font-size:15px}.arch-head span{font-size:12px;color:var(--muted)}.pipeline{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.node{background:#fff;border:1px solid #d2e0e6;border-radius:16px;padding:22px 17px;min-height:170px}.node small{color:#176a76;font-size:10px;letter-spacing:.12em;font-weight:800}.node h3{font-size:17px;margin:17px 0 10px}.node p{color:var(--body);font-size:12px;line-height:1.6;margin:0}.layers{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}.layer{background:#dfebef;border:1px solid #c5d9df;border-radius:13px;padding:17px}.layer b{font-size:14px}.layer p{font-size:12px;color:#365260;line-height:1.6;margin:8px 0 0}.db{background:#123248;color:#fff;border-radius:16px;padding:25px;margin-top:14px}.db h3{font-size:17px}.db-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.db-metrics div{border:1px solid #3d697c;border-radius:12px;padding:15px}.db-metrics b{font-size:20px;color:#b8f3e4;display:block}.db-metrics span{font-size:11px;color:#d1e2eb;line-height:1.5}.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:17px}.tag{padding:8px 10px;border-radius:30px;background:#dceae8;color:#24564f;font-size:11px;font-weight:750}.note{border-left:3px solid #ba6832;background:#fff7f0;color:#61432f;padding:16px 20px;font-size:13px;line-height:1.7;border-radius:0 12px 12px 0}.agents{display:grid;grid-template-columns:1fr 1fr;gap:16px}.agent{background:#1a4059;border:1px solid #476c82;padding:28px;border-radius:20px}.agent small{color:#99e1d7;font-weight:800;letter-spacing:.1em}.agent h3{font-size:25px;letter-spacing:-.035em;margin:16px 0}.agent p{font-size:14px;color:#d1e3eb}.steps{display:grid;gap:0;margin-top:22px}.step{border-top:1px solid #486c7d;padding:13px 0;font-size:13px;color:#e3f0f5;line-height:1.6}.step b{color:#9bdfd3}.skills{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:18px}.skill{background:#244a63;border:1px solid #53798e;color:#e4f1f5;padding:13px;border-radius:9px;font-size:12px;font-weight:650}.triples{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.triple{border:1px solid var(--line);border-radius:18px;padding:24px;background:#fff}.triple .num{display:grid;place-items:center;background:#175c79;width:35px;height:35px;border-radius:50%;color:white;font-weight:800;font-size:12px}.triple h3{font-size:19px;margin:18px 0 10px}.triple p{color:var(--body);font-size:14px;margin:0}.footer{background:#0b2539;color:#d1e3ea;padding:50px 0}.footer strong{color:#fff;font-size:26px;letter-spacing:-.04em}.footer p{font-size:12px;color:#c6dbe5;max-width:760px;margin:12px 0 0}@media(max-width:850px){.mast .wrap,.split,.agents{grid-template-columns:1fr}.mast .wrap{gap:30px;padding-top:65px;padding-bottom:70px}.section{padding:70px 0}.pipeline,.metrics{grid-template-columns:repeat(2,1fr)}.layers,.triples{grid-template-columns:1fr}.db-metrics{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.wrap{width:calc(100% - 36px)}.mast h1{font-size:48px}.mast p{font-size:15px}.section{padding:55px 0}.section h2{font-size:36px}.cards,.pipeline,.metrics,.agents,.skills{grid-template-columns:1fr}.arch{padding:16px}.arch-head{display:block}.arch-head span{display:block;margin-top:7px}.node{min-height:0}.db{padding:17px}.db-metrics{grid-template-columns:1fr 1fr}.metric{padding:20px}}
+
+/* Accessibility and theme isolation: explicit readable text per surface.
+   These rules intentionally follow the original stylesheet so embedded viewers
+   and broad theme classes cannot recolor text across contrasting sections. */
+:root {
+  --text-on-light: #172A37;
+  --text-secondary-on-light: #344957;
+  --label-on-light: #14584F;
+  --label-warm-on-light: #8B3C10;
+  --text-on-dark: #FFFFFF;
+  --color-text-inverse: #F4F8FB;
+  --color-text-inverse-soft: #E1EEF3;
+  --color-eyebrow-on-dark: #B6E5DF;
+  --text-secondary-on-dark: #E1EEF3;
+  --label-on-dark: #A9F1DF;
+}
+html { color-scheme: light; }
+body { color: var(--text-on-light); -webkit-text-fill-color: currentColor; }
+body > section.section:not(.dark),
+body > section.section:not(.dark) .wrap { color: var(--text-on-light); }
+body > section.section:not(.dark) h2,
+body > section.section:not(.dark) h3,
+body > section.section:not(.dark) strong,
+body > section.section:not(.dark) .arch-head strong,
+body > section.section:not(.dark) .layer b {
+  color: var(--text-on-light); -webkit-text-fill-color: var(--text-on-light);
+}
+body > section.section:not(.dark) .eyebrow,
+body > section.section:not(.dark) .node small {
+  color: var(--label-on-light); -webkit-text-fill-color: var(--label-on-light);
+}
+body > section.section:not(.dark) .card small {
+  color: var(--label-warm-on-light); -webkit-text-fill-color: var(--label-warm-on-light);
+}
+body > section.section:not(.dark) .lead,
+body > section.section:not(.dark) .card p,
+body > section.section:not(.dark) .node p,
+body > section.section:not(.dark) .metric span,
+body > section.section:not(.dark) .triple p,
+body > section.section:not(.dark) .arch-head span {
+  color: var(--text-secondary-on-light); -webkit-text-fill-color: var(--text-secondary-on-light);
+  opacity: 1;
+}
+body > section.section:not(.dark) .layer p {
+  color: #304954; -webkit-text-fill-color: #304954;
+}
+body > section.section:not(.dark) .tag {
+  color: #24564F; -webkit-text-fill-color: #24564F;
+}
+body > section.section:not(.dark) .note { color: #61432F; -webkit-text-fill-color: #61432F; }
+body > section.section:not(.dark) .db,
+body > section.section:not(.dark) .db h3 { color: var(--text-on-dark); -webkit-text-fill-color: var(--text-on-dark); }
+body > section.section:not(.dark) .db-metrics b { color: #B8F3E4; -webkit-text-fill-color: #B8F3E4; }
+body > section.section:not(.dark) .db-metrics span { color: #E1EDF2; -webkit-text-fill-color: #E1EDF2; }
+body > section.section:not(.dark) .triple .num { color: #FFFFFF; -webkit-text-fill-color: #FFFFFF; }
+body > section.section.dark { color: var(--text-on-dark); -webkit-text-fill-color: var(--text-on-dark); }
+body > section.section.dark .eyebrow,
+body > section.section.dark .agent small,
+body > section.section.dark .step b { color: var(--label-on-dark); -webkit-text-fill-color: var(--label-on-dark); }
+body > section.section.dark .lead,
+body > section.section.dark .agent p,
+body > section.section.dark .step,
+body > section.section.dark .skill { color: var(--text-secondary-on-dark); -webkit-text-fill-color: var(--text-secondary-on-dark); }
+body > .mast, body > .footer { color: #FFFFFF; -webkit-text-fill-color: #FFFFFF; }
+body > .mast p, body > .footer p { color: var(--text-secondary-on-dark); -webkit-text-fill-color: var(--text-secondary-on-dark); }
+body > .mast .eyebrow { color: var(--label-on-dark); -webkit-text-fill-color: var(--label-on-dark); }
+body > .mast h1 em { color: #F4AE7E; -webkit-text-fill-color: #F4AE7E; }
+
+
+/* Scoped contrast-safe terminology section */
+.terminology{background:#eaf0f3;color:var(--ink)}
+.terminology .eyebrow{color:#14584f;-webkit-text-fill-color:#14584f}
+.terminology h2{color:#172a37;-webkit-text-fill-color:#172a37}
+.terminology .lead{color:#344957;-webkit-text-fill-color:#344957}
+.term-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:30px}
+.term{padding:24px;border:1px solid #c8d6df;background:#fff;border-radius:18px}
+.term b{color:#172a37;-webkit-text-fill-color:#172a37;font-size:17px}
+.term p{margin:10px 0 0;color:#344957;-webkit-text-fill-color:#344957;font-size:14px;line-height:1.65}
+.triples{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:900px){.term-grid,.triples{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.term-grid,.triples{grid-template-columns:1fr}}
+</style><style>
+/* HITL checkpoint: scoped styling, high-contrast, no global overrides */
+.hitl-gate{display:flex;align-items:center;gap:18px;margin:14px 0 20px;
+  padding:20px 22px;background:#fff9ec;color:#19332d;
+  border:1px solid #ad854a;border-left:5px solid #8a531c;border-radius:16px}
+.hitl-gate-mark{flex:0 0 auto;background:#754218;color:#fff;font-size:10px;
+  font-weight:800;letter-spacing:.08em;padding:9px 12px;border-radius:999px}
+.hitl-gate h3{margin:0 0 6px;font-size:17px;line-height:1.35;color:#172a37}
+.hitl-gate p{margin:0;color:#344957;font-size:13px;line-height:1.65}
+.hitl-gate-pill{flex:0 0 auto;border:1px solid #9b7142;border-radius:99px;
+  padding:9px 11px;color:#6e3c17;font-size:11px;font-weight:750;white-space:nowrap}
+.step.hitl-step{border-left:3px solid #e6b467;padding-left:12px;
+  background:rgba(255,255,255,.06);color:#e9f5f6}
+.step.hitl-step b{color:#f4d49b}
+@media(max-width:850px){.hitl-gate{flex-direction:column;align-items:flex-start}
+  .hitl-gate-pill{white-space:normal}}
+</style><style>
+/* ASOFT KB architecture — explicit accessible colors and scoped design tokens */
+.kb-architecture{--kb-ink:#172a37;--kb-body:#344957;--kb-line:#cbd8df;--kb-accent:#175d61;margin:32px 0;color:var(--kb-ink)}
+.kb-head,.kb-subhead{display:flex;justify-content:space-between;align-items:end;gap:22px;margin-bottom:20px}
+.kb-head h3,.kb-subhead h3{font-size:clamp(21px,2.5vw,30px);letter-spacing:-.035em;line-height:1.25;margin:7px 0 0;color:var(--kb-ink)}
+.kb-kicker{font-size:10px;font-weight:850;letter-spacing:.14em;color:#175d61}
+.kb-head .kb-status{font-size:12px;font-weight:650;color:#405665;white-space:nowrap}
+.kb-head .kb-status strong{color:#a55423}
+.kb-flow{display:grid;grid-template-columns:1fr;gap:0}
+.kb-stage{background:#f5f8f9;border:1px solid var(--kb-line);border-radius:16px;padding:20px 24px;display:grid;grid-template-columns:190px 1fr;column-gap:20px;align-items:start}
+.kb-stage>span{grid-row:span 3;padding-top:6px;color:#175d61;letter-spacing:.1em;font-size:10px;font-weight:800}
+.kb-stage h4{font-size:19px;margin:0 0 8px;color:var(--kb-ink);line-height:1.3}
+.kb-stage p{font-size:14px;line-height:1.6;color:var(--kb-body);margin:0}
+.kb-mini,.kb-check{grid-column:2;font-size:12px;margin-top:12px;font-weight:650;color:#24564f}
+.kb-check{background:#fff3df;color:#663a14;border:1px solid #d6b687;border-radius:9px;padding:10px 12px}
+.kb-check b{color:#653610}
+.kb-arrow{text-align:center;line-height:22px;color:#175d61;font-size:20px;font-weight:800}
+.kb-subhead{margin:48px 0 17px}.kb-subhead p{max-width:290px;font-size:12px;color:var(--kb-body);margin:0}
+.kb-domains{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.kb-domains article{background:#fff;border:1px solid var(--kb-line);border-radius:14px;padding:18px;min-height:135px}
+.kb-domains article>span{color:#16616c;letter-spacing:.12em;font-size:10px;font-weight:800}
+.kb-domains h4{font-size:16px;margin:12px 0 8px;color:var(--kb-ink);line-height:1.3}
+.kb-domains p{color:var(--kb-body);font-size:12px;line-height:1.55;margin:0}
+.kb-publish{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;background:#123448;border-radius:18px;color:#fff;padding:24px;margin-top:24px;align-items:center}
+.kb-publish .kb-kicker{color:var(--color-eyebrow-on-dark);-webkit-text-fill-color:var(--color-eyebrow-on-dark)}
+body > section.section:not(.dark) .kb-publish h3{font-size:21px;margin:8px 0 10px;color:var(--color-text-inverse);-webkit-text-fill-color:var(--color-text-inverse)}
+body > section.section:not(.dark) .kb-publish p{color:var(--color-text-inverse-soft);-webkit-text-fill-color:var(--color-text-inverse-soft);font-size:13px;line-height:1.65;margin:0}
+.kb-review{background:#244a5b;border:1px solid #66818e;border-radius:13px;padding:16px;display:grid;gap:9px}
+.kb-review b{color:#f1d1a0;-webkit-text-fill-color:#f1d1a0;font-size:13px}
+.kb-review span{color:var(--color-text-inverse-soft);-webkit-text-fill-color:var(--color-text-inverse-soft);font-size:12px;line-height:1.65}
+.kb-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px}
+.kb-metrics>div{border:1px solid var(--kb-line);border-radius:13px;padding:17px;background:#fff}
+.kb-metrics small{display:block;color:#205b65;font-size:9px;letter-spacing:.08em;font-weight:800}
+.kb-metrics b{display:block;font-size:25px;color:var(--kb-ink);margin:9px 0 5px;letter-spacing:-.04em}
+.kb-metrics span{color:var(--kb-body);font-size:11px;line-height:1.5}
+@media(max-width:850px){.kb-head,.kb-subhead{display:block}.kb-head .kb-status,.kb-subhead p{display:block;margin-top:12px;white-space:normal}.kb-stage{grid-template-columns:1fr;padding:18px}.kb-stage>span,.kb-mini,.kb-check{grid-column:1;grid-row:auto}.kb-stage>span{padding:0 0 12px}.kb-domains{grid-template-columns:repeat(2,minmax(0,1fr))}.kb-publish{grid-template-columns:1fr}.kb-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.kb-domains{grid-template-columns:1fr}.kb-stage h4{font-size:17px}.kb-metrics b{font-size:22px}}
+</style></head><body>
+<div class="mast"><div class="wrap"><div><div class="eyebrow">Engineering Case Study / AI &amp; ERP</div><h1>Ứng dụng AI vào quy trình ERP.<br/><em>Xây dựng nền tảng tri thức cho AI Agent.</em></h1><p>Kết hợp AI Agent và kho tri thức ERP để hỗ trợ phân tích yêu cầu, chuẩn hóa tài liệu giải pháp, chuẩn bị đặc tả bàn giao và tra cứu thông tin kỹ thuật chính xác hơn.</p><div class="chips"><span class="chip">Quy trình AI Agent</span><span class="chip">Kỹ thuật ngữ cảnh</span><span class="chip">SQLite FTS5 / BM25</span><span class="chip">Truy xuất có dẫn nguồn</span></div></div><div class="hero-panel"><div class="panel-label">TỔNG QUAN GIẢI PHÁP</div><div class="mini-grid"><div class="mini"><b>DỮ LIỆU NGUỒN</b>Tài liệu ERP</div><div class="mini"><b>KHO TRI THỨC</b>SQLite có cấu trúc</div><div class="mini warm"><b>TỰ ĐỘNG HÓA</b>Quy trình AI Agent</div><div class="mini"><b>KỸ NĂNG</b>APD Skill Hub</div></div><div class="mini-bottom">Truy xuất tri thức → Cung cấp ngữ cảnh → Xử lý &amp; kiểm tra kết quả</div></div></div></div>
+<section class="section white"><div class="wrap"><div class="eyebrow">01 / TỔNG QUAN</div><h2>Ứng dụng AI trong triển khai ERP.</h2><p class="lead">Tôi tổ chức các tác vụ triển khai ERP thành hai nhóm giải pháp: quy trình xử lý tài liệu giải pháp và bàn giao kỹ thuật; cùng bộ kỹ năng hỗ trợ tra cứu, chuẩn hóa hồ sơ và kiểm thử nghiệp vụ.</p><div class="metrics"><div class="metric"><strong>02</strong><span>Nhóm giải pháp AI</span></div><div class="metric"><strong>04</strong><span>Khâu xử lý tài liệu giải pháp</span></div><div class="metric"><strong>07</strong><span>Bước triển khai được hỗ trợ</span></div><div class="metric"><strong>FTS5</strong><span>Tìm kiếm toàn văn và xếp hạng kết quả</span></div></div></div></section>
+<section class="section"><div class="wrap split"><div><div class="eyebrow">02 / ỨNG DỤNG THỰC TẾ</div><h2>Chuẩn hóa và tự động hóa công việc triển khai.</h2><p class="lead">Từ dữ liệu khách hàng đến tài liệu giải pháp và bàn giao, mỗi bước được tổ chức thành quy trình rõ ràng để giảm thao tác lặp lại và hỗ trợ phối hợp giữa các nhóm.</p></div><div class="cards"><div class="card"><small>01 / TRÍCH XUẤT DỮ LIỆU</small><h3>Trích xuất &amp; chuẩn hóa dữ liệu</h3><p>Trích xuất dữ liệu từ biểu mẫu và tài liệu nghiệp vụ, làm sạch và chuẩn hóa thành dữ liệu có cấu trúc phục vụ các bước tiếp theo.</p></div><div class="card"><small>02 / ÁNH XẠ NGHIỆP VỤ</small><h3>Ánh xạ yêu cầu ERP</h3><p>Ánh xạ yêu cầu nghiệp vụ với từ điển thuật ngữ, màn hình và cấu trúc dữ liệu ERP để xây dựng phương án giải pháp.</p></div><div class="card"><small>03 / BÀN GIAO KỸ THUẬT</small><h3>Đặc tả yêu cầu tùy chỉnh</h3><p>Tổ chức yêu cầu tùy chỉnh thành đặc tả kỹ thuật thống nhất để nhóm triển khai và phát triển phối hợp thực hiện.</p></div><div class="card"><small>04 / KIỂM TRA ĐẦU RA</small><h3>Kiểm định đầu ra</h3><p>Kiểm tra tính đầy đủ, tính nhất quán và định dạng của tài liệu đầu ra trước khi chuyển sang bước tiếp theo.</p></div></div></div></section>
+<section class="section white"><div class="wrap"><div class="eyebrow">03 / KIẾN TRÚC KNOWLEDGE BASE</div><h2>Thiết kế kho tri thức ERP có kiểm soát và truy vết.</h2><p class="lead">Tôi tổ chức kiến trúc Knowledge Base theo bảy miền tri thức, kết nối tài liệu nguồn với lớp kiểm định, kho lưu trữ và các kênh khai thác. Mỗi đơn vị tri thức được gắn nguồn, trạng thái và phạm vi sử dụng, giúp AI Agent và các bộ phận tra cứu thông tin có căn cứ.</p><div class="kb-architecture">
+<div class="kb-head"><div><span class="kb-kicker">ENTERPRISE KNOWLEDGE ARCHITECTURE</span><h3>Luồng vận hành kho tri thức ASOFT ERP</h3></div><div class="kb-status">Runtime hiện hữu <strong>·</strong> Candidate kiểm định riêng</div></div>
+<div class="kb-flow">
+<article class="kb-stage"><span>01 / GOVERNED SOURCES</span><h4>Nguồn tri thức được kiểm soát</h4><p>Kho kỹ thuật ERP, quy trình theo ngành, playbook triển khai, hướng dẫn sử dụng, chuẩn QA và danh mục biểu mẫu.</p><div class="kb-mini">Quyền sử dụng · Phiên bản · Nguồn gốc</div></article>
+<div aria-hidden="true" class="kb-arrow">↓</div>
+<article class="kb-stage"><span>02 / INGESTION &amp; QUALITY GATE</span><h4>Tiếp nhận, chuẩn hóa và kiểm định</h4><p>Kiểm kê nguồn, xử lý định dạng, tạo hash, phân loại mức bảo mật, phát hiện trùng lặp và thiết lập citation về vị trí tài liệu gốc.</p><div class="kb-check"><b>Human-in-the-Loop</b> · Reviewer nghiệp vụ/kỹ thuật kiểm tra; Knowledge Owner phê duyệt nội dung đủ điều kiện.</div></article>
+<div aria-hidden="true" class="kb-arrow">↓</div>
+<article class="kb-stage"><span>03 / KNOWLEDGE STORE</span><h4>Tri thức có cấu trúc và chỉ mục tra cứu</h4><p>Knowledge units, catalog kỹ thuật (Screen ID, bảng, cột, rule, alias), asset catalog theo metadata, chỉ mục toàn văn, audit và thông tin phiên bản build.</p><div class="kb-mini">SQLite · FTS5/BM25 · Provenance · Metadata</div></article>
+<div aria-hidden="true" class="kb-arrow">↓</div>
+<article class="kb-stage"><span>04 / CONSUMPTION</span><h4>Tra cứu cho con người và AI Agent</h4><p>Consultant, Product, Support, QA và R&amp;D tra cứu theo quyền. AI Agent truy xuất nguồn phù hợp, đối chiếu thông tin kỹ thuật và phản hồi kèm tham chiếu nguồn.</p><div class="kb-mini">Role-based retrieval · Citation · Feedback</div></article>
+</div>
+<div class="kb-subhead"><div><span class="kb-kicker">KNOWLEDGE TAXONOMY</span><h3>Bảy miền tri thức được tổ chức theo nhu cầu doanh nghiệp</h3></div><p>Catalog kỹ thuật và chỉ mục tìm kiếm là hạ tầng hỗ trợ, không thay thế các miền tri thức.</p></div>
+<div class="kb-domains">
+<article><span>A / PRODUCT</span><h4>Tri thức sản phẩm</h4><p>Phân hệ, chức năng, màn hình, hướng dẫn và cấu hình.</p></article>
+<article><span>B / TECHNICAL</span><h4>Tri thức kỹ thuật</h4><p>Data dictionary, schema, tích hợp và tài liệu vận hành.</p></article>
+<article><span>C / BUSINESS</span><h4>Tri thức nghiệp vụ &amp; ngành</h4><p>Workflow, quy tắc và quy trình AS-IS/TO-BE.</p></article>
+<article><span>D / DELIVERY</span><h4>Tri thức triển khai</h4><p>Quy trình 7 bước, Fit-Gap, TLGP, UAT và biểu mẫu.</p></article>
+<article><span>E / SUPPORT</span><h4>Tri thức hỗ trợ</h4><p>FAQ, sự cố và giải pháp sau khi được chuyên gia xác nhận.</p></article>
+<article><span>F / QUALITY</span><h4>Tri thức chất lượng</h4><p>Tiêu chí chấp nhận, testcase và quy trình kiểm định.</p></article>
+<article><span>G / PRESALES</span><h4>Tri thức thương mại</h4><p>Khảo sát, demo, đề xuất và tài liệu tiền triển khai.</p></article>
+</div>
+<div class="kb-publish"><div><span class="kb-kicker">KNOWLEDGE LIFECYCLE</span><h3>Cập nhật tri thức có kiểm soát</h3><p>Đề xuất nguồn → Staging → Review chuyên môn → Approved → Candidate build &amp; regression → Phê duyệt phát hành → Runtime.</p></div><div class="kb-review"><b>Human-in-the-Loop</b><span>Con người xác nhận nội dung và quyết định promote; AI không tự phê duyệt tri thức hoặc thay thế kho đang vận hành.</span></div></div>
+<div class="kb-metrics"><div><small>RUNTIME BASELINE</small><b>2.335</b><span>Bảng schema ERP hiện hữu</span></div><div><small>RUNTIME BASELINE</small><b>54.570</b><span>Khai báo cột</span></div><div><small>RUNTIME BASELINE</small><b>19.040</b><span>Ánh xạ thuật ngữ</span></div><div><small>BUILD CANDIDATE</small><b>3.283</b><span>Knowledge units trong bản kiểm định, chưa promote</span></div></div>
+</div></div></section>
+<section class="section dark"><div class="wrap"><div class="eyebrow">04 / WORKFLOW &amp; AGENT SKILLS</div><h2>Hai nhóm giải pháp, một quy trình thống nhất.</h2><p class="lead">Quy trình xử lý tài liệu được chia thành bốn khâu chuyên môn, kết hợp với APD Skill Hub để hỗ trợ các công việc thường gặp trong triển khai ASOFT ERP.</p><div class="agents"><article class="agent"><small>01 / QUY TRÌNH GIẢI PHÁP</small><h3>Quy trình giải pháp &amp; bàn giao</h3><p>Kết nối dữ liệu đầu vào với tài liệu giải pháp, đặc tả tùy chỉnh và bước kiểm tra trước khi bàn giao.</p><div class="steps"><div class="step"><b>01 · Data Distiller</b> — Trích xuất và chuẩn hóa dữ liệu.</div><div class="step"><b>02 · ERP Architect</b> — Ánh xạ yêu cầu và xây dựng tài liệu giải pháp.</div>
+<div class="step hitl-step">
+<b>HITL · Human-in-the-Loop</b> — Chuyên viên nghiệp vụ và khách hàng rà soát, thống nhất tài liệu giải pháp trước khi chuyển yêu cầu tùy chỉnh sang bước đặc tả kỹ thuật.
+    </div>
+<div class="step"><b>03 · IPE Tech Writer</b> — Biên soạn đặc tả yêu cầu tùy chỉnh.</div><div class="step"><b>04 · Output Auditor</b> — Kiểm tra nội dung và định dạng đầu ra.</div></div></article><article class="agent"><small>02 / BỘ KỸ NĂNG</small><h3>APD Skill Hub</h3><p>Bộ kỹ năng phục vụ các công việc cụ thể: tra cứu quy trình, chuyển đổi tài liệu, tạo kịch bản kiểm thử, điền biểu mẫu và tra cứu tri thức ERP.</p><div class="skills"><div class="skill">Quy trình triển khai 7 bước</div><div class="skill">MarkItDown Converter</div><div class="skill">Testcase UAT / BDD</div><div class="skill">Soạn email nghiệp vụ</div><div class="skill">ERP Knowledge Retrieval</div><div class="skill">Hỗ trợ điền biểu mẫu</div></div></article></div></div></section>
+<section class="section white"><div class="wrap"><div class="eyebrow">05 / TRUY XUẤT TRI THỨC</div><h2>Tra cứu nghiệp vụ và dữ liệu kỹ thuật ERP.</h2><p class="lead">AI Agent xác định loại câu hỏi, kiểm tra quyền truy cập rồi tra cứu các knowledge units và catalog kỹ thuật phù hợp. Kết quả được đối chiếu theo nguồn, trạng thái phê duyệt và phiên bản trước khi đưa vào ngữ cảnh trả lời.</p><div class="triples"><article class="triple"><span class="num">T1</span><h3>Nghiệp vụ &amp; quy trình</h3><p>FTS5/BM25 tìm đơn vị tri thức, sau đó lấy bước, quy tắc và trích dẫn nguồn.</p></article><article class="triple"><span class="num">T2</span><h3>Màn hình và bảng ERP</h3><p>Tra Screen ID, menu, tên màn hình và bảng ứng viên theo ngữ cảnh.</p></article><article class="triple"><span class="num">T3</span><h3>Xác minh cột ERP</h3><p>Đối chiếu tên cột, kiểu dữ liệu và nhãn giao diện trong bảng cụ thể.</p></article><article class="triple"><span class="num">T4</span><h3>Thuật ngữ đồng nghĩa</h3><p>Đưa cách gọi tự nhiên về thuật ngữ chuẩn, rồi mở rộng lại truy vấn T1–T3.</p></article></div></div></section>
+<section class="section"><div class="wrap split"><div><div class="eyebrow">06 / PHƯƠNG PHÁP TRIỂN KHAI</div><h2>Kết hợp kiến thức ERP với kỹ thuật AI Agent.</h2><p class="lead">Tôi tập trung thiết kế ngữ cảnh, tổ chức công cụ và dữ liệu nghiệp vụ để AI hỗ trợ đúng công việc của bộ phận triển khai, đồng thời giữ bước kiểm tra chất lượng trước khi sử dụng kết quả.</p></div><div class="cards"><div class="card"><small>KỸ THUẬT NGỮ CẢNH</small><h3>Cung cấp đúng ngữ cảnh</h3><p>Cung cấp hướng dẫn, công cụ và dữ liệu ERP phù hợp với từng nhiệm vụ để hỗ trợ xử lý chính xác.</p></div><div class="card"><small>QUY TRÌNH THEO KỸ NĂNG</small><h3>Đóng gói thao tác chuyên môn</h3><p>Đóng gói hướng dẫn nghiệp vụ, mẫu biểu và quy tắc thực hiện thành kỹ năng dùng lại giữa các tác vụ.</p></div><div class="card"><small>TRẢ LỜI DỰA TRÊN NGUỒN</small><h3>Kết luận gắn bằng chứng</h3><p>Đối chiếu Screen ID, bảng và cột ERP với dữ liệu nguồn trước khi đưa vào tài liệu hoặc câu trả lời.</p></div><div class="card"><small>CHẤT LƯỢNG &amp; AN TOÀN</small><h3>Kiểm tra chất lượng &amp; dữ liệu</h3><p>Rà soát tính đầy đủ, nhất quán của kết quả và duy trì nguyên tắc sử dụng dữ liệu nội bộ phù hợp.</p></div>
+<div class="card"><small>HUMAN-IN-THE-LOOP</small>
+<h3>Giữ quyền quyết định ở con người</h3>
+<p>Đặt bước rà soát và phê duyệt tại các điểm chuyển giao quan trọng: thống nhất giải pháp với khách hàng, xác nhận yêu cầu tùy chỉnh và kiểm tra tài liệu trước khi sử dụng.</p></div>
+</div></div></section>
+<section class="section terminology"><div class="wrap"><div class="eyebrow">07 / NỀN TẢNG KỸ THUẬT</div><h2>Các thành phần kỹ thuật cốt lõi.</h2><p class="lead">Các khái niệm nền tảng được áp dụng trong thiết kế quy trình AI và hệ thống truy xuất tri thức ERP.</p><div class="term-grid"><article class="term"><b>AI Agent</b><p>Kết hợp mô hình ngôn ngữ, ngữ cảnh và công cụ để xử lý công việc theo từng bước.</p></article><article class="term"><b>Context Engineering</b><p>Tổ chức quy tắc, công cụ và tri thức liên quan để cung cấp ngữ cảnh đúng tại thời điểm suy luận.</p></article><article class="term"><b>RAG / Retrieval</b><p>Truy xuất tri thức ERP bằng SQLite FTS5/BM25 và truy vấn quan hệ, sau đó cung cấp nội dung liên quan cho mô hình.</p></article><article class="term"><b>Agent Skills</b><p>Đóng gói hướng dẫn, mẫu biểu và tài nguyên theo nhiệm vụ để Agent sử dụng khi cần.</p></article><article class="term"><b>Evaluation</b><p>Kiểm tra độ đầy đủ, tính chính xác và sự nhất quán của tài liệu được tạo theo tiêu chí xác định.</p></article><article class="term"><b>Điều phối Agent</b><p>Khái niệm thiết kế phân công và phối hợp giữa nhiều Agent, hữu ích khi mở rộng quy trình xử lý thành các thành phần chuyên biệt.</p></article>
+<article class="term"><b>Human-in-the-Loop (HITL)</b>
+<p>Cơ chế đưa con người vào những điểm quyết định cần chuyên môn hoặc phê duyệt; Agent hỗ trợ chuẩn bị, con người rà soát và xác nhận trước khi quy trình tiếp tục.</p></article>
+</div></div></section><footer class="footer"><div class="wrap"><strong>AI Agent &amp; ERP Knowledge Base</strong><p>Ứng dụng kỹ thuật ngữ cảnh, quy trình AI Agent và kho tri thức ERP để hỗ trợ phân tích nghiệp vụ, chuẩn hóa tài liệu và tra cứu kỹ thuật trong công việc triển khai.</p></div></footer>
+</body></html>

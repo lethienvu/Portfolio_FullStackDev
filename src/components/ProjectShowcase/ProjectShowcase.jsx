@@ -2,11 +2,11 @@ import './ProjectShowcase.css';
 import { useLanguage } from '../../i18n/LanguageContext.jsx';
 
 // Import Customer Logos
-import detmold from '../../assets/customer/DETMOLD_packaging.jpg';
-import steelFlower from '../../assets/customer/STEALFLOWER.removebg-preview.png';
-import lichien from '../../assets/customer/lichien.png';
-import lotte from '../../assets/customer/lotte.png';
-import tvc from '../../assets/customer/tvc_logo.png';
+import detmold from '../../assets/customer/DETMOLD_packaging.webp';
+import steelFlower from '../../assets/customer/STEALFLOWER.removebg-preview.svg';
+import lichien from '../../assets/customer/lichien.webp';
+import lotte from '../../assets/customer/lotte.webp';
+import tvc from '../../assets/customer/tripodLogo.svg';
 
 export default function ProjectShowcase() {
   const { t } = useLanguage();
@@ -97,7 +97,7 @@ export default function ProjectShowcase() {
           <div className="clients-grid">
             {clients.map((client, i) => (
               <div key={i} className="client-logo">
-                <img src={client.img} alt={client.name} title={client.name} className="no-lightbox" />
+                <img src={client.img} alt={client.name} title={client.name} />
               </div>
             ))}
           </div>

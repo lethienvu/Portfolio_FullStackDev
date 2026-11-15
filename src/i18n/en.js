@@ -1,5 +1,5 @@
-import bestEmp2024 from '../assets/bestEmployee/bestEmp2024.jpeg';
-import bestEmpBanner from '../assets/bestEmployee/bestEmp_Banner.jpeg';
+import bestEmp2024 from '../assets/bestEmployee/bestEmp2024.webp';
+import bestEmpBanner from '../assets/bestEmployee/bestEmp_Banner.webp';
 
 const en = {
   // Navbar
@@ -295,6 +295,18 @@ const en = {
     sectionLabel: "Get In Touch",
     title: "Contact",
     subtitle: "If you are looking for a leader who bridges complex business logic with high-performance technical architecture, let's connect to drive operational excellence together.",
+    editorialLabel: "LET'S CONNECT",
+    editorialTitle: 'Let’s discuss a collaboration opportunity',
+    editorialDescription: 'I am always open to connecting about software development, enterprise solutions and practical applications of AI.',
+    emailCta: 'Send email',
+    linkedinCta: 'View LinkedIn',
+    channelEmail: 'Email',
+    channelPhone: 'Phone / Zalo',
+    portfolio: 'Portfolio',
+    qrLabel: 'Connect via Zalo',
+    copy: 'Copy',
+    copied: 'Copied',
+    copyFeedback: 'copied.',
     formTitle: "Send a message",
     fields: {
       name: "Full Name",

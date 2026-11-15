@@ -2,12 +2,15 @@ import { useEffect, useRef, useState } from 'react';
 import './ExperienceSection.css';
 import { useLanguage } from '../../i18n/LanguageContext.jsx';
 import { HtmlText } from '../HtmlText.jsx';
+import ExperienceRouteTimeline from './ExperienceRouteTimeline.jsx';
 import logoSGU from '../../assets/sgu-logo.webp';
 import logoVTS from '../../assets/vtsLogo.svg';
+import logoASOFT from '../../assets/asotf_logo.svg';
 
 function CompanyMark({ company }) {
   if (company.includes('SGU')) return <img src={logoSGU} alt={company} />;
-  if (company.includes('VIET TIN')) return <img src={logoVTS} alt={company} />;
+  if (company.includes('VIET TIN') || company.includes('Việt Tín')) return <img src={logoVTS} alt={company} />;
+  if (company.includes('ASOFT')) return <img src={logoASOFT} alt={company} />;
   return <span aria-label={company}>AS</span>;
 }
 
@@ -21,5 +24,15 @@ function DetailDialog({ job, onClose }) {
 export default function ExperienceSection() {
   const { t, lang } = useLanguage(); const [selected, setSelected] = useState(null); const e = t.experience;
   const detailLabel = lang === 'vi' ? 'Xem chi tiết' : lang === 'ja' ? '詳細を見る' : lang === 'zh' ? '查看详情' : 'View details';
-  return <section id="experience" className="experience" aria-labelledby="exp-heading"><div className="container"><header className="experience__header"><h2 id="exp-heading" className="section-title">{e.title}</h2><p className="section-subtitle"><HtmlText>{e.subtitle}</HtmlText></p></header><div className="experience-tree" role="list">{e.jobs.map((job) => <button className={`experience-node${job.current ? ' experience-node--current' : ''}`} key={`${job.company}-${job.role}-${job.period}`} onClick={() => setSelected(job)} role="listitem" aria-haspopup="dialog"><span className="experience-node__branch" aria-hidden="true" /><span className="experience-node__date">{job.period}</span><span className="experience-node__company"><CompanyMark company={job.company} /></span><span className="experience-node__content"><strong>{job.role}</strong><small>{job.company}</small></span><span className="experience-node__detail">{detailLabel} →</span></button>)}</div></div><DetailDialog job={selected} onClose={() => setSelected(null)} /></section>;
+  const routeLabel = lang === 'vi' ? 'Hành trình kinh nghiệm' : lang === 'ja' ? 'キャリアの軌跡' : lang === 'zh' ? '职业历程' : 'Career journey';
+  return <section id="experience" className="experience" aria-labelledby="exp-heading">
+    <div className="container">
+      <header className="experience__header">
+        <h2 id="exp-heading" className="section-title">{e.title}</h2>
+        <p className="section-subtitle"><HtmlText>{e.subtitle}</HtmlText></p>
+      </header>
+      <ExperienceRouteTimeline jobs={e.jobs} label={routeLabel} detailLabel={detailLabel} onSelect={setSelected} CompanyMark={CompanyMark} />
+    </div>
+    <DetailDialog job={selected} onClose={() => setSelected(null)} />
+  </section>;
 }

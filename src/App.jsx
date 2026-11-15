@@ -12,8 +12,7 @@ const ExperienceSection = lazy(() => import("./components/ExperienceSection/Expe
 const TechDeepDive = lazy(() => import("./components/TechDeepDive/TechDeepDive"));
 const ClientsAndProducts = lazy(() => import("./components/ClientsAndProducts/ClientsAndProducts"));
 const CaseStudies = lazy(() => import("./components/CaseStudies/CaseStudies"));
-const ProductImageSection = lazy(() => import("./components/ProductImageSection/ProductImageSection"));
-const Lightbox = lazy(() => import("./components/common/Lightbox.jsx"));
+const ContactSection = lazy(() => import("./components/ContactSection/ContactSection"));
 
 
 function SectionFallback() {
@@ -126,42 +125,10 @@ function PortfolioNavigation({ theme, onThemeToggle }) {
 export default function App() {
   useScrollAnimation();
   const { lang } = useLanguage();
-  const [lightboxData, setLightboxData] = useState({ isOpen: false, images: [], index: 0 });
   const [theme, setTheme] = useState(() => localStorage.getItem("portfolio-theme") || "light");
   const toggleTheme = useCallback(() => {
     setTheme((current) => (current === "light" ? "dark" : "light"));
   }, []);
-
-  const openLightbox = useCallback((images, index = 0) => {
-    setLightboxData({ isOpen: true, images, index });
-  }, []);
-
-  const closeLightbox = useCallback(() => {
-    setLightboxData(prev => ({ ...prev, isOpen: false }));
-  }, []);
-
-  const nextLightboxImg = useCallback(() => {
-    setLightboxData(prev => ({
-      ...prev,
-      index: (prev.index + 1) % prev.images.length
-    }));
-  }, []);
-
-  const prevLightboxImg = useCallback(() => {
-    setLightboxData(prev => ({
-      ...prev,
-      index: (prev.index - 1 + prev.images.length) % prev.images.length
-    }));
-  }, []);
-
-  const handleGlobalImageClick = useCallback((e) => {
-    if (e.target.tagName === 'IMG') {
-      const isInteractive = e.target.closest('button') || e.target.closest('a') || e.target.classList.contains('no-lightbox') || e.target.closest('.no-lightbox');
-      if (!isInteractive) {
-        openLightbox([e.target.src], 0);
-      }
-    }
-  }, [openLightbox]);
 
   useEffect(() => {
     document.documentElement.lang = lang;
@@ -183,13 +150,16 @@ export default function App() {
         </filter>
       </svg>
       <PortfolioNavigation theme={theme} onThemeToggle={toggleTheme} />
-      <div className="page-wrapper" onClick={handleGlobalImageClick}>
+      <div className="page-wrapper">
         <main id="main-content">
-          <HeroSection onOpenLightbox={openLightbox} />
+          <HeroSection />
+
+          <div className="portfolio-zone portfolio-zone--clients" aria-label="Clients and products">
+            <DeferredSection minHeight="450px"><ClientsAndProducts /></DeferredSection>
+          </div>
 
           <div id="skills-knowledge" className="portfolio-zone portfolio-zone--skills" aria-label="Skills and knowledge">
             <DeferredSection minHeight="500px"><TechDeepDive /></DeferredSection>
-            <DeferredSection minHeight="450px"><ClientsAndProducts /></DeferredSection>
           </div>
 
           <div className="portfolio-zone portfolio-zone--experience">
@@ -198,26 +168,16 @@ export default function App() {
 
           <div id="featured-projects" className="portfolio-zone portfolio-zone--projects" aria-label="Featured projects">
             <DeferredSection minHeight="900px"><CaseStudies /></DeferredSection>
-            <DeferredSection minHeight="700px">
-              <ProductImageSection onOpenLightbox={openLightbox} isLightboxOpen={lightboxData.isOpen} />
-            </DeferredSection>
+          </div>
+
+          <div className="portfolio-zone portfolio-zone--contact">
+            <DeferredSection minHeight="650px"><ContactSection /></DeferredSection>
           </div>
 
           <Footer />
         </main>
       </div>
 
-      {lightboxData.isOpen && (
-        <Suspense fallback={null}>
-          <Lightbox
-            images={lightboxData.images}
-            index={lightboxData.index}
-            onClose={closeLightbox}
-            onNext={nextLightboxImg}
-            onPrev={prevLightboxImg}
-          />
-        </Suspense>
-      )}
     </>
   );
 }

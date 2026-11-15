@@ -1,5 +1,5 @@
-import bestEmp2024 from '../assets/bestEmployee/bestEmp2024.jpeg';
-import bestEmpBanner from '../assets/bestEmployee/bestEmp_Banner.jpeg';
+import bestEmp2024 from '../assets/bestEmployee/bestEmp2024.webp';
+import bestEmpBanner from '../assets/bestEmployee/bestEmp_Banner.webp';
 
 const vi = {
   // Navbar
@@ -21,7 +21,7 @@ const vi = {
   // Clients & Products
   clientsProducts: {
     title: 'Khách hàng',
-    subtitle: 'Các đối tác đã tin tưởng và hợp tác',
+    subtitle: 'Những doanh nghiệp tôi đã có cơ hội đồng hành',
     clients: 'Khách hàng tiêu biểu',
     products: 'Sản phẩm đã phát triển',
   },
@@ -55,8 +55,8 @@ const vi = {
     clientsLabel: 'Khách hàng tiêu biểu',
     jobs: [
       {
-        period:  '06/2026 – 11/2026',
-        role:    'Cố vấn & Điều phối Triển khai Dự án (Advisor & Project Delivery)',
+        period:  '06/2026 – 10/2026',
+        role:    'Nhân viên Cố vấn & Thực thi Dự án',
         company: 'Công ty Cổ phần ASOFT',
         companyDesc: 'Tư vấn và triển khai giải pháp ERP cho doanh nghiệp sản xuất.',
         current: false,
@@ -69,9 +69,9 @@ const vi = {
         tags: ['ERP Consulting', 'Project Delivery', 'Business Analysis', 'CRM', 'Sales', 'Inventory', 'Procurement', 'Manufacturing', 'Accounting', 'HRM'],
       },
       {
-        period:  '06/2023 – Hiện tại',
-        role:    'Quản lý Dự án & Trưởng nhóm Triển khai (Project Management & Implementation Lead)',
-        company: 'Công ty TNHH Giải pháp Phần mềm Việt Tín (VIET TIN SOFTWARE SOLUTION COMPANY LIMITED)',
+        period:  '07/2024 – 05/2026',
+        role:    'Trưởng nhóm Phát triển & Triển khai Dự án',
+        company: 'Công ty TNHH Giải pháp Phần mềm Việt Tín',
         companyDesc: 'Đơn vị phát triển Hệ sinh thái Paradise HR phục vụ hàng chục ngàn nhân sự.',
         current: true,
         highlights: [
@@ -89,11 +89,11 @@ const vi = {
       },
       {
         period:  '2024',
-        role:    'Nhân viên xuất sắc của năm 2024',
-        company: 'Công ty TNHH Giải pháp Phần mềm Việt Tín (VIET TIN SOFTWARE SOLUTION COMPANY LIMITED)',
+        role:    'Danh hiệu Nhân viên xuất sắc năm 2024',
+        company: 'Công ty TNHH Giải pháp Phần mềm Việt Tín',
         current: false,
         highlights: [
-          'Được vinh danh danh hiệu Nhân viên xuất sắc nhất năm 2024 nhờ những đóng góp quan trọng trong việc triển khai thành công hệ thống Paradise HR cho các đối tác lớn và giải pháp tối ưu quy trình làm việc, tăng hiệu suất, nâng cao chất lượng hệ sinh thái sản phẩm.',
+          'Được trao danh hiệu Nhân viên xuất sắc năm 2024 nhờ những đóng góp quan trọng trong việc triển khai thành công hệ thống Paradise HR cho các đối tác lớn, tối ưu quy trình làm việc và nâng cao chất lượng hệ sinh thái sản phẩm.',
         ],
         kpis: [],
         tags: ['Employee of the Year', '2024', 'Award'],
@@ -104,8 +104,8 @@ const vi = {
       },
       {
         period:  '08/2023 – 06/2024',
-        role:    'Phát triển Phần mềm & Kiến trúc Hệ thống (Software Development & System Architecture)',
-        company: 'Công ty TNHH Giải pháp Phần mềm Việt Tín (VIET TIN SOFTWARE SOLUTION COMPANY LIMITED)',
+        role:    'Nhân viên Triển khai & Phát triển Phần mềm',
+        company: 'Công ty TNHH Giải pháp Phần mềm Việt Tín',
         current: false,
         highlights: [
           'Phát triển SPA Framework tùy chỉnh: Tự xây dựng Khung ứng dụng đơn trang (SPA Framework) bằng JavaScript thuần. Loại bỏ phụ thuộc nặng để đạt thời gian tải dưới một giây và giảm <strong>40% kích thước gói</strong>.',
@@ -119,7 +119,7 @@ const vi = {
       {
         period:  '06/2023 – 08/2023',
         role:    'Thực tập sinh Kỹ sư Phần mềm (Intern Software Engineer)',
-        company: 'Công ty TNHH Giải pháp Phần mềm Việt Tín (VIET TIN SOFTWARE SOLUTION COMPANY LIMITED)',
+        company: 'Công ty TNHH Giải pháp Phần mềm Việt Tín',
         current: false,
         highlights: [
           'Tìm hiểu kiến trúc hệ thống và quy trình phát triển phần mềm doanh nghiệp.',
@@ -131,7 +131,7 @@ const vi = {
       {
         period:  '06/2019 – 11/2024',
         role:    'Sinh viên Kỹ thuật Phần mềm',
-        company: 'Đại học Sài Gòn (SGU)',
+        company: 'Trường Đại học Sài Gòn (SGU)',
         companyDesc: 'Kỹ sư Phần mềm (Software Engineering)',
         current: false,
         highlights: [
@@ -307,6 +307,18 @@ const vi = {
     sectionLabel: 'Liên hệ',
     title:        'Liên hệ',
     subtitle:     'Sẵn sàng đồng hành cùng bạn xây dựng giải pháp công nghệ. Hãy kết nối để cùng nhau biến ý tưởng thành hiện thực.',
+    editorialLabel: 'LET’S CONNECT',
+    editorialTitle: 'Cùng trao đổi về cơ hội hợp tác',
+    editorialDescription: 'Tôi luôn sẵn sàng kết nối để trao đổi về các cơ hội phát triển phần mềm, triển khai giải pháp doanh nghiệp và ứng dụng AI trong công việc.',
+    emailCta: 'Gửi email',
+    linkedinCta: 'Xem LinkedIn',
+    channelEmail: 'Email',
+    channelPhone: 'Điện thoại / Zalo',
+    portfolio: 'Portfolio',
+    qrLabel: 'Thêm cách kết nối qua Zalo',
+    copy: 'Sao chép',
+    copied: 'Đã sao chép',
+    copyFeedback: 'đã được sao chép.',
     formTitle:    'Gửi tin nhắn',
     fields: {
       name:               'Họ và tên',
