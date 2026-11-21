@@ -63,3 +63,30 @@ html[data-theme="dark"] .experience-route .u318-dot { fill: var(--color-surface)
 @media (prefers-reduced-motion: reduce) { .experience-route .u318-route, .experience-route .u318-dot, .experience-route .u318-dotc, .experience-route .u318-card, .experience-route .u318-pl { transition: none; } }
 
 @media (max-width: 760px) { .experience-route .u318-sc { overflow-x: auto; overscroll-behavior-inline: contain; } }
+
+@media (max-width: 760px) {
+  .experience-route .u318-sc { overflow-x: hidden; }
+  .experience-route .u318-map {
+    min-width: 0;
+    height: auto;
+    display: grid;
+    gap: var(--space-3);
+  }
+  .experience-route .u318-map > svg {
+    display: none;
+  }
+  .experience-route .u318-card,
+  .experience-route .u318-card--left-of-dot,
+  .experience-route .u318-card--offset-left,
+  .experience-route .u318-card--offset-right,
+  .experience-route .u318-card--upper-left,
+  .experience-route .u318-card--award {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    max-width: none;
+  }
+  .experience-route .u318-card--award {
+    min-height: 11.3rem;
+  }
+}

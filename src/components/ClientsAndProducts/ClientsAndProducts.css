@@ -2,12 +2,16 @@
    Clients & Products — static proof band
    =================================================== */
 
+.portfolio-zone--clients {
+  background-color: #100e0b;
+}
+
 .cap-section {
   position: relative;
   padding-block: var(--space-8);
+  /* min-height: 100vh; */
   overflow: hidden;
-  isolation: isolate;
-  background: #100e0b;
+  background: transparent;
   color: #fff;
 }
 
@@ -20,34 +24,27 @@
 }
 
 .cap-section__aura {
-  z-index: -1;
+  z-index: 0;
 }
 
 .cap-section__aura-layer--one {
-  background: radial-gradient(55.8% 55.49% at 50% 100%, rgb(38, 77, 76) 0%, rgba(25, 48, 47, 0) 100%);
-  mix-blend-mode: screen;
-}
-
-.cap-section__aura-layer--two {
-  background:
-    repeating-linear-gradient(100deg, #262626 0%, #262626 3%, rgba(38, 38, 38, .7) 5%, rgba(38, 38, 38, .7) 7%, transparent 10%, transparent 12%, rgba(38, 38, 38, .7) 14%, #262626 16%),
-    repeating-linear-gradient(100deg, #9ca3af 0%, #9ca3af 1.5%, rgba(156, 163, 175, .8) 2%, #6b7280 3%, #6b7280 4%, rgba(156, 163, 175, .8) 4.5%, #9ca3af 5%);
-  background-size: 300% 200%;
-  filter: blur(108px);
-  mix-blend-mode: screen;
-  opacity: .9;
+  background: linear-gradient(138deg, #05070c 0%, #0f172a 40%, #172554 70%, #1e3a8a 100%);
+  mix-blend-mode: normal;
   transform: translateZ(0);
   will-change: transform;
 }
 
-.cap-section__aura-layer--three {
-  background: radial-gradient(ellipse at 100% 100%, #fff 20%, #0a0a0a 80%);
-  mix-blend-mode: multiply;
+.cap-section__aura-layer--two {
+  background: radial-gradient(ellipse 45% 50% at 72% 40%, rgba(96, 165, 250, 0.20) 0%, transparent 68%);
+  mix-blend-mode: screen;
+  filter: blur(105px);
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .cap-section__grain {
   mix-blend-mode: overlay;
-  opacity: .22;
+  opacity: .85;
 }
 
 .cap-section__content {
@@ -127,7 +124,7 @@
 .cap-client-logo--navt img { max-width: 6.4rem; max-height: 2.45rem; }
 .cap-client-logo--steel-flower img { max-width: 15rem; max-height: 2rem; }
 .cap-client-logo--lotte img { max-width: 8rem; max-height: 1.75rem; }
-.cap-client-logo--lichien img { max-width: 10rem; max-height: 2.1rem; }
+.cap-client-logo--lichien img { max-width: 10rem;}
 .cap-client-logo--detmold img { max-width: 15rem; max-height: 3.5rem; }
 .cap-client-logo--tripod img { max-width: 10rem; max-height: 1.45rem; }
 .cap-client-logo--genepa img { max-width: 10rem; max-height: 3rem; }
@@ -199,8 +196,12 @@
   }
 
   .cap-clients__grid > li,
-  .cap-clients__grid > li:nth-child(6) {
+  .cap-clients__grid > li:nth-child(6),
+  .cap-clients__grid > li:nth-child(7),
+  .cap-clients__grid > li:nth-child(8),
+  .cap-clients__grid > li:nth-child(9) {
     grid-column: auto;
+    grid-column-start: auto;
   }
 }
 
@@ -211,11 +212,15 @@
 
   .cap-clients__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
+    gap: 1.25rem .75rem;
   }
 
   .cap-clients__grid > li {
     min-height: 4.5rem;
+  }
+
+  .cap-clients__grid > li:nth-child(9) {
+    grid-column: 1 / -1;
   }
 
   .cap-client-logo img {
@@ -234,6 +239,12 @@
   .cap-client-logo--sgw img { max-width: 3.7rem; max-height: 2.35rem; }
 
   .cap-section__aura-layer--two {
-    filter: blur(75px);
+    filter: blur(105px);
+  }
+}
+
+@media (min-width: 769px) {
+  .cap-section__aura-layer--two {
+    filter: blur(151px);
   }
 }

@@ -337,33 +337,39 @@
   grid-column: 1 / -1;
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
   gap: 1rem clamp(1.25rem, 3vw, 3rem);
   align-items: center;
   justify-content: space-between;
   margin-top: clamp(.25rem, 1.5vh, 1rem);
   padding-top: clamp(1rem, 2vh, 1.5rem);
-  border-top: 1px solid color-mix(in srgb, var(--color-ink) 14%, transparent);
+  border-top: 0;
 }
 .hero__profile-details {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .5rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(8rem, 1fr)) minmax(18rem, 1.8fr);
+  width: 100%;
+  flex: 1 1 100%;
+  gap: clamp(.75rem, 2vw, 2.5rem);
   align-items: stretch;
+  justify-content: stretch;
 }
 .hero__profile-details > span {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   grid-template-rows: auto auto;
   column-gap: .5rem;
-  min-width: 8.6rem;
-  padding-right: clamp(.85rem, 1.5vw, 1.5rem);
+  width: 100%;
+  min-width: 0;
+  padding-right: 0;
 }
-.hero__profile-details > span + span { border-left: 1px solid color-mix(in srgb, var(--color-ink) 10%, transparent); padding-left: clamp(.85rem, 1.5vw, 1.5rem); }
+.hero__profile-details > span + span { border-left: 0; padding-left: 0; }
 .hero__profile-details > span:nth-child(4) {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto auto;
-  flex: 1 1 19rem;
+  width: 100%;
+  min-width: 0;
 }
 .hero__profile-details > span:nth-child(4) strong { white-space: normal; }
 .hero__profile-details img {
@@ -579,7 +585,7 @@
   min-height: 0;
   padding: 0;
   justify-content: flex-start;
-  gap: clamp(1rem, 1.8vh, 1.5rem);
+  gap: 2rem;
 }
 .hero__headline { gap: clamp(1rem, 1.65vh, 1.4rem); }
 .hero__value-headline { max-width: 39rem; margin-top: 0; }
@@ -653,13 +659,18 @@
   .hero__text { max-width: 44rem; }
   .hero__right-col { justify-items: center; }
   .hero__graphics { width: min(100%, 34rem); height: 32rem; min-height: 32rem; margin: 0; }
+  .hero__profile-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .hero__profile-details > span:nth-child(4) {
+    grid-column: 1 / -1;
+  }
 }
 @media (max-width: 520px) {
   .hero { padding-block: calc(var(--hero-nav-clearance) + 1.5rem) 2.75rem; }
-  .hero__text { gap: 1rem; padding: 0; }
+  .hero__text { gap: 2rem; padding: 0; }
   .hero__graphics { width: 100%; min-height: 24.5rem; height: 24.5rem; }
   .hero__card-wrapper { left: 52%; }
-  .hero__card-wrapper .pcard { width: 10.5rem; height: 10.5rem; }
   .hero__orb { width: min(76%, 19rem); }
   .hero__graphics::after { width: min(80%, 20rem); }
   .hero__stat-card { width: 6.1rem; min-height: 5.7rem; padding: .65rem .7rem; }
@@ -671,4 +682,227 @@
   .hero__stat-card--0 { left: -.4rem; top: 35%; }
   .hero__stat-card--1 { right: -.35rem; top: 6%; }
   .hero__stat-card--2 { right: -.35rem; bottom: 8%; }
+}
+
+/* Final mobile overrides keep cascade order explicit and do not affect desktop. */
+@media (max-width: 900px) {
+  .hero {
+    height: auto;
+    min-height: 100svh;
+    overflow: clip;
+  }
+  .hero__inner {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+  }
+  .hero__right-col {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .hero__text {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .hero__right-col,
+  .hero__footer {
+    grid-column: 1;
+  }
+  .hero__footer {
+    grid-row: 3;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero { --hero-nav-clearance: 52px; }
+}
+
+@media (max-width: 520px) {
+  .hero { padding-block: calc(var(--hero-nav-clearance) + 1.25rem) 2.25rem; }
+  .hero__inner { gap: 1.75rem; }
+  .hero__text { width: 100%; max-width: none; gap: 2rem; }
+  .hero__identity { display: block; }
+  .hero__name {
+    display: block;
+    font-size: clamp(2.65rem, 14vw, 3.75rem);
+    line-height: 1.02;
+    letter-spacing: .025em;
+  }
+  .hero__headline { gap: .85rem; }
+  .hero__value-headline {
+    max-width: 20rem;
+    font-size: clamp(.95rem, 4.1vw, 1.08rem);
+    line-height: 1.32;
+  }
+  .hero__role { width: 100%; }
+  .hero__desc {
+    max-width: 34rem;
+    margin-block: .15rem .25rem;
+    font-size: clamp(.92rem, 3.7vw, 1rem);
+    line-height: 1.65;
+  }
+  .hero__desc p { -webkit-line-clamp: 3; }
+  .hero__actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: .65rem;
+  }
+  .hero__actions .btn {
+    width: 100%;
+    min-height: 44px;
+    font-size: clamp(.88rem, 3.8vw, 1rem);
+  }
+  .hero__footer {
+    display: grid;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    gap: .75rem;
+  }
+  .hero__profile-details {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    max-width: none;
+    gap: .7rem 0;
+    align-items: start;
+    justify-content: space-between;
+  }
+  .hero__profile-details > span,
+  .hero__profile-details > span + span {
+    align-items: start;
+    justify-items: start;
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    border-left: 0;
+    text-align: left;
+  }
+  .hero__profile-details > span:nth-child(3) { grid-column: 3; }
+  .hero__profile-details > span:nth-child(4) {
+    grid-column: 1 / -1;
+    flex: none;
+    width: 100%;
+    margin-top: .15rem;
+    padding-top: 0;
+    border-top: 0;
+    text-align: center;
+    justify-items: center;
+  }
+  .hero__footer strong {
+    overflow: visible;
+    font-size: clamp(.7rem, 3.2vw, .78rem);
+    line-height: 1.32;
+    text-overflow: clip;
+    white-space: normal;
+  }
+  .hero__footer small { font-size: clamp(.58rem, 2.8vw, .66rem); }
+  .hero__profile-details img { width: 1.1rem; height: 1.1rem; }
+  .hero__site-status { width: 100%; }
+  .hero__right-col { width: 100%; }
+  .hero__graphics {
+    width: 100%;
+    height: 25.5rem;
+    min-height: 25.5rem;
+  }
+  .hero__orb { width: min(72%, 19.5rem); }
+  .hero__graphics::after { width: min(76%, 20.5rem); }
+  .hero__card-wrapper { left: 50%; top: 42%; }
+  .hero__card-wrapper .pcard {
+    transform: scale(.62);
+    transform-origin: center;
+  }
+  .hero__stat-cards {
+    position: static;
+    display: block;
+  }
+  .hero__stat-card,
+  .hero__stat-card--0,
+  .hero__stat-card--1,
+  .hero__stat-card--2 {
+    position: absolute;
+    width: clamp(5.15rem, 22vw, 6.2rem);
+    min-height: 5.7rem;
+    height: auto;
+    margin: 0;
+    padding: .65rem .58rem;
+  }
+  .hero__stat-card--0 {
+    left: clamp(-.25rem, 1vw, .25rem);
+    top: 30%;
+    rotate: -5deg;
+  }
+  .hero__stat-card--1 {
+    right: clamp(-.25rem, 1vw, .25rem);
+    top: 8%;
+    rotate: 4deg;
+  }
+  .hero__stat-card--2 {
+    right: clamp(-.25rem, 1vw, .25rem);
+    bottom: 9%;
+    width: clamp(5.75rem, 24vw, 6.7rem);
+    rotate: 7deg;
+  }
+  .hero__stat-card strong { font-size: clamp(1.38rem, 7vw, 1.75rem); }
+  .hero__stat-card > span { font-size: clamp(.56rem, 2.6vw, .66rem); }
+  .hero__stat-card small { font-size: clamp(.49rem, 2.25vw, .56rem); }
+}
+
+@media (max-width: 375px) {
+  .hero__graphics { height: 24.5rem; min-height: 24.5rem; }
+  .hero__stat-card,
+  .hero__stat-card--0,
+  .hero__stat-card--1,
+  .hero__stat-card--2 { min-height: 5.95rem; }
+}
+
+@media (min-width: 376px) and (max-width: 520px) {
+  .hero__card-wrapper .pcard {
+    transform: scale(.72);
+  }
+}
+
+@media (max-width: 520px) {
+  .hero__role {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(.35rem, 2vw, .75rem);
+    width: 100%;
+  }
+
+  .hero__role-track {
+    grid-template-columns: auto minmax(0, 1fr);
+    min-width: 0;
+  }
+
+  .hero__role-track--engineering {
+    padding-right: .55rem;
+  }
+
+  .hero__role-track--erp {
+    padding-left: .55rem;
+  }
+
+  .hero__role-mark {
+    display: grid;
+  }
+
+  .hero__role-kicker,
+  .hero__role-track--engineering .hero__role-kicker {
+    padding-right: clamp(.25rem, 1.5vw, .65rem);
+    font-size: clamp(1.15rem, 5.8vw, 1.55rem);
+  }
+
+  .hero__role-track--erp .hero__role-kicker {
+    padding-inline: clamp(.25rem, 1.5vw, .65rem);
+  }
+
+  .hero__role-title {
+    font-size: clamp(.58rem, 2.5vw, .75rem);
+    white-space: normal;
+  }
+
+  .hero__role-vietnamese {
+    font-size: clamp(.55rem, 2.35vw, .72rem);
+    white-space: normal;
+  }
 }
