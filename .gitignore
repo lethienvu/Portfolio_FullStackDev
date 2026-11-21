@@ -7,6 +7,20 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Development reports, AI context, and local QA artifacts
+artifacts/
+.impeccable/
+memory/
+media/
+docs/
+AGENTS.md
+SOUL.md
+USER.md
+IDENTITY.md
+CONTENT_EXPORT.md
+DESIGN.md
+.copilot/
+
 node_modules
 dist
 dist-ssr
