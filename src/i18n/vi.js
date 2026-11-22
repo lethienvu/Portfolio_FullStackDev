@@ -44,13 +44,14 @@ const vi = {
     card: {
       title:      'Software Engineer | ERP Implementation Specialist — Kỹ sư Phần mềm | Chuyên viên Triển khai ERP',
       contactBtn: 'Lưu vCard',
+      about: 'Tôi sẵn sàng nhận cơ hội mới và luôn mong muốn trao đổi để tìm ra giải pháp phù hợp.',
     },
   },
 
   // Experience
   experience: {
     sectionLabel: 'Kinh nghiệm làm việc',
-    title:        'Dòng thời gian làm việc',
+    title:        'Quá trình công tác',
     subtitle:     'Kinh nghiệm triển khai, phân tích nghiệp vụ và phối hợp kỹ thuật cho hệ thống HR/ERP tại <strong>10+</strong> doanh nghiệp, phục vụ hơn <strong>14.000</strong> người dùng cuối.',
     clientsLabel: 'Khách hàng tiêu biểu',
     jobs: [
@@ -117,7 +118,7 @@ const vi = {
         tags: ['Vanilla JavaScript', 'SQL Server', 'Performance Optimization', 'Design System', 'PWA', 'Java'],
       },
       {
-        period:  '06/2023 – 08/2023',
+        period:  '06/2023 – 07/2023',
         role:    'Thực tập sinh Kỹ sư Phần mềm (Intern Software Engineer)',
         company: 'Công ty TNHH Giải pháp Phần mềm Việt Tín',
         current: false,

@@ -6,6 +6,32 @@
   overflow: hidden;
 }
 
+.experience::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 76% 20%, rgba(255, 214, 153, 0.28), transparent 24rem),
+    radial-gradient(circle at 18% 82%, rgba(101, 166, 150, 0.14), transparent 28rem),
+    linear-gradient(145deg, #f8f1e5 0%, #eee6d3 55%, #dce7e2 100%);
+  background-blend-mode: normal, normal, normal;
+  pointer-events: none;
+}
+
+html[data-theme="dark"] .experience::before {
+  background:
+    radial-gradient(circle at 80% 20%, rgba(245, 193, 118, 0.10), transparent 24rem),
+    radial-gradient(circle at 18% 82%, rgba(72, 151, 143, 0.12), transparent 26rem),
+    linear-gradient(145deg, #17221e 0%, #1d2925 58%, #24272a 100%);
+  background-blend-mode: normal, normal, normal;
+}
+
+.experience > .container {
+  position: relative;
+  z-index: 1;
+}
+
 /* Faded background memories */
 .experience__memories {
   position: absolute;

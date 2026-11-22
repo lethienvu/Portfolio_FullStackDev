@@ -48,7 +48,6 @@ export default function ClientsAndProducts() {
       <div className="cap-section__aura" aria-hidden="true">
         <div className="cap-section__aura-layer cap-section__aura-layer--one" />
         <div className="cap-section__aura-layer cap-section__aura-layer--two" />
-        <div className="cap-section__aura-layer cap-section__aura-layer--three" />
         <svg className="cap-section__grain" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <filter id="clients-grain">
             <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="4" stitchTiles="stitch" />

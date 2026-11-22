@@ -17,6 +17,10 @@ function CheckIcon() {
 
 export default function LanguageSelect() {
   const { lang, setLang } = useLanguage();
+  const languageLabel = lang === "vi" ? "Chọn ngôn ngữ hiển thị"
+    : lang === "ja" ? "表示言語を選択"
+    : lang === "zh" ? "选择显示语言"
+    : "Choose display language";
   const [isOpen, setIsOpen] = useState(false);
   const selectedIndex = Math.max(0, LANGUAGES.findIndex((language) => language.code === lang));
   const [activeIndex, setActiveIndex] = useState(selectedIndex);
@@ -98,12 +102,12 @@ export default function LanguageSelect() {
 
   return (
     <div ref={rootRef} className={`u031-language${isOpen ? " is-open" : ""}`} onPointerEnter={() => { cancelScheduledClose(); if (!isOpen) open(); }} onPointerLeave={scheduleClose}> 
-      <button className="u031-language__trigger" type="button" aria-haspopup="listbox" aria-expanded={isOpen} aria-controls={listId} aria-label="Chọn ngôn ngữ hiển thị" onClick={() => (isOpen ? close(true) : open())} onKeyDown={(event) => { if (event.key === "ArrowDown" || event.key === "ArrowUp") { event.preventDefault(); open(); } }}>
+      <button className="u031-language__trigger" type="button" aria-haspopup="listbox" aria-expanded={isOpen} aria-controls={listId} aria-label={languageLabel} onClick={() => (isOpen ? close(true) : open())} onKeyDown={(event) => { if (event.key === "ArrowDown" || event.key === "ArrowUp") { event.preventDefault(); open(); } }}>
         <img className="u031-language__translate" src={`${import.meta.env.BASE_URL}translate.svg`} alt="" aria-hidden="true" />
         <span className="sr-only">{selected.name}</span>
       </button>
       {isOpen && menuPosition && createPortal(
-        <ul ref={listRef} id={listId} className="u031-language__list" role="listbox" tabIndex="-1" aria-label="Ngôn ngữ hiển thị" aria-activedescendant={`${listId}-${activeIndex}`} onKeyDown={handleListKeyDown} onPointerEnter={cancelScheduledClose} onPointerLeave={scheduleClose} style={{ top: menuPosition.top, right: menuPosition.right }}>
+        <ul ref={listRef} id={listId} className="u031-language__list" role="listbox" tabIndex="-1" aria-label={languageLabel} aria-activedescendant={`${listId}-${activeIndex}`} onKeyDown={handleListKeyDown} onPointerEnter={cancelScheduledClose} onPointerLeave={scheduleClose} style={{ top: menuPosition.top, right: menuPosition.right }}>
           <li className="u031-language__highlight" role="presentation" aria-hidden="true" style={{ "--u031-index": activeIndex }} />
           {LANGUAGES.map((language, index) => <li id={`${listId}-${index}`} key={language.code} className="u031-language__option" role="option" aria-selected={index === selectedIndex} onPointerMove={() => setActiveIndex(index)} onClick={() => choose(index)}><span className="u031-language__flag" aria-hidden="true">{language.flag}</span><span>{language.name}<small>{language.region}</small><CheckIcon /></span></li>)}
         </ul>,

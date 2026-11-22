@@ -44,13 +44,14 @@ const zh = {
     card: {
       title: "Software Engineer | ERP Implementation Specialist — Kỹ sư Phần mềm | Chuyên viên Triển khai ERP",
       contactBtn: "保存 vCard",
+      about: "我正在寻找新的工作机会，也欢迎与您交流合适的合作与解决方案。",
     },
   },
 
   // Experience
   experience: {
     sectionLabel: "工作经历",
-    title: "职业时间线",
+    title: "工作经历",
     subtitle: "在 VIET TIN SOFTWARE 担任项目管理及实施负责人以及软件开发与系统架构师，为<strong>10多家</strong>大型企业客户提供端到端的HR生态系统，服务超过<strong>14,000名</strong>最终用户。",
     clientsLabel: "主要客户",
     jobs: [
@@ -112,7 +113,7 @@ const zh = {
         tags: ["Vanilla JavaScript", "SQL Server", "Performance Optimization", "Design System", "PWA", "Java"],
       },
       {
-        period: "06/2023 – 08/2023",
+        period: "06/2023 – 07/2023",
         role: "实习软件工程师",
         company: "VIET TIN SOFTWARE SOLUTION COMPANY LIMITED",
         current: false,

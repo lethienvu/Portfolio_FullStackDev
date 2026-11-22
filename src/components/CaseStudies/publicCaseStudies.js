@@ -1,5 +1,5 @@
 // Curated presentation only. Raw attribution and verification notes stay in projectEvidence.js.
-const p = (vi, en) => ({ vi, en });
+const p = (vi, en, ja = en, zh = en) => ({ vi, en, ja, zh });
 export const publicCaseStudies = {
   0: {
     role: p('UI/UX & Frontend Developer', 'UI/UX & Frontend Developer'),

@@ -28,7 +28,7 @@
   --color-white-20:      rgba(255, 255, 255, 0.20);
   --color-white-30:      rgba(255, 255, 255, 0.30);
   --color-white-40:      rgba(255, 255, 255, 0.40);
-  --color-white-50:      rgba(255, 255, 255, 0.50);
+  --color-white-65:      rgba(255, 255, 255, 0.65);
   --color-black-05:      rgba(0, 0, 0, 0.05);
   --color-black-08:      rgba(0, 0, 0, 0.08);
   --color-black-10:      rgba(0, 0, 0, 0.10);
@@ -45,6 +45,26 @@
   --color-accent:        #2563eb;
   --color-accent-light:  #dbeafe;
   --color-accent-dark:   #1d4ed8;
+  --color-zalo:          #0068ff;
+
+  /* Frosted Slate contact signature palette */
+  --color-slate-50:       #f8fafc;
+  --color-slate-100:      #f1f5f9;
+  --color-slate-200:      #e2e8f0;
+  --color-slate-300:      #cbd5e1;
+  --color-slate-400:      #94a3b8;
+  --color-slate-500:      #64748b;
+  --color-slate-600:      #475569;
+  --color-slate-700:      #334155;
+  --color-slate-800:      #1e293b;
+  --color-slate-900:      #0f172a;
+  --color-frosted-border: var(--color-white-50);
+  --color-frosted-surface: rgba(255, 255, 255, .42);
+  --color-frosted-muted: rgba(30, 41, 59, .74);
+  --color-arctic-paper: #faf8f2;
+  --gradient-frosted-slate: linear-gradient(145deg, #f8fafc 0%, #e0f2fe 38%, #bae6fd 68%, #dbeafe 100%);
+  --gradient-frosted-radial: radial-gradient(ellipse 50% 40% at 35% 42%, rgba(125, 211, 252, .22) 0%, transparent 60%);
+  --shadow-frosted-signature: 0 18px 50px rgba(71, 85, 105, .16);
 
   /* Liquid glass variables */
   --saturation: 150%;
@@ -128,11 +148,17 @@
   --size-navbar-height:      64px;
   --size-hero-card-width:    380px;
   --size-avatar:             56px;
+  --size-contact-portrait-width: 164px;
+  --size-contact-portrait-height: 203px;
   --size-logo-svg:         42px;
   --size-avatar-font:        22px;
   --size-icon-box:           44px;
   --size-icon-box-sm:        40px;
   --size-icon-box-xs:        20px;
+  --size-contact-pill-icon:  18px;
+  --size-contact-social-button: 50px;
+  --size-contact-social-expanded: 150px;
+  --size-contact-social-icon: 24px;
   --size-dot-lg:             12px;
   --size-dot-md:             7px;
   --size-dot-sm:             6px;
@@ -143,7 +169,7 @@
   --size-timeline-rail:      2px;
   --size-scrollbar:          6px;
   --size-scrollbar-thumb:    3px;
-  --size-cta: 30px;
+  --size-cta: 40px;
 
   /* Shared image-overlay logo capsule. Keep its surface light for brand assets. */
   --logo-capsule-width: 96px;

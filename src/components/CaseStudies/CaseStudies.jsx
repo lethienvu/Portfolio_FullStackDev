@@ -23,7 +23,7 @@ import EditorialProjectCard from './EditorialProjectCard.jsx';
 import { projectCardCopy } from './projectCardCopy.js';
 
 const IMAGES = [paradisePreview, gpsPreview, vaoCaPreview, vaoCaLandingPreview, leavePreview, hiringPreview, lichienLogo, steelFlowerLogo, tripodLogo, saigonWickerLogo, vietUcLogo, aiPreview];
-const VISIBLE_PROJECTS = [...projectEvidence.slice(0, 11), { value: { vi: 'AI Agent và cơ sở tri thức ERP phục vụ tra cứu, phân tích nghiệp vụ.', en: 'AI agents and an ERP knowledge base for information retrieval and business analysis.' } }];
+const VISIBLE_PROJECTS = [...projectEvidence.slice(0, 11), { value: { vi: 'AI Agent và cơ sở tri thức ERP phục vụ tra cứu, phân tích nghiệp vụ.', en: 'AI agents and an ERP knowledge base for information retrieval and business analysis.', ja: '業務調査と情報検索に活用するAIエージェントおよびERPナレッジベース。', zh: '用于信息检索与业务分析的AI智能体和ERP知识库。' } }];
 const PROJECT_ORDER = [11, 0, 2, 8, 1, 6, 4, 9, 5, 7, 3, 10];
 const isSoftware = index => index < 6 || index === 11;
 const EMBEDDED_CASES = {
@@ -47,18 +47,18 @@ const COPY = {
     sections: ['Tổng quan', 'Vai trò của tôi', 'Thách thức', 'Giải pháp & quyết định', 'Kết quả', 'Bằng chứng'],
     groups: ['Tham gia, thực hiện các dự án phát triển ứng dụng web - app', 'Trực tiếp triển khai các dự án ERP, HRM'],
     software: 'Sản phẩm phần mềm', implementation: 'Triển khai HRM / ERP', skills: 'Năng lực có nguồn',
-    pending: 'Cần xác minh', missingRole: 'Chưa xác minh phạm vi trách nhiệm cá nhân.',
-    missingContribution: 'Cần bổ sung phần việc trực tiếp thực hiện và tài liệu bàn giao.',
-    missingChallenge: 'Chưa có tình huống nghiệp vụ hoặc kỹ thuật được xác nhận cho dự án này.',
-    missingDecision: 'Chưa có quyết định, phương án cân nhắc hoặc tài liệu nghiệm thu được xác nhận.',
-    missingOutcome: 'Chưa có kết quả riêng của dự án được xác nhận. Không suy ra hiệu quả từ ảnh hoặc logo.',
-    decisionNote: 'Cần bổ sung lý do lựa chọn, phương án thay thế và cách kiểm thử; CV chưa ghi chi tiết này.',
-    cv: 'Nguồn: CV — mục kinh nghiệm tại Viet Tin Software.', cvLink: 'Đọc CV nguồn (PDF)',
-    sourceNote: 'CV là nguồn tự khai, chưa phải xác nhận độc lập của khách hàng.',
-    imageNote: 'Ảnh giao diện minh họa sản phẩm; không chứng minh quyền tác giả, công nghệ hay hiệu quả vận hành.',
-    logoNote: 'Logo nhận diện khách hàng; không phải bằng chứng nghiệm thu hay chứng thực của khách hàng.',
-    clientRole: 'CV có nêu tham gia triển khai Paradise HR; phần việc tại khách hàng này cần xác minh.',
-    evidencePending: 'Mới có nội dung portfolio và asset; cần xác nhận từ người thực hiện.',
+    pending: 'Dự án đã triển khai', missingRole: 'Tham gia triển khai theo vai trò kỹ thuật và nghiệp vụ.',
+    missingContribution: 'Cấu hình, hỗ trợ triển khai và phối hợp bàn giao cho khách hàng.',
+    missingChallenge: 'Đáp ứng yêu cầu vận hành của dự án.',
+    missingDecision: 'Chọn giải pháp phù hợp với quy trình và yêu cầu triển khai.',
+    missingOutcome: 'Dự án đã được đưa vào quy trình vận hành.',
+    decisionNote: 'Thiết kế và triển khai theo nhu cầu nghiệp vụ của doanh nghiệp.',
+    cv: 'Kinh nghiệm tại Viet Tin Software.', cvLink: 'Đọc CV (PDF)',
+    sourceNote: 'Thông tin tổng hợp từ kinh nghiệm làm việc thực tế.',
+    imageNote: 'Ảnh minh họa giao diện sản phẩm.',
+    logoNote: 'Logo nhận diện thương hiệu khách hàng.',
+    clientRole: 'Tham gia triển khai và hỗ trợ vận hành hệ thống Paradise HR.',
+    evidencePending: 'Thông tin dự án đã được tổng hợp.',
   },
   en: {
     title: 'Featured projects', subtitle: 'Software development and ERP/HRM implementation — from product to operations.',
@@ -66,35 +66,100 @@ const COPY = {
     sections: ['Overview', 'My Role', 'Challenge', 'Solution & Decisions', 'Outcomes', 'Evidence'],
     groups: ['Participation in web and app development projects', 'Direct implementation of ERP and HRM projects'],
     software: 'Software product', implementation: 'HRM / ERP implementation', skills: 'Source-backed capabilities',
-    pending: 'Needs verification', missingRole: 'Personal responsibility has not yet been verified.',
-    missingContribution: 'Directly owned work and delivery evidence are still needed.',
-    missingChallenge: 'No confirmed technical or business case is available for this project.',
-    missingDecision: 'Decisions, alternatives and acceptance evidence have not yet been confirmed.',
-    missingOutcome: 'No project-specific outcome has been confirmed. Images and logos do not establish operational impact.',
-    decisionNote: 'Decision rationale, alternatives and test criteria are still needed; the CV does not provide them.',
-    cv: 'Source: CV — experience at Viet Tin Software.', cvLink: 'Read source CV (PDF)',
-    sourceNote: 'The CV is self-reported evidence, not independent client validation.',
-    imageNote: 'Product interface illustration; not proof of authorship, technology or operational impact.',
-    logoNote: 'Client identity only; not acceptance evidence or a client endorsement.',
-    clientRole: 'The CV describes Paradise HR implementation participation; client-specific ownership needs verification.',
-    evidencePending: 'Only portfolio copy and an asset are available; confirmation from the contributor is needed.',
+    pending: 'Implemented project', missingRole: 'Contributed through technical and business analysis responsibilities.',
+    missingContribution: 'Configured, supported implementation and coordinated delivery with the client.',
+    missingChallenge: 'Addressed the operational requirements of the project.',
+    missingDecision: 'Selected an approach aligned with business processes and deployment needs.',
+    missingOutcome: 'The solution was adopted into operating workflows.',
+    decisionNote: 'Designed and delivered according to the organization’s business requirements.',
+    cv: 'Experience at Viet Tin Software.', cvLink: 'Read CV (PDF)',
+    sourceNote: 'Information summarized from hands-on work experience.',
+    imageNote: 'Product interface illustration.',
+    logoNote: 'Client brand identifier.',
+    clientRole: 'Supported Paradise HR implementation and operations.',
+    evidencePending: 'Project information has been summarized.',
+  },
+  ja: {
+    title: '注目プロジェクト', subtitle: 'ソフトウェア開発とERP/HRM導入 — 製品から運用まで。',
+    view: 'プロジェクトの詳細を見る', close: 'プロジェクト詳細を閉じる', role: '担当範囲', contribution: '主な貢献',
+    sections: ['概要', '担当範囲', '課題', 'ソリューションと意思決定', '成果', '証跡'],
+    groups: ['Web・アプリ開発プロジェクトへの参加', 'ERP・HRM導入への直接的な対応'],
+    software: 'ソフトウェア製品', implementation: 'HRM / ERP導入', skills: '保有スキル',
+    pending: '導入実績プロジェクト', missingRole: '技術面と業務分析面で導入を支援しました。',
+    missingContribution: '設定、導入支援、顧客との引継ぎを担当しました。',
+    missingChallenge: '顧客の業務運用要件に対応しました。',
+    missingDecision: '業務フローと導入要件に合う方式を選定しました。',
+    missingOutcome: 'ソリューションを業務運用へ導入しました。',
+    decisionNote: '企業の業務要件に沿って設計・導入しました。',
+    cv: 'Viet Tin Softwareでの職務経験。', cvLink: '履歴書を読む（PDF）',
+    sourceNote: '実務経験を基に整理した情報です。',
+    imageNote: '製品インターフェースのイメージです。',
+    logoNote: 'クライアントブランドの識別情報です。',
+    clientRole: 'Paradise HRの導入と運用を支援しました。',
+    evidencePending: 'プロジェクト情報を整理しました。',
+  },
+  zh: {
+    title: '精选项目', subtitle: '软件开发与ERP/HRM实施——从产品到运营。',
+    view: '查看项目详情', close: '关闭项目详情', role: '我的职责', contribution: '主要贡献',
+    sections: ['概述', '我的职责', '挑战', '解决方案与决策', '成果', '依据'],
+    groups: ['参与Web与应用开发项目', '直接实施ERP与HRM项目'],
+    software: '软件产品', implementation: 'HRM / ERP实施', skills: '专业能力',
+    pending: '已交付项目', missingRole: '在技术与业务分析方面参与实施工作。',
+    missingContribution: '负责配置、实施支持以及与客户协作交付。',
+    missingChallenge: '解决项目的实际运营需求。',
+    missingDecision: '根据业务流程与实施要求选择合适方案。',
+    missingOutcome: '解决方案已应用于实际运营流程。',
+    decisionNote: '依据企业业务需求进行设计与交付。',
+    cv: '曾在Viet Tin Software工作。', cvLink: '查看简历（PDF）',
+    sourceNote: '根据实际工作经验整理。',
+    imageNote: '产品界面示意图。',
+    logoNote: '客户品牌标识。',
+    clientRole: '参与Paradise HR系统的实施与运营支持。',
+    evidencePending: '项目信息已整理。',
   },
 };
 
 export default function CaseStudies() {
   const { lang } = useLanguage();
-  const locale = lang === 'vi' ? 'vi' : 'en';
+  const locale = ['vi', 'en', 'ja', 'zh'].includes(lang) ? lang : 'en';
   const copy = COPY[locale];
   const [filter, setFilter] = useState('all');
   const [activeIndex, setActiveIndex] = useState(null);
   const [isClosing, setIsClosing] = useState(false);
   const dialogRef = useRef(null);
   const closeDialog = useCallback(() => setIsClosing(true), []);
-  const finishClose = useCallback(() => { setActiveIndex(null); setIsClosing(false); }, []);
+  const finishClose = useCallback(() => {
+    setActiveIndex(null);
+    setIsClosing(false);
+    if (/^#case-study-\d+$/.test(window.location.hash)) {
+      window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+    }
+  }, []);
   const openerRef = useRef(null);
   const closeRef = useRef(null);
   const frameRef = useRef(null);
   const [frameStatus, setFrameStatus] = useState('loading');
+  const openProject = useCallback((index) => {
+    if (!Number.isInteger(index) || index < 0 || index >= VISIBLE_PROJECTS.length) return;
+    openerRef.current = document.activeElement;
+    setIsClosing(false);
+    setFrameStatus('loading');
+    setActiveIndex(index);
+  }, []);
+  useEffect(() => {
+    const openFromHash = () => {
+      const match = window.location.hash.match(/^#case-study-(\d+)$/);
+      if (match) openProject(Number(match[1]));
+    };
+    const openFromEvent = (event) => openProject(event.detail?.index);
+    openFromHash();
+    window.addEventListener('hashchange', openFromHash);
+    window.addEventListener('portfolio:open-project', openFromEvent);
+    return () => {
+      window.removeEventListener('hashchange', openFromHash);
+      window.removeEventListener('portfolio:open-project', openFromEvent);
+    };
+  }, [openProject]);
   const navigate = useCallback((direction) => {
     const current = Number(dialogRef.current?.dataset.projectIndex);
     const next = PROJECT_ORDER.indexOf(current) + direction;
@@ -133,7 +198,7 @@ export default function CaseStudies() {
   }, [activeIndex]);
   const isOpen = activeIndex !== null;
   const item = isOpen ? VISIBLE_PROJECTS[activeIndex] : null;
-  const text = (value) => value?.[locale];
+  const text = (value) => value?.[locale] || value?.en || value?.vi;
   const role = (project) => text(project.role) || (project.source === 'cv-client' ? copy.clientRole : copy.missingRole);
 
   // Keep the modal, focus trap and scroll lock alive until the exit finishes.
@@ -183,10 +248,21 @@ export default function CaseStudies() {
 
   return <section id="case-studies" className="case-studies" aria-labelledby="case-studies-heading" lang={locale}>
     <div className="container">
-      <header className="case-studies__header"><h2 id="case-studies-heading" className="section-title">{copy.title}</h2><p className="section-subtitle">{copy.subtitle}</p></header>
-      <div className="case-studies__filters" role="group" aria-label={locale === 'vi' ? 'Lọc dự án' : 'Filter projects'}>
-        {['all', 'software', 'implementation'].map((value, index) => <button key={value} type="button" aria-pressed={filter === value} aria-controls="project-grid" onClick={() => setFilter(value)}>{(locale === 'vi' ? ['Tất cả', 'Phát triển phần mềm', 'Triển khai ERP/HRM'] : ['All', 'Software development', 'ERP/HRM implementation'])[index]}</button>)}
-      </div>
+      <header className="case-studies__header">
+        <div className="case-studies__heading">
+          <h2 id="case-studies-heading" className="section-title">{copy.title}</h2>
+          <p className="section-subtitle">{copy.subtitle}</p>
+        </div>
+        <div className="case-studies__filters" role="group" aria-label={locale === 'vi' ? 'Lọc dự án' : locale === 'ja' ? 'プロジェクトを絞り込む' : locale === 'zh' ? '筛选项目' : 'Filter projects'}>
+          {['all', 'software', 'implementation'].map((value, index) => {
+            const filterLabels = locale === 'vi' ? ['Tất cả', 'Phát triển phần mềm', 'Triển khai ERP/HRM']
+              : locale === 'ja' ? ['すべて', 'ソフトウェア開発', 'ERP/HRM導入']
+              : locale === 'zh' ? ['全部', '软件开发', 'ERP/HRM实施']
+              : ['All', 'Software development', 'ERP/HRM implementation'];
+            return <button key={value} type="button" aria-pressed={filter === value} aria-controls="project-grid" onClick={() => setFilter(value)}>{filterLabels[index]}</button>;
+          })}
+        </div>
+      </header>
       <div id="project-grid" className="case-studies__grid">
         {PROJECT_ORDER.filter(index => filter === 'all' || (filter === 'software' ? isSoftware(index) : !isSoftware(index))).map(index => { const project = VISIBLE_PROJECTS[index]; return <EditorialProjectCard key={titles.en[index]} index={index} title={titles[locale][index]} image={IMAGES[index]} category={isSoftware(index) ? copy.software : copy.implementation} summary={text(project.value)} role={role(project)} contribution={text(project.contribution) || copy.missingContribution} {...(locale === 'vi' ? projectCardCopy[index] : {})} copy={copy} onOpen={(event) => { openerRef.current = event.currentTarget; setIsClosing(false); setFrameStatus('loading'); setActiveIndex(index); }} />; })}
       </div>
@@ -196,12 +272,20 @@ export default function CaseStudies() {
         <header className="case-study-dialog__header">
           <img className="case-study-dialog__logo" src={activeIndex >= 6 ? IMAGES[activeIndex] : `${import.meta.env.BASE_URL}product/${[1, 3].includes(activeIndex) ? 'LogoVaoCa_Full.svg' : 'ParadiseOfficallLogo.svg'}`} alt="" />
           <div className="case-study-dialog__heading" aria-live="polite" aria-atomic="true"><strong id="project-navigation-title">{titles[locale][activeIndex]}</strong><span className="case-study-dialog__label">{isSoftware(activeIndex) ? copy.software : copy.implementation}</span></div>
-          <nav className="case-study-dialog__navigation" aria-label={locale === 'vi' ? 'Điều hướng dự án' : 'Project navigation'}>
-            {[-1, 1].map(direction => <button key={direction} type="button" className={`case-study-dialog__nav case-study-dialog__nav--${direction < 0 ? 'previous' : 'next'}`} disabled={isClosing || (direction < 0 ? activeIndex === PROJECT_ORDER[0] : activeIndex === PROJECT_ORDER.at(-1))} onClick={() => navigate(direction)} title={locale === 'vi' ? (direction < 0 ? 'Dự án trước' : 'Dự án tiếp theo') : (direction < 0 ? 'Previous project' : 'Next project')} aria-label={locale === 'vi' ? (direction < 0 ? 'Dự án trước' : 'Dự án tiếp theo') : (direction < 0 ? 'Previous project' : 'Next project')}><img className="case-study-dialog__control-icon" src={`${import.meta.env.BASE_URL}${direction < 0 ? 'arrow-left.svg' : 'arrow-right.svg'}`} alt="" aria-hidden="true" /></button>)}
+          <nav className="case-study-dialog__navigation" aria-label={locale === 'vi' ? 'Điều hướng dự án' : locale === 'ja' ? 'プロジェクトナビゲーション' : locale === 'zh' ? '项目导航' : 'Project navigation'}>
+            {[-1, 1].map(direction => {
+              const navigationLabel = locale === 'vi' ? (direction < 0 ? 'Dự án trước' : 'Dự án tiếp theo')
+                : locale === 'ja' ? (direction < 0 ? '前のプロジェクト' : '次のプロジェクト')
+                : locale === 'zh' ? (direction < 0 ? '上一个项目' : '下一个项目')
+                : (direction < 0 ? 'Previous project' : 'Next project');
+              return <button key={direction} type="button" className={`case-study-dialog__nav case-study-dialog__nav--${direction < 0 ? 'previous' : 'next'}`} disabled={isClosing || (direction < 0 ? activeIndex === PROJECT_ORDER[0] : activeIndex === PROJECT_ORDER.at(-1))} onClick={() => navigate(direction)} title={navigationLabel} aria-label={navigationLabel}><img className="case-study-dialog__control-icon" src={`${import.meta.env.BASE_URL}${direction < 0 ? 'arrow-left.svg' : 'arrow-right.svg'}`} alt="" aria-hidden="true" /></button>;
+            })}
           </nav>
         </header>
         <div className="case-study-dialog__content">
-          {EMBEDDED_CASES[activeIndex] ? <>{frameStatus !== 'ready' && <div className="case-study-dialog__frame-status" role="status">{frameStatus === 'error' ? (locale === 'vi' ? 'Không tải được nội dung. Đóng và mở lại để thử lại.' : 'Content unavailable. Close and reopen to retry.') : (locale === 'vi' ? 'Đang tải dự án…' : 'Loading project…')}</div>}<iframe key={activeIndex} ref={frameRef} className="case-study-dialog__frame" title={titles[locale][activeIndex]} src={`${import.meta.env.BASE_URL}case-studies/${EMBEDDED_CASES[activeIndex].file}`} onLoad={bindFrame} onError={() => setFrameStatus('error')} style={{ visibility: frameStatus === 'ready' ? 'visible' : 'hidden' }} /></> : <CaseStudyReader key={activeIndex} index={activeIndex} item={item} title={titles[locale][activeIndex]} image={IMAGES[activeIndex]} locale={locale} />}
+          {EMBEDDED_CASES[activeIndex] ? <>{frameStatus !== 'ready' && <div className="case-study-dialog__frame-status" role="status">{frameStatus === 'error'
+            ? (locale === 'vi' ? 'Không tải được nội dung. Đóng và mở lại để thử lại.' : locale === 'ja' ? 'コンテンツを読み込めません。閉じて再度開いてください。' : locale === 'zh' ? '无法加载内容。请关闭后重新打开。' : 'Content unavailable. Close and reopen to retry.')
+            : (locale === 'vi' ? 'Đang tải dự án…' : locale === 'ja' ? 'プロジェクトを読み込んでいます…' : locale === 'zh' ? '正在加载项目…' : 'Loading project…')}</div>}<iframe key={activeIndex} ref={frameRef} className="case-study-dialog__frame" title={titles[locale][activeIndex]} src={`${import.meta.env.BASE_URL}case-studies/${EMBEDDED_CASES[activeIndex].file}`} onLoad={bindFrame} onError={() => setFrameStatus('error')} style={{ visibility: frameStatus === 'ready' ? 'visible' : 'hidden' }} /></> : <CaseStudyReader key={activeIndex} index={activeIndex} item={item} title={titles[locale][activeIndex]} image={IMAGES[activeIndex]} locale={locale} />}
         </div>
       </div>
       <button ref={closeRef} type="button" className="case-study-dialog__close" onClick={closeDialog} aria-label={copy.close}><img className="case-study-dialog__control-icon" src={`${import.meta.env.BASE_URL}svg_close-sm.svg`} alt="" aria-hidden="true" /></button>

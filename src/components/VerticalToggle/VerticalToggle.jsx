@@ -3,7 +3,7 @@ import { useLanguage } from '../../i18n/LanguageContext';
 import './VerticalToggle.css';
 
 export default function VerticalToggle() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const [activeSection, setActiveSection] = useState('hero');
 
   const sections = useMemo(() => [
@@ -39,7 +39,7 @@ export default function VerticalToggle() {
   };
 
   return (
-    <nav className="radio-container" aria-label="Portfolio sections">
+    <nav className="radio-container" aria-label={lang === 'vi' ? 'Các phần trong portfolio' : lang === 'ja' ? 'ポートフォリオのセクション' : lang === 'zh' ? '作品集章节' : 'Portfolio sections'}>
       {sections.map((section) => (
         <button
           className={`radio-container__item${activeSection === section.id ? ' is-active' : ''}`}

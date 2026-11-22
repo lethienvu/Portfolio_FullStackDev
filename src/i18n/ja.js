@@ -44,13 +44,14 @@ const ja = {
     card: {
       title: "Software Engineer | ERP Implementation Specialist — Kỹ sư Phần mềm | Chuyên viên Triển khai ERP",
       contactBtn: "vCardを保存",
+      about: "新しい仕事の機会に前向きで、適切な課題についてぜひお話しできればと思います。",
     },
   },
 
   // Experience
   experience: {
     sectionLabel: "職歴",
-    title: "キャリアタイムライン",
+    title: "職務経歴",
     subtitle: "VIET TIN SOFTWAREでのプロジェクト管理・導入リーダー、およびソフトウェア開発・システムアーキテクチャ。<strong>14,000人以上</strong>のエンドユーザーにサービスを提供する<strong>10社以上</strong>の大企業クライアント向けに、エンドツーエンドのHRエコシステムを提供しました。",
     clientsLabel: "主要クライアント",
     jobs: [
@@ -112,7 +113,7 @@ const ja = {
         tags: ["Vanilla JavaScript", "SQL Server", "Performance Optimization", "Design System", "PWA", "Java"],
       },
       {
-        period: "06/2023 – 08/2023",
+        period: "06/2023 – 07/2023",
         role: "インターン ソフトウェアエンジニア",
         company: "VIET TIN SOFTWARE SOLUTION COMPANY LIMITED",
         current: false,
