@@ -10,8 +10,9 @@ export default function VerticalToggle() {
     { id: 'hero', label: t.nav.home },
     { id: 'skills-knowledge', label: t.nav.technical },
     { id: 'experience', label: t.nav.experience },
-    { id: 'featured-projects', label: t.nav.projects }
-  ], [t.nav.home, t.nav.technical, t.nav.experience, t.nav.projects]);
+    { id: 'featured-projects', label: t.nav.projects },
+    { id: 'contact', label: t.nav.contact }
+  ], [t.nav.home, t.nav.technical, t.nav.experience, t.nav.projects, t.nav.contact]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

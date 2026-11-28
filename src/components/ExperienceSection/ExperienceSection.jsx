@@ -25,7 +25,7 @@ export default function ExperienceSection() {
   const { t, lang } = useLanguage(); const [selected, setSelected] = useState(null); const e = t.experience;
   const detailLabel = lang === 'vi' ? 'Xem chi tiết' : lang === 'ja' ? '詳細を見る' : lang === 'zh' ? '查看详情' : 'View details';
   const routeLabel = lang === 'vi' ? 'Hành trình kinh nghiệm' : lang === 'ja' ? 'キャリアの軌跡' : lang === 'zh' ? '职业历程' : 'Career journey';
-  return <section id="experience" className="experience" aria-labelledby="exp-heading">
+  return <section className="experience" aria-labelledby="exp-heading">
     <div className="container">
       <header className="experience__header">
         <h2 id="exp-heading" className="section-title">{e.title}</h2>

@@ -7,7 +7,7 @@ const vi = {
     home:       'Giới thiệu',
     experience: 'Kinh nghiệm',
     technical:  'Chuyên môn',
-    projects:   'Dự án nổi bật',
+    projects:   'Dự án',
     contact:    'Liên hệ',
     hire:       'Lưu vCard',
   },

@@ -218,7 +218,7 @@ export default function App() {
             <DeferredSection minHeight="500px"><TechDeepDive /></DeferredSection>
           </div>
 
-          <div className="portfolio-zone portfolio-zone--experience">
+          <div id="experience" className="portfolio-zone portfolio-zone--experience">
             <DeferredSection minHeight="700px"><ExperienceSection /></DeferredSection>
           </div>
 
@@ -226,7 +226,7 @@ export default function App() {
             <DeferredSection minHeight="900px"><CaseStudies /></DeferredSection>
           </div>
 
-          <div className="portfolio-zone portfolio-zone--contact">
+          <div id="contact" className="portfolio-zone portfolio-zone--contact">
             <DeferredSection minHeight="650px"><ContactSection /></DeferredSection>
           </div>
 
